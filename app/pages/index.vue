@@ -1,17 +1,17 @@
 <template>
   <main class="home-page">
-    <HomeHero />
-    <DirectionsSec />
-    <AboutSec />
-    <FormSec />
-    <ProgramsSec />
-    <TeamSec />
-    <ReviewsSec />
-    <VideoReviewsSec />
-    <PrinciplesSec />
-    <FaqSec />
-    <LogosSec />
-    <ArticlesSec />
+    <SectionsHomeHero />
+    <SectionsDirectionsSec />
+    <SectionsAboutSec />
+    <SectionsFormSec />
+    <SectionsProgramsSec />
+    <SectionsTeamSec />
+    <SectionsReviewsSec />
+    <SectionsVideoReviewsSec />
+    <SectionsPrinciplesSec />
+    <SectionsFaqSec />
+    <SectionsLogosSec />
+    <SectionsArticlesSec />
   </main>
 </template>
 

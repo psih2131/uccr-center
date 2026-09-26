@@ -15,7 +15,8 @@
 @import "./components/_HeaderAlphabeticalIndex.scss";
 @import "./components/_HeaderSearch.scss";
 @import "./components/buttons/_BtnPill.scss";
-@import "./components/_HomeHero.scss";
+@import "./components/sections/HomeHero";
+@import "./components/sections/AboutHero";
 @import "./components/sections/_DirectionsSec.scss";
 @import "./components/sections/_AboutSec.scss";
 @import "./components/sections/_ProgramsSec.scss";
@@ -27,6 +28,14 @@
 @import "./components/sections/_LogosSec.scss";
 @import "./components/sections/_ArticlesSec.scss";
 @import "./components/sections/_FormSec.scss";
+@import "./components/sections/_ContactsSec.scss";
+@import "./components/sections/_LicensesSec.scss";
+@import "./components/sections/_LicensesPageSec.scss";
+@import "./components/sections/_DirectionHero.scss";
+@import "./components/sections/_DirectionSpecsSec.scss";
+@import "./components/sections/_DirectionDocSec.scss";
+@import "./components/sections/_CatalogSec.scss";
+@import "./components/sections/CoursePage";
 @import "./components/_modals.scss";
 @import "./components/_AppCookie.scss";
 

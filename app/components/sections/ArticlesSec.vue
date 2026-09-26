@@ -3,7 +3,7 @@
     <div class="container">
       <div class="articles__head">
         <h2 class="section-title articles__title">Читайте интересные статьи</h2>
-        <BtnPill title="Смотреть все статьи" type="link" to="/blog" />
+        <ButtonsBtnPill title="Смотреть все статьи" type="link" to="/blog" />
       </div>
 
       <div class="articles__grid">

@@ -27,7 +27,7 @@
             <span class="principle-card__line principle-card__line--v principle-card__line--v2"></span>
             <h3 class="principle-card__cta-title">Оставьте заявку и получите консультацию</h3>
             <p class="principle-card__text">Наши специалисты свяжутся с вами в течении 5 минут и раскажут вам все подробности и детали</p>
-            <BtnPill class="btn-pill--light" title="Получить консультацию" type="modal" />
+            <ButtonsBtnPill class="btn-pill--light" title="Получить консультацию" type="modal" />
           </article>
         </template>
       </div>

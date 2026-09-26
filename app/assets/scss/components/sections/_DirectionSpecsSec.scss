@@ -1,0 +1,155 @@
+.direction-specs {
+	padding: 0 0 130px;
+}
+
+.direction-specs__bar {
+	display: flex;
+	align-items: center;
+	min-height: 87px;
+	padding: 0 25px;
+	margin-bottom: 26px;
+	background: $white;
+	border-radius: 10px;
+}
+
+.direction-specs__title {
+	margin: 0;
+	flex: 1;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 1.2;
+	color: $darkBlue;
+}
+
+.direction-specs__meta {
+	margin: 0 30px 0 0;
+	font-size: 20px;
+	color: $gray1;
+
+	b {
+		font-weight: 400;
+		font-size: 26px;
+		color: $darkBlue;
+	}
+}
+
+.direction-specs__grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.spec-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 280px;
+	height: 248px;
+	padding: 20px 20px 20px 24px;
+	background: $white;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+	&:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 12px 24px rgba(20, 87, 113, 0.16);
+	}
+}
+
+.spec-card__top {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+}
+
+.spec-card__num,
+.spec-card__new {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	padding: 0 8px;
+	border-radius: 4px;
+	font-size: 14px;
+	letter-spacing: 0.02em;
+}
+
+.spec-card__num {
+	min-width: 47px;
+	background: rgba(214, 234, 225, 0.29);
+	color: $darkBlue;
+}
+
+.spec-card__new {
+	background: #D6F7F7;
+	color: $cyan;
+}
+
+.spec-card__plus {
+	margin-left: auto;
+}
+
+.spec-card__title {
+	margin: 33px 0 20px;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.2;
+	color: $darkBlue;
+}
+
+.spec-card__count {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1;
+	color: $gray1;
+
+	b {
+		font-weight: 400;
+		font-size: 20px;
+		color: $darkBlue;
+	}
+}
+
+.spec-card__image {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	width: 75px;
+	height: 75px;
+	object-fit: cover;
+	border: 1px solid $gray2;
+	border-radius: 9px;
+}
+
+.spec-card__more {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	margin-top: auto;
+	font-size: 16px;
+	letter-spacing: 0.03em;
+	color: $darkBlue;
+}
+
+.spec-card__icon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: $mint;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: $darkBlue;
+}
+
+.direction-specs__more {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+
+	.btn-pill {
+		width: 302px;
+	}
+}

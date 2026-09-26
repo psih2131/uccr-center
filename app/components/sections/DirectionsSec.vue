@@ -68,7 +68,7 @@
                 </span>
               </NuxtLink>
 
-              <NuxtLink to="/kursy" class="dir-card dir-card--cta">
+              <NuxtLink to="/directions/rabochie-professii/catalog" class="dir-card dir-card--cta">
                 <span class="dir-card__line dir-card__line--h dir-card__line--h1"></span>
                 <span class="dir-card__line dir-card__line--h dir-card__line--h2"></span>
                 <span class="dir-card__line dir-card__line--v dir-card__line--v1"></span>
@@ -100,14 +100,14 @@ import { ref } from 'vue'
 import { Collapse } from 'vue-collapsed'
 
 const professionCards = [
-  { num: '01', title: 'Бурильщик', professions: 15, isNew: true, to: '/kursy/burilshchik' },
-  { num: '02', title: 'Водитель погрузчика', professions: 15, isNew: true, to: '/kursy/voditel-pogruzchika' },
-  { num: '03', title: 'Кассир', professions: 15, isNew: true, to: '/kursy/kassir' },
-  { num: '04', title: 'Машинист', professions: 15, isNew: true, to: '/kursy/mashinist' },
-  { num: '05', title: 'Младший медперсонал', professions: 15, isNew: true, to: '/kursy/medpersonal' },
-  { num: '01', title: 'Монтажник', professions: 15, isNew: true, to: '/kursy/montazhnik' },
-  { num: '02', title: 'Оператор', professions: 15, isNew: true, to: '/kursy/operator' },
-  { num: '03', title: 'Сварщик', professions: 15, isNew: true, to: '/kursy/svarshchik' },
+  { num: '01', title: 'Бурильщик', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/burilshchik' },
+  { num: '02', title: 'Водитель погрузчика', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/voditel-pogruzchika' },
+  { num: '03', title: 'Кассир', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/kassir' },
+  { num: '04', title: 'Машинист', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/mashinist' },
+  { num: '05', title: 'Младший медперсонал', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/medpersonal' },
+  { num: '01', title: 'Монтажник', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/montazhnik' },
+  { num: '02', title: 'Оператор', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/operator' },
+  { num: '03', title: 'Сварщик', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/svarshchik' },
 ]
 
 const items = [

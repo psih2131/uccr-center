@@ -4,7 +4,7 @@
     <slot />
     <AppFooter />
     <AppCookie />
-    <AppModals />
+    <ModalsAppModals />
   </div>
 </template>
 

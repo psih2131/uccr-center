@@ -14,7 +14,7 @@
     <div class="modal-consult__fields">
       <input class="modal-consult__input" type="text" name="name" placeholder="Ваше имя">
       <input class="modal-consult__input" type="tel" name="phone" placeholder="Номер телефона">
-      <BtnPill class="btn-pill--light modal-consult__submit" type="modal" title="Отправить заявку" @click="openSuccessModal" />
+      <ButtonsBtnPill class="btn-pill--light modal-consult__submit" type="modal" title="Отправить заявку" @click="openSuccessModal" />
     </div>
 
     <div class="modal-consult__policy">

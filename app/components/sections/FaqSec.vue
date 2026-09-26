@@ -3,7 +3,7 @@
     <div class="container">
       <div class="faq__head">
         <h2 class="section-title faq__title">Часто-задаваемые вопросы</h2>
-        <BtnPill title="Задать свой вопрос" type="modal" />
+        <ButtonsBtnPill title="Задать свой вопрос" type="modal" />
       </div>
 
       <div class="faq__cols">

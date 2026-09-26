@@ -1,0 +1,127 @@
+.licenses {
+	padding: 0 0 130px;
+}
+
+.licenses__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 44px;
+}
+
+.licenses__title {
+	font-size: 57px;
+}
+
+.licenses__slider-wrap {
+	position: relative;
+}
+
+.licenses__nav {
+	position: absolute;
+	top: 155px;
+	z-index: 2;
+
+	&--prev {
+		left: -90px;
+		transform: rotate(180deg);
+	}
+
+	&--next {
+		right: -90px;
+	}
+}
+
+.license-card {
+	width: 272px;
+	height: 361px;
+	padding: 5px;
+	background: $white;
+	border-radius: 10px;
+}
+
+.license-card__preview {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 262px;
+	height: 294px;
+	padding: 0;
+	border: 0;
+	background: $mint;
+	border-radius: 8px;
+	cursor: pointer;
+
+	&:hover .license-card__zoom {
+		opacity: 1;
+	}
+}
+
+.license-card__zoom {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: $white;
+	color: $darkBlue;
+	box-shadow: 0 2px 8px rgba(20, 87, 113, 0.12);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: opacity 0.25s ease, background 0.25s ease, color 0.25s ease;
+
+	svg {
+		display: block;
+	}
+
+	&:hover {
+		background: $darkBlue;
+		color: $white;
+	}
+}
+
+.license-card__image {
+	display: block;
+	width: 172px;
+	height: 245px;
+	object-fit: cover;
+}
+
+.license-card__title {
+	margin: 15px 0 0;
+	font-size: 16px;
+	line-height: 1;
+	letter-spacing: 0.02em;
+	text-align: center;
+	color: $darkBlueSoft;
+}
+
+.licenses__dots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	width: 268px;
+	height: 5px;
+	margin: 50px auto 0;
+}
+
+.licenses__dot {
+	width: 40px;
+	height: 5px;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	background: $gray2;
+	cursor: pointer;
+
+	&--active {
+		background: $darkBlue;
+	}
+}

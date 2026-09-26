@@ -23,16 +23,16 @@
         <div class="hero__main">
           <div class="hero__tags">
             <div class="hero__tags-row">
-              <NuxtLink to="/rabochie-professii" class="hero__tag">Рабочие профессии</NuxtLink>
-              <span class="hero__dot"></span>
-              <NuxtLink to="/ohrana-truda" class="hero__tag">Охрана труда</NuxtLink>
-              <span class="hero__dot"></span>
-              <NuxtLink to="/perepodgotovka" class="hero__tag">Переподготовка</NuxtLink>
+              <template v-for="(item, index) in tagRows[0]" :key="item.slug">
+                <span v-if="index" class="hero__dot"></span>
+                <NuxtLink :to="`/directions/${item.slug}`" class="hero__tag">{{ item.menuTitle }}</NuxtLink>
+              </template>
             </div>
             <div class="hero__tags-row">
-              <NuxtLink to="/povyshenie-kvalifikacii" class="hero__tag">Повышение квалификации</NuxtLink>
-              <span class="hero__dot"></span>
-              <NuxtLink to="/attestaciya" class="hero__tag">Атестация</NuxtLink>
+              <template v-for="(item, index) in tagRows[1]" :key="item.slug">
+                <span v-if="index" class="hero__dot"></span>
+                <NuxtLink :to="`/directions/${item.slug}`" class="hero__tag">{{ item.menuTitle }}</NuxtLink>
+              </template>
             </div>
           </div>
           <div class="hero__main-title-wrapper">
@@ -102,4 +102,10 @@
 </template>
 
 <script setup>
+import { getDirectionBySlug } from '~/data/directions'
+
+const tagRows = [
+  ['rabochie-professii', 'ohrana-truda', 'perepodgotovka'],
+  ['povyshenie-kvalifikacii', 'attestaciya'],
+].map((row) => row.map((slug) => getDirectionBySlug(slug)).filter(Boolean))
 </script>

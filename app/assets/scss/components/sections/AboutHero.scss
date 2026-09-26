@@ -1,0 +1,343 @@
+.about-hero {
+	position: relative;
+	padding-bottom: 130px;
+}
+
+.about-hero__inner {
+	position: relative;
+	height: 1150px;
+}
+
+.about-hero__grid {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 1918px;
+	height: 1150px;
+	transform: translateX(-50%);
+	pointer-events: none;
+}
+
+.about-hero__line {
+	position: absolute;
+	background: $gray2;
+
+	&--v-left {
+		top: 0;
+		left: 275px;
+		width: 2px;
+		height: 1150px;
+	}
+
+	&--v-right {
+		top: 0;
+		left: 1639px;
+		width: 2px;
+		height: 1150px;
+	}
+
+	&--h-top {
+		top: 122px;
+		left: 0;
+		width: 1918px;
+		height: 2px;
+	}
+
+	&--h-1 {
+		top: 750px;
+		left: 277px;
+		width: 1364px;
+		height: 2px;
+	}
+
+	&--h-2 {
+		top: 882px;
+		left: 277px;
+		width: 1364px;
+		height: 2px;
+	}
+
+	&--h-3 {
+		top: 1014px;
+		left: 277px;
+		width: 1364px;
+		height: 2px;
+	}
+
+	&--h-4 {
+		top: 1148px;
+		left: 277px;
+		width: 1364px;
+		height: 2px;
+	}
+
+	&--v-a {
+		top: 752px;
+		left: 857px;
+		width: 2px;
+		height: 130px;
+	}
+
+	&--v-b {
+		top: 884px;
+		left: 723px;
+		width: 2px;
+		height: 130px;
+	}
+
+	&--v-c {
+		top: 1016px;
+		left: 1043px;
+		width: 2px;
+		height: 134px;
+	}
+}
+
+.about-hero__plus {
+	position: absolute;
+	display: block;
+
+	&--lg {
+		top: 98px;
+		left: 251px;
+	}
+
+	&--md {
+		top: 738px;
+		left: 1627px;
+	}
+}
+
+.about-hero__corner {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		background: $darkBlue;
+	}
+
+	&::before {
+		width: 2px;
+		height: 25px;
+	}
+
+	&::after {
+		width: 25px;
+		height: 2px;
+	}
+
+	&--tl {
+		&::before,
+		&::after {
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&--tr {
+		&::before {
+			top: 0;
+			right: 0;
+		}
+
+		&::after {
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&--bl {
+		&::before {
+			top: 0;
+			left: 0;
+		}
+
+		&::after {
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	&--br {
+		&::before {
+			top: 0;
+			right: 0;
+		}
+
+		&::after {
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+}
+.about-hero__corner--3,
+.about-hero__corner--12{
+	border-color: $red;
+	&::before,
+	&::after {
+		background: $red;
+	}
+}
+
+
+.about-hero__content {
+	position: relative;
+	height: 100%;
+}
+
+.about-hero__crumbs {
+	position: absolute;
+	top: 51px;
+	left: 78px;
+	margin: 0;
+	font-size: 20px;
+	line-height: 1.2;
+	letter-spacing: 0.02em;
+	color: $gray1;
+
+	a {
+		color: $gray1;
+	}
+}
+
+.about-hero__crumbs-current {
+	color: $darkBlue;
+}
+
+.about-hero__main {
+	position: absolute;
+	top: 164px;
+	left: 78px;
+	display: flex;
+	align-items: flex-start;
+	gap: 63px;
+}
+
+.about-hero__photo {
+	display: block;
+	width: 387px;
+	height: 483px;
+	object-fit: cover;
+	border-radius: 10px;
+	flex-shrink: 0;
+}
+
+.about-hero__info {
+	padding-top: 17px;
+}
+
+.about-hero__lead {
+	width: 838px;
+	margin: 0;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 1.2;
+	color: $darkBlue;
+}
+
+.about-hero__label {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin-right: 8px;
+	font-size: 20px;
+	line-height: 1;
+	color: $gray1;
+	vertical-align: middle;
+}
+
+.about-hero__dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: $red;
+}
+
+.about-hero__lead-pic {
+	display: inline-block;
+	width: 97px;
+	height: 37px;
+	margin: 0 8px;
+	border-radius: 31px;
+	object-fit: cover;
+	vertical-align: middle;
+}
+
+.about-hero__lead-plus {
+	display: inline-flex;
+	vertical-align: middle;
+
+	svg {
+		display: block;
+	}
+}
+
+.about-hero__texts {
+	width: 567px;
+	margin: 51px 0 0 135px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	p {
+		margin: 0;
+		font-size: 20px;
+		line-height: 1.2;
+		color: $gray1;
+	}
+}
+
+.about-hero__stat {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	gap: 30px;
+
+	&--exp {
+		top: 782px;
+		left: 112px;
+	}
+
+	&--partners {
+		top: 914px;
+		left: 735px;
+	}
+
+	&--offices {
+		top: 1046px;
+		left: 183px;
+	}
+}
+
+.about-hero__stat-value {
+	font-size: 70px;
+	font-weight: 500;
+	line-height: 1;
+	color: $darkBlue;
+}
+
+.about-hero__stat-text {
+	margin: 0;
+	font-size: 20px;
+	line-height: 1.2;
+	color: $darkBlue;
+}
+
+.about-hero__stat--exp .about-hero__stat-text {
+	width: 328px;
+	font-size: 24px;
+	line-height: 1;
+}
+
+.about-hero__stat--partners .about-hero__stat-text {
+	width: 253px;
+}
+
+.about-hero__stat--offices .about-hero__stat-text {
+	width: 374px;
+}

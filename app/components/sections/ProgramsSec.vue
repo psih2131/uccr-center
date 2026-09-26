@@ -3,7 +3,7 @@
     <div class="container">
       <div class="programs__head">
         <h2 class="section-title programs__title">Популярные програмы</h2>
-        <BtnPill title="Смотреть все програмы" type="link" to="/kursy" />
+        <ButtonsBtnPill title="Смотреть все програмы" type="link" to="/directions/rabochie-professii/catalog" />
       </div>
 
       <ClientOnly>
@@ -52,7 +52,7 @@
 
               <div class="program-card__bottom">
                 <strong class="program-card__price">{{ item.price }}</strong>
-                <BtnPill title="Подробнее" type="link" :to="item.to" />
+                <ButtonsBtnPill title="Подробнее" type="link" :to="item.to" />
               </div>
             </article>
           </swiper-slide>
@@ -80,6 +80,6 @@ const items = Array.from({ length: 6 }, (_, index) => ({
   format: 'Дистанционно',
   price: '1000 ₽',
   color: colors[index % colors.length],
-  to: '/kursy/ezhegodnoe-obuchenie-voditelej',
+  to: '/directions/rabochie-professii/catalog/ezhegodnoe-obuchenie-voditelej',
 }))
 </script>

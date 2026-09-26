@@ -20,7 +20,7 @@
         <p class="about__lead">
           «Центр развития» — удостоверяющий центр для компаний, ИП и специалистов. Профессиональное обучение и поддержка на всех этапах работы.
         </p>
-        <BtnPill title="Подробнее о компании" type="link" to="/o-kompanii" />
+        <ButtonsBtnPill title="Подробнее о компании" type="link" to="/o-kompanii" />
       </div>
     </div>
   </section>

@@ -70,29 +70,13 @@
 
           <nav class="header__nav">
             <ul class="header__nav-list">
-              <li class="header__nav-item">
-                <NuxtLink to="/rabochie-professii" class="header__nav-link header__nav-link--active">
-                  Рабочие профессии
-                </NuxtLink>
-              </li>
-              <li class="header__nav-item">
-                <NuxtLink to="/perepodgotovka" class="header__nav-link">
-                  Переподготовка
-                </NuxtLink>
-              </li>
-              <li class="header__nav-item">
-                <NuxtLink to="/povyshenie-kvalifikacii" class="header__nav-link">
-                  Повышение квалификации
-                </NuxtLink>
-              </li>
-              <li class="header__nav-item">
-                <NuxtLink to="/attestaciya" class="header__nav-link">
-                  Аттестация
-                </NuxtLink>
-              </li>
-              <li class="header__nav-item">
-                <NuxtLink to="/ohrana-truda" class="header__nav-link">
-                  Охрана труда
+              <li v-for="item in directions" :key="item.slug" class="header__nav-item">
+                <NuxtLink
+                  :to="`/directions/${item.slug}`"
+                  class="header__nav-link"
+                  :class="{ 'header__nav-link--active': $route.params.id === item.slug }"
+                >
+                  {{ item.menuTitle }}
                 </NuxtLink>
               </li>
             </ul>
@@ -115,6 +99,7 @@
 <script setup>
 import HeaderAlphabeticalIndex from '@/components/HeaderAlphabeticalIndex.vue'
 import HeaderSearch from '@/components/HeaderSearch.vue'
+import { directions } from '~/data/directions'
 
 const store = useCounterStore()
 
