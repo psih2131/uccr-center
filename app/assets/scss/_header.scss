@@ -1,0 +1,195 @@
+.header{
+    box-shadow: 0px 2px 8px rgba(20, 87, 113, 0.1);
+    background: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+.header__top{
+    .container{
+        padding: 13px 0;
+        border-bottom: solid 1px #C1D0D6;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.header__extra-list{
+    display: flex;
+    column-gap: 40px;
+}
+
+.header__extra-link{
+    color: $gray1;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    transition: all ease 0.3s;
+
+    &:hover{
+        color: $darkBlue;
+        transition: all ease 0.3s;
+    }
+
+    &--active{
+        color: $darkBlue;
+        font-weight: 600;
+    }
+}
+
+.header__contacts{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+
+}
+
+.header__city {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 121px;
+    height: 29px;
+    padding: 0 9px 0 13px;
+    border: 1px solid $gray2;
+    border-radius: 20px;
+    background: rgba(193, 208, 214, 0.06);
+    color: $gray1;
+    font-family: $mainFont;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+        color: $darkBlue;
+        border-color: $darkBlue;
+    }
+}
+
+.header__city-name {
+    font-weight: 400;
+}
+
+.header__city-icon {
+    display: block;
+    flex-shrink: 0;
+}
+
+.header__contact{
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+
+    svg{
+        display: block;
+        path{
+            transition: all ease 0.2s;
+        }
+    }
+
+    &:hover{
+        .header__mail-text,
+        .header__phone-text{
+            color: $darkBlue;
+            transition: all ease 0.2s;
+        }
+        svg{
+            path{
+                fill: $darkBlue;
+                transition: all ease 0.2s;
+            }
+        }
+    }
+}
+.header__mail-text,
+.header__phone-text{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: $gray1;
+    transition: all ease 0.2s;
+}
+
+.header__bottom{
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 0;
+    }
+}
+.header__logo{
+    display: block;
+    width: 200px;
+}
+.header__logo-img{
+    width: 100%;
+    display: block;
+}
+
+.header__nav-list{
+    display: flex;
+    column-gap: 35px;
+}
+
+.header__nav-link{
+    font-style: normal;
+    font-size: 17px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $gray1;
+    transition: all ease 0.2s;
+    
+    &:hover{
+        color: $darkBlue;
+        transition: all ease 0.2s;
+    }
+
+    &--active{
+        color: $darkBlue;
+        font-weight: 600;
+    }
+}
+
+.header__consult {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    width: 236px;
+    height: 48px;
+    padding: 0 52px 0 20px;
+    border: 0;
+    border-radius: 48px;
+    background: $darkBlue;
+    color: $white;
+    font-family: $mainFont;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        opacity: 0.88;
+    }
+}
+
+.header__consult-icon {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: $mint;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $darkBlue;
+}

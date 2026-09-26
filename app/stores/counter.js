@@ -2,16 +2,19 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useCounterStore = defineStore('counter', () => {
-  // const serverUrlDomainRequest = ref('https://red-angels-server.ru')
-  // const globalInfo = ref(null)
+  const activeModal = ref('')
 
-  // function setGlobalInfo(data) {
-  //   globalInfo.value = data
-  // }
+  function openModal(name) {
+    activeModal.value = name
+  }
+
+  function closeModal() {
+    activeModal.value = ''
+  }
 
   return {
-    // serverUrlDomainRequest,
-    // globalInfo,
-    // setGlobalInfo,
+    activeModal,
+    openModal,
+    closeModal,
   }
 })

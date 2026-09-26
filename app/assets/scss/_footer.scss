@@ -1,0 +1,215 @@
+.footer {
+	background: #0A2D3B;
+	color: $gray1;
+	padding: 61px 0 25px;
+}
+
+.footer__top {
+	display: grid;
+	grid-template-columns: 463px 663px 267px;
+	justify-content: space-between;
+}
+
+.footer__card {
+	height: 420px;
+	padding: 30px;
+	border: 1px solid rgba(193, 208, 214, 0.21);
+	border-radius: 10px;
+	background: rgba(217, 217, 217, 0.06);
+}
+
+.footer__card--services,
+.footer__card--nav {
+	background: rgba(217, 217, 217, 0.02);
+}
+
+.footer__logo {
+	display: block;
+	width: 200px;
+	transition: opacity 0.2s ease;
+
+	img {
+		width: 100%;
+		display: block;
+	}
+
+	&:hover {
+		opacity: 0.75;
+	}
+}
+
+.footer__about {
+	width: 366px;
+	margin: 20px 0 0;
+	font-size: 16px;
+	line-height: 1.2;
+	color: $gray1;
+}
+
+.footer__rule {
+	display: block;
+	height: 1px;
+	margin-top: 24px;
+	background: #325562;
+}
+
+.footer__socials {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 26px;
+}
+
+.footer__social {
+	width: 48px;
+	height: 48px;
+	border-radius: 4px;
+	background: #145770;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s ease, transform 0.2s ease;
+
+	img {
+		width: 18px;
+		height: 18px;
+		object-fit: contain;
+		filter: brightness(0) invert(1);
+	}
+
+	&:hover {
+		background: #1d7a96;
+		transform: translateY(-3px);
+	}
+}
+
+.footer__hot {
+	margin: 24px 0 0;
+	font-size: 18px;
+	line-height: 22px;
+	text-transform: uppercase;
+	color: $gray1;
+}
+
+.footer__phones {
+	display: flex;
+	gap: 32px;
+	margin-top: 15px;
+
+	a {
+		font-size: 26px;
+		line-height: 31px;
+		color: $white;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: $gray1;
+		}
+	}
+}
+
+.footer__mail {
+	display: inline-block;
+	margin-top: 10px;
+	font-size: 26px;
+	line-height: 31px;
+	color: $white;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: $gray1;
+	}
+}
+
+.footer__title {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+	text-transform: uppercase;
+	color: $white;
+}
+
+.footer__card--services .footer__rule,
+.footer__card--nav .footer__rule {
+	margin-top: 15px;
+}
+
+.footer__list {
+	display: flex;
+	flex-direction: column;
+	margin-top: 16px;
+
+	a {
+		font-size: 20px;
+		line-height: 35px;
+		color: $gray1;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: $white;
+		}
+	}
+}
+
+.footer__link--active {
+	color: $white;
+}
+
+.footer__bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 45px;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.footer__copy {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.39);
+}
+
+.footer__legal {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+
+.footer__cookie {
+	color: $white;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: $gray1;
+	}
+}
+
+.footer__policy {
+	color: $gray1;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: $white;
+	}
+}
+
+.footer__credit {
+	margin-top: 40px;
+	padding-top: 25px;
+	border-top: 1px solid #3A5763;
+	font-size: 16px;
+	line-height: 1;
+	text-align: right;
+	color: $gray1;
+
+	a {
+		color: $white;
+		text-decoration: underline;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: $gray1;
+		}
+	}
+}

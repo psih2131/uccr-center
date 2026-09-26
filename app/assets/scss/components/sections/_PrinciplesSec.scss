@@ -1,0 +1,145 @@
+.principles {
+	padding: 0 0 130px;
+}
+
+.principles__title {
+	margin-bottom: 50px;
+}
+
+.principles__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 345px);
+	gap: 20px;
+}
+
+.principles__empty {
+	width: 345px;
+	height: 345px;
+}
+
+.principle-card {
+	position: relative;
+	width: 345px;
+	height: 345px;
+	padding: 25px;
+	background: $white;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.principle-card--accent,
+.principle-card--cta {
+	background: $darkBlue;
+}
+
+.principle-card__num {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 54px;
+	height: 37px;
+	padding: 0 10px;
+	border-radius: 4px;
+	background: rgba(214, 234, 225, 0.29);
+	font-size: 18px;
+	letter-spacing: 0.02em;
+	color: $darkBlue;
+}
+
+.principle-card--accent .principle-card__num {
+	color: $white;
+}
+
+.principle-card__plus {
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	color: $gray1;
+}
+
+.principle-card--accent .principle-card__plus {
+	color: rgba(255, 255, 255, 0.45);
+}
+
+.principle-card__title {
+	margin: 30px 0 15px;
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 30px;
+	color: $darkBlue;
+}
+
+.principle-card--accent .principle-card__title {
+	color: $white;
+}
+
+.principle-card__text {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.2;
+	letter-spacing: 0.02em;
+	color: $gray1;
+}
+
+.principle-card--cta {
+	display: flex;
+	flex-direction: column;
+
+	.principle-card__cta-title {
+		position: relative;
+		z-index: 1;
+		margin: 13px 0 15px;
+		font-size: 30px;
+		font-weight: 400;
+		line-height: 1;
+		color: $white;
+	}
+
+	.principle-card__text {
+		position: relative;
+		z-index: 1;
+		max-width: 257px;
+	}
+
+	.btn-pill {
+		position: relative;
+		z-index: 1;
+		width: 270px;
+		margin-top: auto;
+	}
+}
+
+.principle-card__line {
+	position: absolute;
+	background: #6B98A7;
+
+	&--h {
+		left: 0;
+		height: 1px;
+	}
+
+	&--h1 {
+		top: 228px;
+		width: 345px;
+	}
+
+	&--h2 {
+		top: 237px;
+		left: 0;
+		width: 345px;
+	}
+
+	&--v {
+		top: 0;
+		width: 1px;
+		height: 345px;
+	}
+
+	&--v1 {
+		left: 324px;
+	}
+
+	&--v2 {
+		left: 333px;
+	}
+}

@@ -1,0 +1,26 @@
+<template>
+    <div class="header__search" :class="{ 'header__search--focus': searchFocus }">
+        <div class="header__search-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.83317 2.33464C3.90017 2.33464 2.33317 3.90164 2.33317 5.83464C2.33317 7.76763 3.90017 9.33463 5.83317 9.33463C7.76617 9.33463 9.33317 7.76763 9.33317 5.83464C9.33317 3.90164 7.76617 2.33464 5.83317 2.33464ZM1.1665 5.83464C1.1665 3.25731 3.25584 1.16797 5.83317 1.16797C8.4105 1.16797 10.4998 3.25731 10.4998 5.83464C10.4998 6.91305 10.134 7.90603 9.51975 8.69626L12.6623 11.8388C12.8901 12.0666 12.8901 12.436 12.6623 12.6638C12.4345 12.8916 12.0652 12.8916 11.8374 12.6638L8.6948 9.52122C7.90456 10.1355 6.91159 10.5013 5.83317 10.5013C3.25584 10.5013 1.1665 8.41196 1.1665 5.83464Z" fill="#B8C4DA"/>
+            </svg>
+        </div>
+
+        <input
+            class="header__search-input"
+            type="search"
+            name="q"
+            placeholder="Найти курс"
+            v-model="search"
+            @focus="searchFocus = true"
+            @blur="searchFocus = false"
+        >
+       
+    </div>
+</template>
+
+<script setup>
+    import { ref } from 'vue';
+    const search = ref('');
+    const searchFocus = ref(false);
+</script>

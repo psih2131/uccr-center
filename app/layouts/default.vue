@@ -3,7 +3,8 @@
     <AppHeader />
     <slot />
     <AppFooter />
-
+    <AppCookie />
+    <AppModals />
   </div>
 </template>
 

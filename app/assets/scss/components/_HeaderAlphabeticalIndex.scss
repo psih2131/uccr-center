@@ -1,0 +1,32 @@
+.index-search__header{
+    padding: 10px 13px;
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 100px;
+    background: $darkBlue;
+    column-gap: 10px;
+
+    svg{
+        display: block;
+    }
+}
+
+.header__index-text{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: $white;
+}
+
+.header__top-left{
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+}
+.header__tools{
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+}

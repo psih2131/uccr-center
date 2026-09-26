@@ -1,0 +1,48 @@
+.cookie-bar {
+	position: fixed;
+	left: 50%;
+	bottom: 65px;
+	z-index: 150;
+	display: flex;
+	align-items: center;
+	width: 819px;
+	height: 64px;
+	padding: 0 25px;
+	border-radius: 14px;
+	background: $darkBlue;
+	transform: translateX(-50%);
+}
+
+.cookie-bar__text {
+	width: 552px;
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.2;
+	color: $white;
+}
+
+.cookie-bar__actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-left: auto;
+}
+
+.cookie-bar__btn {
+	width: 85px;
+	height: 29px;
+	padding: 0;
+	border: 0;
+	border-radius: 6px;
+	font-size: 14px;
+	line-height: 1;
+	color: $white;
+
+	&--accept {
+		background: #6B98A7;
+	}
+
+	&--decline {
+		background: $red;
+	}
+}

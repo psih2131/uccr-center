@@ -1,0 +1,142 @@
+.reviews {
+	padding: 0 0 130px;
+}
+
+.reviews__title {
+	font-size: 57px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.reviews__slider-wrap {
+	position: relative;
+}
+
+.reviews__nav {
+	position: absolute;
+	top: 151px;
+	z-index: 2;
+
+	&--prev {
+		left: -90px;
+		transform: rotate(180deg);
+	}
+
+	&--next {
+		right: -90px;
+	}
+}
+
+.review-card {
+	position: relative;
+	width: 466px;
+	height: 353px;
+	padding: 25px;
+	background: $white;
+	border-radius: 10px;
+}
+
+.review-card__top {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+}
+
+.review-card__num,
+.review-card__tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 37px;
+	padding: 0 12px;
+	border-radius: 4px;
+	font-size: 18px;
+	letter-spacing: 0.02em;
+}
+
+.review-card__num {
+	min-width: 54px;
+	background: rgba(214, 234, 225, 0.29);
+	color: $darkBlue;
+}
+
+.review-card__tag {
+	background: #D6F7F7;
+	color: $cyan;
+}
+
+.review-card__plus {
+	margin-left: auto;
+}
+
+.review-card__logo {
+	display: block;
+	width: 144px;
+	height: 35px;
+	margin: 35px 0 35px;
+	object-fit: contain;
+	object-position: left center;
+}
+
+.review-card__company {
+	margin: 0 0 10px;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.2;
+	color: $darkBlue;
+}
+
+.review-card__text {
+	max-width: 411px;
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.2;
+	color: $gray1;
+}
+
+.review-card__more {
+	position: absolute;
+	left: 25px;
+	bottom: 24px;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 16px;
+	letter-spacing: 0.03em;
+	color: $darkBlue;
+}
+
+.review-card__icon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: $mint;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.reviews__dots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	width: 268px;
+	height: 5px;
+	margin: 40px auto 0;
+}
+
+.reviews__dot {
+	width: 40px;
+	height: 5px;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	background: $gray2;
+	cursor: pointer;
+
+	&--active {
+		background: $darkBlue;
+	}
+}

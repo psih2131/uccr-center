@@ -12,6 +12,23 @@
 
 // /* components */
 
+@import "./components/_HeaderAlphabeticalIndex.scss";
+@import "./components/_HeaderSearch.scss";
+@import "./components/buttons/_BtnPill.scss";
+@import "./components/_HomeHero.scss";
+@import "./components/sections/_DirectionsSec.scss";
+@import "./components/sections/_AboutSec.scss";
+@import "./components/sections/_ProgramsSec.scss";
+@import "./components/sections/_TeamSec.scss";
+@import "./components/sections/_ReviewsSec.scss";
+@import "./components/sections/_VideoReviewsSec.scss";
+@import "./components/sections/_PrinciplesSec.scss";
+@import "./components/sections/_FaqSec.scss";
+@import "./components/sections/_LogosSec.scss";
+@import "./components/sections/_ArticlesSec.scss";
+@import "./components/sections/_FormSec.scss";
+@import "./components/_modals.scss";
+@import "./components/_AppCookie.scss";
 
 // /* pages */
-@import "home-page";
+@import "./_home-page.scss";
