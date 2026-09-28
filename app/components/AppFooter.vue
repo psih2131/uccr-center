@@ -72,8 +72,8 @@
       <div class="footer__bottom">
         <p class="footer__copy">© 2012–2026, ООО «Центр Развития»</p>
         <div class="footer__legal">
-          <NuxtLink to="/cookie" class="footer__cookie">Обработка куки</NuxtLink>
-          <NuxtLink to="/politika" class="footer__policy">Политика конфиденциальности</NuxtLink>
+          <NuxtLink to="/docs/obrabotka-cookie" class="footer__cookie">Обработка куки</NuxtLink>
+          <NuxtLink to="/docs/politika-konfidencialnosti" class="footer__policy">Политика конфиденциальности</NuxtLink>
         </div>
       </div>
 

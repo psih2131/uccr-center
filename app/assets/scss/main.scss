@@ -12,8 +12,9 @@
 
 // /* components */
 
-@import "./components/_HeaderAlphabeticalIndex.scss";
+@import "./components/_AlphabeticalIndex.scss";
 @import "./components/_HeaderSearch.scss";
+@import "./components/_HeaderCitySelect.scss";
 @import "./components/buttons/_BtnPill.scss";
 @import "./components/sections/HomeHero";
 @import "./components/sections/AboutHero";
@@ -35,9 +36,19 @@
 @import "./components/sections/_DirectionSpecsSec.scss";
 @import "./components/sections/_DirectionDocSec.scss";
 @import "./components/sections/_CatalogSec.scss";
-@import "./components/sections/CoursePage";
+@import "./components/sections/_CourseHero.scss";
+@import "./components/sections/_CourseProgramSec.scss";
+@import "./components/sections/_CourseOfferSec.scss";
+@import "./components/sections/_CourseTariffsSec.scss";
+@import "./components/sections/_CourseStepsSec.scss";
+@import "./components/sections/_CourseAudienceSec.scss";
+@import "./components/sections/_CourseDocsNeedSec.scss";
+@import "./components/sections/_CourseSimilarSec.scss";
 @import "./components/_modals.scss";
 @import "./components/_AppCookie.scss";
+@import "./components/_AppPreloader.scss";
 
 // /* pages */
 @import "./_home-page.scss";
+@import "./pages/_DocsPage.scss";
+@import "./pages/_BlogPage.scss";

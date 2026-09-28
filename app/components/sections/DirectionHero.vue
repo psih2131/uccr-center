@@ -6,7 +6,7 @@
           <p class="direction-hero__crumbs">
             <NuxtLink to="/">Главная</NuxtLink>
             <span> - </span>
-            <NuxtLink v-if="catalog" :to="`/directions/${direction.slug}`">{{ direction.menuTitle }}</NuxtLink>
+            <NuxtLink v-if="catalog" :to="directionUrl(direction.slug)">{{ direction.menuTitle }}</NuxtLink>
             <span v-else class="direction-hero__crumbs-current">{{ direction.menuTitle }}</span>
             <template v-if="catalog">
               <span> - </span>
@@ -83,6 +83,8 @@ const props = defineProps({
     default: false,
   },
 })
+
+const { directionUrl } = useCity()
 
 const benefits = [
   'Работаем на основании Лицензии Мин. Образования',

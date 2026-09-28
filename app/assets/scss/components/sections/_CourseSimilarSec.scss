@@ -1,0 +1,20 @@
+.course-similar {
+	padding: 0 0 130px;
+}
+
+.course-similar__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+
+.course-similar__head .btn-pill {
+	width: 270px;
+}
+
+.course-similar__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 466px);
+	gap: 21px;
+}

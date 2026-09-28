@@ -10,12 +10,7 @@
           <button class="catalog__show-all" type="button" @click="resetFilters">
             показать все
           </button>
-          <NuxtLink to="/alfavitnyj-ukazatel" class="directions__index">
-            <svg width="20" height="20" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M5.833 2.335a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-4.666 3.5a4.667 4.667 0 1 1 8.353 2.862l3.142 3.142a.583.583 0 1 1-.825.825L8.695 9.521A4.667 4.667 0 0 1 1.167 5.835Z" fill="currentColor"/>
-            </svg>
-            Алфавитный указатель
-          </NuxtLink>
+          <AlphabeticalIndex />
         </div>
       </div>
 
@@ -279,8 +274,9 @@ const selectedName = computed(() => {
 })
 
 const route = useRoute()
+const { courseUrl } = useCity()
 const courseTo = computed(() => (
-  `/directions/${route.params.id}/catalog/ezhegodnoe-obuchenie-voditelej`
+  courseUrl(route.params.id || 'rabochie-professii', 'ezhegodnoe-obuchenie-voditelej')
 ))
 
 const items = computed(() => Array.from({ length: 8 }, (_, index) => ({

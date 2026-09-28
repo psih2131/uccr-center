@@ -6,12 +6,7 @@
         <p class="direction-specs__meta">
           Количество специализаций: <b>24</b>
         </p>
-        <NuxtLink to="/alfavitnyj-ukazatel" class="directions__index">
-          <svg width="20" height="20" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M5.833 2.335a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-4.666 3.5a4.667 4.667 0 1 1 8.353 2.862l3.142 3.142a.583.583 0 1 1-.825.825L8.695 9.521A4.667 4.667 0 0 1 1.167 5.835Z" fill="currentColor"/>
-          </svg>
-          Алфавитный указатель
-        </NuxtLink>
+        <AlphabeticalIndex />
       </div>
 
       <div class="direction-specs__grid">
@@ -43,7 +38,7 @@
       </div>
 
       <div class="direction-specs__more">
-        <ButtonsBtnPill title="Смотреть все специальности" type="link" :to="catalogTo" />
+        <ButtonsBtnPill title="Смотреть все специальности" type="link" :to="resolvedCatalogTo" />
       </div>
     </div>
   </section>
@@ -61,9 +56,15 @@ const photos = [tm1, tm2, tm3, tm4, tm5]
 const props = defineProps({
   catalogTo: {
     type: String,
-    default: '/directions/rabochie-professii/catalog',
+    default: '',
   },
 })
+
+const { catalogUrl } = useCity()
+
+const resolvedCatalogTo = computed(
+  () => props.catalogTo || catalogUrl('rabochie-professii'),
+)
 
 const cards = computed(() => [
   { num: '01', title: 'Бурильщик', professions: 15, isNew: true, slug: 'burilshchik' },
@@ -78,7 +79,7 @@ const cards = computed(() => [
   { num: '05', title: 'Бурильщик', professions: 15, isNew: true, slug: 'burilshchik-2' },
 ].map((card, index) => ({
   ...card,
-  to: `${props.catalogTo}/${card.slug}`,
+  to: `${resolvedCatalogTo.value}/${card.slug}`,
   image: photos[index % photos.length],
 })))
 </script>

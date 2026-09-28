@@ -1,0 +1,44 @@
+.course-steps {
+	padding: 0 0 130px;
+}
+
+.course-steps__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 465px);
+	gap: 23px;
+	margin-top: 50px;
+}
+
+.course-step {
+
+	padding: 30px;
+	background: $white;
+	border-radius: 15px;
+}
+
+.course-step__num {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 69px;
+	height: 25px;
+	border-radius: 4px;
+	background: rgba(214, 234, 225, 0.29);
+	font-size: 16px;
+	color: $darkBlue;
+}
+
+.course-step__title {
+	margin: 34px 0 0;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 30px;
+	color: $darkBlue;
+}
+
+.course-step__text {
+	margin: 16px 0 0;
+	font-size: 16px;
+	line-height: 1.2;
+	color: $gray1;
+}

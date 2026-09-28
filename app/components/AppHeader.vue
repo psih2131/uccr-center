@@ -25,7 +25,7 @@
 
           <div class="header__tools">
 
-            <HeaderAlphabeticalIndex />
+            <AlphabeticalIndex variant="header" />
 
             <HeaderSearch />
             
@@ -34,12 +34,7 @@
         </div>
 
           <div class="header__contacts">
-            <button class="header__city" type="button">
-              <span class="header__city-name">Москва</span>
-              <svg class="header__city-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3 5L7 9L11 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
+            <HeaderCitySelect />
 
             <a class="header__contact header__phone" href="tel:+79189942241">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +67,7 @@
             <ul class="header__nav-list">
               <li v-for="item in directions" :key="item.slug" class="header__nav-item">
                 <NuxtLink
-                  :to="`/directions/${item.slug}`"
+                  :to="directionUrl(item.slug)"
                   class="header__nav-link"
                   :class="{ 'header__nav-link--active': $route.params.id === item.slug }"
                 >
@@ -97,11 +92,11 @@
 </template>
 
 <script setup>
-import HeaderAlphabeticalIndex from '@/components/HeaderAlphabeticalIndex.vue'
 import HeaderSearch from '@/components/HeaderSearch.vue'
 import { directions } from '~/data/directions'
 
 const store = useCounterStore()
+const { directionUrl } = useCity()
 
 function openConsultModal() {
   store.activeModal = 'consult'

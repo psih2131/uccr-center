@@ -1,17 +1,23 @@
 <template>
   <section class="course-docs">
     <div class="container">
-      <h2 class="section-title">Какие документы нужны?</h2>
+      <h2 class="section-title course-docs__title">Какие документы нужны?</h2>
 
       <div class="course-docs__grid">
         <article v-for="item in docs" :key="item.title" class="course-docs__card">
+          <span class="course-docs__line course-docs__line--v1" aria-hidden="true"></span>
+          <span class="course-docs__line course-docs__line--v2" aria-hidden="true"></span>
+
           <span class="course-docs__icon">
             <img :src="item.icon" alt="" width="60" height="60">
           </span>
+
           <h3>{{ item.title }}</h3>
-          <ul>
+
+          <ul v-if="item.lines">
             <li v-for="line in item.lines" :key="line">{{ line }}</li>
           </ul>
+          <p v-else class="course-docs__text">{{ item.text }}</p>
         </article>
       </div>
     </div>
@@ -19,31 +25,31 @@
 </template>
 
 <script setup>
-import iconCert from '~/assets/images/course/course-doc-cert.png'
-import iconPassport from '~/assets/images/course/course-doc-passport.png'
-import iconPhoto from '~/assets/images/course/course-doc-photo.png'
-import iconAddress from '~/assets/images/course/course-doc-address.png'
+import icon1 from '~/assets/images/icons/doc1.png'
+import icon2 from '~/assets/images/icons/doc2.png'
+import icon3 from '~/assets/images/icons/doc3.png'
+import icon4 from '~/assets/images/icons/doc4.png'
 
 const docs = [
   {
     title: 'Заявка на обучение',
-    icon: iconCert,
+    icon: icon1,
     lines: ['ФИО', 'Специальность', 'Разряд'],
   },
   {
     title: 'Паспорт',
-    icon: iconPassport,
-    lines: ['Паспортные данные для заключения договора (фото / скан / текст)'],
+    icon: icon2,
+    text: 'Паспортные данные для заключения договора (фото / скан / текст)',
   },
   {
     title: 'Фото на светлом фоне',
-    icon: iconPhoto,
-    lines: ['Для оформления удостоверения'],
+    icon: icon3,
+    text: 'Для оформления удостоверения',
   },
   {
     title: 'Адрес',
-    icon: iconAddress,
-    lines: ['Для доставки оригиналов документов'],
+    icon: icon4,
+    text: 'Для доставки оригиналов документов',
   },
 ]
 </script>

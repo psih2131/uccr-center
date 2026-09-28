@@ -60,7 +60,7 @@
             <label class="course-hero__policy">
               <span class="course-hero__policy-box"></span>
               <span>
-                Отправляя форму, я соглашаюсь с <NuxtLink to="/soglashenie">Пользовательским соглашением</NuxtLink> и даю согласие на обработку персональных данных в соответствии с&nbsp;<NuxtLink to="/politika">Политикой конфиденциальности</NuxtLink>
+                Отправляя форму, я соглашаюсь с <NuxtLink to="/docs/polzovatelskoe-soglashenie">Пользовательским соглашением</NuxtLink> и даю согласие на обработку персональных данных в соответствии с&nbsp;<NuxtLink to="/docs/politika-konfidencialnosti">Политикой конфиденциальности</NuxtLink>
               </span>
             </label>
           </form>

@@ -39,9 +39,9 @@
               <span class="home-form__check" aria-hidden="true"></span>
               <p class="home-form__policy">
                 Отправляя форму, я соглашаюсь с
-                <NuxtLink to="/soglashenie">Пользовательским соглашением</NuxtLink>
+                <NuxtLink to="/docs/polzovatelskoe-soglashenie">Пользовательским соглашением</NuxtLink>
                 и даю согласие на обработку персональных данных в соответствии с
-                <NuxtLink to="/politika">Политикой конфиденциальности</NuxtLink>
+                <NuxtLink to="/docs/politika-konfidencialnosti">Политикой конфиденциальности</NuxtLink>
               </p>
               <div class="home-form__socials">
                 <a class="home-form__social" href="#" aria-label="WhatsApp">

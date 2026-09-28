@@ -3,12 +3,7 @@
     <div class="container">
       <div class="directions__head">
         <h2 class="section-title directions__title">Актуальные направления</h2>
-        <NuxtLink to="/alfavitnyj-ukazatel" class="directions__index">
-          <svg width="20" height="20" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M5.833 2.335a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-4.666 3.5a4.667 4.667 0 1 1 8.353 2.862l3.142 3.142a.583.583 0 1 1-.825.825L8.695 9.521A4.667 4.667 0 0 1 1.167 5.835Z" fill="currentColor"/>
-          </svg>
-          Алфавитный указатель
-        </NuxtLink>
+        <AlphabeticalIndex />
       </div>
 
       <div class="directions__list">
@@ -68,7 +63,7 @@
                 </span>
               </NuxtLink>
 
-              <NuxtLink to="/directions/rabochie-professii/catalog" class="dir-card dir-card--cta">
+              <NuxtLink :to="catalogUrl('rabochie-professii')" class="dir-card dir-card--cta">
                 <span class="dir-card__line dir-card__line--h dir-card__line--h1"></span>
                 <span class="dir-card__line dir-card__line--h dir-card__line--h2"></span>
                 <span class="dir-card__line dir-card__line--v dir-card__line--v1"></span>
@@ -99,24 +94,29 @@
 import { ref } from 'vue'
 import { Collapse } from 'vue-collapsed'
 
-const professionCards = [
-  { num: '01', title: 'Бурильщик', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/burilshchik' },
-  { num: '02', title: 'Водитель погрузчика', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/voditel-pogruzchika' },
-  { num: '03', title: 'Кассир', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/kassir' },
-  { num: '04', title: 'Машинист', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/mashinist' },
-  { num: '05', title: 'Младший медперсонал', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/medpersonal' },
-  { num: '01', title: 'Монтажник', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/montazhnik' },
-  { num: '02', title: 'Оператор', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/operator' },
-  { num: '03', title: 'Сварщик', professions: 15, isNew: true, to: '/directions/rabochie-professii/catalog/svarshchik' },
-]
+const { catalogUrl, courseUrl } = useCity()
 
-const items = [
-  { title: 'Рабочие профессии', count: 24, cards: professionCards },
-  { title: 'Курсы повышения квалификации', count: 24, cards: professionCards },
-  { title: 'Переподготовка', count: 12, cards: professionCards },
-  { title: 'Аттестация', count: 40, cards: professionCards },
-  { title: 'Охрана труда', count: 43, cards: professionCards },
-]
+const professionCards = computed(() => [
+  { num: '01', title: 'Бурильщик', professions: 15, isNew: true, slug: 'burilshchik' },
+  { num: '02', title: 'Водитель погрузчика', professions: 15, isNew: true, slug: 'voditel-pogruzchika' },
+  { num: '03', title: 'Кассир', professions: 15, isNew: true, slug: 'kassir' },
+  { num: '04', title: 'Машинист', professions: 15, isNew: true, slug: 'mashinist' },
+  { num: '05', title: 'Младший медперсонал', professions: 15, isNew: true, slug: 'medpersonal' },
+  { num: '01', title: 'Монтажник', professions: 15, isNew: true, slug: 'montazhnik' },
+  { num: '02', title: 'Оператор', professions: 15, isNew: true, slug: 'operator' },
+  { num: '03', title: 'Сварщик', professions: 15, isNew: true, slug: 'svarshchik' },
+].map((card) => ({
+  ...card,
+  to: courseUrl('rabochie-professii', card.slug),
+})))
+
+const items = computed(() => [
+  { title: 'Рабочие профессии', count: 24, cards: professionCards.value },
+  { title: 'Курсы повышения квалификации', count: 24, cards: professionCards.value },
+  { title: 'Переподготовка', count: 12, cards: professionCards.value },
+  { title: 'Аттестация', count: 40, cards: professionCards.value },
+  { title: 'Охрана труда', count: 43, cards: professionCards.value },
+])
 
 const openIndexes = ref([0])
 

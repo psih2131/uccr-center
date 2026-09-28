@@ -21,9 +21,9 @@
       <span class="modal-consult__check" aria-hidden="true"></span>
       <p class="modal-consult__policy-text">
         Отправляя форму, я соглашаюсь с
-        <NuxtLink to="/soglashenie">Пользовательским соглашением</NuxtLink>
+        <NuxtLink to="/docs/polzovatelskoe-soglashenie">Пользовательским соглашением</NuxtLink>
         и даю согласие на обработку персональных данных в соответствии с
-        <NuxtLink to="/politika">Политикой конфиденциальности</NuxtLink>
+        <NuxtLink to="/docs/politika-konfidencialnosti">Политикой конфиденциальности</NuxtLink>
       </p>
     </div>
   </div>

@@ -13,6 +13,17 @@ export const courses = [
   },
 ]
 
-export const getCourseBySlug = (slug) => (
-  courses.find((item) => item.slug === slug) ?? null
-)
+export const getCourseBySlug = (slug) => {
+  if (!slug || typeof slug !== 'string') return null
+
+  const found = courses.find((item) => item.slug === slug)
+  if (found) return found
+
+  // Пока в данных мало курсов — не роняем демо-ссылки 404-ом
+  return {
+    slug,
+    title: `Обучение по программе «${slug}»`,
+    shortTitle: slug,
+    specialty: 'Программа обучения',
+  }
+}

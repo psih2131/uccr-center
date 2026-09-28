@@ -25,13 +25,13 @@
             <div class="hero__tags-row">
               <template v-for="(item, index) in tagRows[0]" :key="item.slug">
                 <span v-if="index" class="hero__dot"></span>
-                <NuxtLink :to="`/directions/${item.slug}`" class="hero__tag">{{ item.menuTitle }}</NuxtLink>
+                <NuxtLink :to="directionUrl(item.slug)" class="hero__tag">{{ item.menuTitle }}</NuxtLink>
               </template>
             </div>
             <div class="hero__tags-row">
               <template v-for="(item, index) in tagRows[1]" :key="item.slug">
                 <span v-if="index" class="hero__dot"></span>
-                <NuxtLink :to="`/directions/${item.slug}`" class="hero__tag">{{ item.menuTitle }}</NuxtLink>
+                <NuxtLink :to="directionUrl(item.slug)" class="hero__tag">{{ item.menuTitle }}</NuxtLink>
               </template>
             </div>
           </div>
@@ -103,6 +103,8 @@
 
 <script setup>
 import { getDirectionBySlug } from '~/data/directions'
+
+const { directionUrl } = useCity()
 
 const tagRows = [
   ['rabochie-professii', 'ohrana-truda', 'perepodgotovka'],

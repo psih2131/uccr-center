@@ -1,7 +1,7 @@
 <template>
   <main class="direction-page">
     <SectionsDirectionHero :direction="direction" />
-    <SectionsDirectionSpecsSec :catalog-to="`/directions/${direction.slug}/catalog`" />
+    <SectionsDirectionSpecsSec :catalog-to="catalogUrl(direction.slug)" />
     <SectionsFaqSec />
     <SectionsAboutSec />
     <SectionsDirectionDocSec />
@@ -16,6 +16,7 @@
 import { getDirectionBySlug } from '~/data/directions'
 
 const route = useRoute()
+const { catalogUrl } = useCity()
 const direction = computed(() => getDirectionBySlug(route.params.id))
 
 if (!direction.value) {

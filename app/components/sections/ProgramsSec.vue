@@ -3,7 +3,7 @@
     <div class="container">
       <div class="programs__head">
         <h2 class="section-title programs__title">Популярные програмы</h2>
-        <ButtonsBtnPill title="Смотреть все програмы" type="link" to="/directions/rabochie-professii/catalog" />
+        <ButtonsBtnPill title="Смотреть все програмы" type="link" :to="catalogUrl('rabochie-professii')" />
       </div>
 
       <ClientOnly>
@@ -72,7 +72,9 @@ useSwiper(sliderRef, {
 
 const colors = ['#5DA0BA', '#66AF5E', '#966DC3']
 
-const items = Array.from({ length: 6 }, (_, index) => ({
+const { catalogUrl, courseUrl } = useCity()
+
+const items = computed(() => Array.from({ length: 6 }, (_, index) => ({
   category: 'Повышение квалификации',
   title: 'Ежегодное обучение водителей',
   text: 'Обязательное ежегодное обучение для водителей автотранспортных средств.',
@@ -80,6 +82,6 @@ const items = Array.from({ length: 6 }, (_, index) => ({
   format: 'Дистанционно',
   price: '1000 ₽',
   color: colors[index % colors.length],
-  to: '/directions/rabochie-professii/catalog/ezhegodnoe-obuchenie-voditelej',
-}))
+  to: courseUrl('rabochie-professii', 'ezhegodnoe-obuchenie-voditelej'),
+})))
 </script>

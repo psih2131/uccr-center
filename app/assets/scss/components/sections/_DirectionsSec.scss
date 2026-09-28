@@ -17,19 +17,6 @@
 	color: $darkBlue;
 }
 
-.directions__index {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	height: 45px;
-	padding: 0 20px 0 14px;
-	border-radius: 25px;
-	background: $darkBlue;
-	color: $white;
-	font-size: 20px;
-	line-height: 1;
-}
-
 .directions__list {
 	display: flex;
 	flex-direction: column;

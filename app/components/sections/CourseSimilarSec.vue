@@ -55,8 +55,9 @@
 
 <script setup>
 const route = useRoute()
-const catalogTo = computed(() => `/directions/${route.params.id}/catalog`)
-const courseTo = computed(() => `${catalogTo.value}/ezhegodnoe-obuchenie-voditelej`)
+const { catalogUrl, courseUrl } = useCity()
+const catalogTo = computed(() => catalogUrl(route.params.id || 'rabochie-professii'))
+const courseTo = computed(() => courseUrl(route.params.id || 'rabochie-professii', 'ezhegodnoe-obuchenie-voditelej'))
 const colors = ['#5DA0BA', '#66AF5E', '#966DC3']
 
 const items = computed(() => Array.from({ length: 3 }, (_, index) => ({
