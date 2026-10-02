@@ -7,7 +7,7 @@
           <span>{{ selectedName }}</span>
         </h2>
         <div class="catalog__head-actions">
-          <button class="catalog__show-all" type="button" @click="resetFilters">
+          <button class="catalog__show-all" type="button" @click="showAll">
             показать все
           </button>
           <AlphabeticalIndex />
@@ -16,7 +16,7 @@
 
       <div class="catalog__body">
         <aside class="catalog__aside">
-          <div class="catalog-nav">
+          <div v-if="popular.length" class="catalog-nav">
             <div class="catalog-nav__head">
               <h3 class="catalog-nav__title">
                 Популярные направления <span>({{ popular.length }})</span>
@@ -29,7 +29,7 @@
                 :key="`popular-${item.id}`"
                 class="catalog-nav__item"
                 :class="{ 'catalog-nav__item--active': selectedId === item.id }"
-                @click="selectedId = item.id"
+                @click="selectCategory(item.id)"
               >
                 <span class="catalog-nav__radio"></span>
                 <span class="catalog-nav__name">{{ item.name }}</span>
@@ -38,7 +38,7 @@
             </div>
           </div>
 
-          <div class="catalog-nav">
+          <div v-if="others.length" class="catalog-nav">
             <div class="catalog-nav__head">
               <h3 class="catalog-nav__title">
                 Другие направления <span>({{ others.length }})</span>
@@ -51,7 +51,7 @@
                 :key="`other-${item.id}`"
                 class="catalog-nav__item"
                 :class="{ 'catalog-nav__item--active': selectedId === item.id }"
-                @click="selectedId = item.id"
+                @click="selectCategory(item.id)"
               >
                 <span class="catalog-nav__radio"></span>
                 <span class="catalog-nav__name">{{ item.name }}</span>
@@ -62,7 +62,7 @@
         </aside>
 
         <div class="catalog__main">
-          <form class="catalog__search" @submit.prevent>
+          <form class="catalog__search" @submit.prevent="submitSearch">
             <label class="catalog__search-field">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
                 <circle cx="6.5" cy="6.5" r="5.2" stroke="currentColor" stroke-width="1.6"/>
@@ -70,9 +70,20 @@
               </svg>
               <input
                 v-model="query"
-                type="search"
+                type="text"
                 placeholder="Поиск по курсам и профессиям"
               >
+              <button
+                v-if="query || activeSearch"
+                class="catalog__search-clear"
+                type="button"
+                aria-label="Очистить поиск"
+                @click="clearSearch"
+              >
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2.5 2.5L9.5 9.5M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </button>
             </label>
             <button class="catalog__search-btn" type="submit">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
@@ -83,6 +94,7 @@
             </button>
           </form>
 
+          <!--
           <div class="catalog__toolbar">
             <div class="catalog__filters">
               <span class="catalog__filter-icon" aria-hidden="true">
@@ -154,9 +166,14 @@
               </div>
             </div>
           </div>
+          -->
 
-          <div class="catalog__grid">
-            <article v-for="(item, index) in visibleItems" :key="index" class="program-card">
+          <p v-if="isLoading && !items.length" class="catalog__empty">Загрузка...</p>
+          <p v-else-if="!items.length && activeSearch" class="catalog__empty">Ничего не найдено</p>
+          <p v-else-if="!items.length" class="catalog__empty">Курсы не найдены</p>
+
+          <div v-else class="catalog__grid">
+            <article v-for="(item, index) in items" :key="item.id || item.slug" class="program-card">
               <div class="program-card__top">
                 <span class="program-card__icon" :style="{ background: item.color }">
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
@@ -168,12 +185,12 @@
                     <path d="M16.791 24h-5.582C6.158 24 4 21.842 4 16.791v-5.582C4 6.158 6.158 4 11.209 4h5.582C21.842 4 24 6.158 24 11.209v5.582C24 21.842 21.842 24 16.791 24ZM11.209 5.395C6.921 5.395 5.395 6.921 5.395 11.21v5.581c0 4.289 1.526 5.814 5.814 5.814h5.582c4.288 0 5.814-1.525 5.814-5.814v-5.581c0-4.289-1.526-5.814-5.814-5.814h-5.582Z" fill="white"/>
                   </svg>
                 </span>
-                <span class="program-card__cat" :style="{ color: item.color }">{{ item.category }}</span>
+                <span v-if="item.category" class="program-card__cat" :style="{ color: item.color }">{{ item.category }}</span>
               </div>
 
               <div class="program-card__info">
                 <h3 class="program-card__title">{{ item.title }}</h3>
-                <p class="program-card__text">{{ item.text }}</p>
+                <p v-if="item.text" class="program-card__text">{{ item.text }}</p>
               </div>
 
               <span class="program-card__line"></span>
@@ -198,33 +215,18 @@
               <span class="program-card__line"></span>
 
               <div class="program-card__bottom">
-                <strong class="program-card__price">{{ item.price }}</strong>
+                <strong class="program-card__price">{{ item.price || '—' }}</strong>
                 <ButtonsBtnPill title="Подробнее" type="link" :to="item.to" />
               </div>
             </article>
           </div>
 
-          <div class="catalog__pager">
-            <button class="catalog__pager-arrow" type="button" :disabled="page === 1" @click="page = Math.max(1, page - 1)">
-              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true">
-                <path d="M7 1 1 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <button
-              v-for="num in totalPages"
-              :key="num"
-              class="catalog__page"
-              :class="{ 'catalog__page--active': page === num }"
-              type="button"
-              @click="page = num"
-            >
-              {{ String(num).padStart(2, '0') }}
-            </button>
-            <button class="catalog__pager-arrow" type="button" :disabled="page === totalPages" @click="page = Math.min(totalPages, page + 1)">
-              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true">
-                <path d="M1 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
+          <div v-if="hasMore" class="catalog__more">
+            <ButtonsBtnPill
+              title="Загрузить ещё"
+              type="modal"
+              @click="loadMore"
+            />
           </div>
         </div>
       </div>
@@ -233,102 +235,186 @@
 </template>
 
 <script setup>
+const PAGE_SIZE = 8
 const colors = ['#5DA0BA', '#66AF5E', '#966DC3']
 
-const popular = [
-  { id: 'avtomatizaciya', name: 'Автоматизация', count: 4 },
-  { id: 'bdd', name: 'БДД', count: 12 },
-  { id: 'bankovskoe-delo', name: 'Банковское дело', count: 54 },
-  { id: 'geodeziya', name: 'Геодезия', count: 44 },
-  { id: 'geologiya', name: 'Геология', count: 2 },
-  { id: 'burenie', name: 'Бурение', count: 3 },
-]
+const props = defineProps({
+  direction: {
+    type: Object,
+    required: true,
+  },
+})
 
-const others = [
-  { id: 'svarka', name: 'Сварка', count: 8 },
-  { id: 'stroitelstvo', name: 'Строительство', count: 22 },
-  { id: 'elektrobezopasnost', name: 'Электробезопасность', count: 18 },
-  { id: 'ohrana-truda', name: 'Охрана труда', count: 31 },
-  { id: 'pozharnaya', name: 'Пожарная безопасность', count: 9 },
-  { id: 'prombezopasnost', name: 'Промышленная безопасность', count: 11 },
-  { id: 'ekologiya', name: 'Экология', count: 6 },
-  { id: 'logistika', name: 'Логистика', count: 7 },
-]
+const config = useRuntimeConfig()
+const { courseUrl } = useCity()
 
-const formatOptions = ['Формат обучения', 'Дистанционно', 'Очно']
-const termOptions = ['Срок обучения', '20 часов', '40 часов', '72 часа']
-const sortOptions = ['По умолчанию', 'Сначала дешевле', 'Сначала дороже']
+const directionSlug = computed(() => props.direction?.slug || '')
 
-const selectedId = ref('avtomatizaciya')
+const selectedId = ref(null)
 const query = ref('')
+const activeSearch = ref('')
 const page = ref(1)
-const totalPages = 5
-const openFilter = ref('')
-const formatLabel = ref('Формат обучения')
-const termLabel = ref('Срок обучения')
-const sortLabel = ref('По умолчанию')
+const pageCount = ref(1)
+const courses = ref([])
+const isLoading = ref(false)
+
+const { data: categoriesResponse } = await useFetch(`${config.public.strapiUrl}/api/category-directions`, {
+  key: () => `catalog-categories-${directionSlug.value}`,
+  query: {
+    'filters[direction][slug][$eq]': directionSlug.value,
+    'fields[0]': 'title',
+    'fields[1]': 'slug',
+    'populate[courses][count]': true,
+    'pagination[pageSize]': 100,
+  },
+})
+
+function relationCount(value) {
+  if (typeof value?.count === 'number') return value.count
+  if (Array.isArray(value)) return value.length
+  return 0
+}
+
+function formatHours(time) {
+  if (!time) return '—'
+  return /час/i.test(String(time)) ? time : `${time} часов`
+}
+
+const categories = computed(() =>
+  (categoriesResponse.value?.data || [])
+    .filter((item) => item?.slug && item?.title)
+    .map((item) => ({
+      id: item.slug,
+      name: item.title,
+      count: relationCount(item.courses),
+    }))
+    .sort((a, b) => b.count - a.count),
+)
+
+const popular = computed(() => categories.value.slice(0, 5))
+const others = computed(() => categories.value.slice(5))
 
 const selectedName = computed(() => {
-  const item = [...popular, ...others].find((entry) => entry.id === selectedId.value)
-  return item?.name ?? 'Автоматизация'
-})
-
-const route = useRoute()
-const { courseUrl } = useCity()
-const courseTo = computed(() => (
-  courseUrl(route.params.id || 'rabochie-professii', 'ezhegodnoe-obuchenie-voditelej')
-))
-
-const items = computed(() => Array.from({ length: 8 }, (_, index) => ({
-  category: 'Повышение квалификации',
-  title: 'Ежегодное обучение водителей',
-  text: 'Обязательное ежегодное обучение для водителей автотранспортных средств.',
-  hours: '20 часов',
-  format: 'Дистанционно',
-  price: '1000 ₽',
-  color: colors[index % colors.length],
-  to: courseTo.value,
-})))
-
-const visibleItems = computed(() => {
-  const value = query.value.trim().toLowerCase()
-  const list = items.value
-  if (!value) {
-    return list
+  if (!selectedId.value) {
+    return props.direction?.menuTitle || props.direction?.title || 'Все'
   }
 
-  return list.filter((item) => (
-    item.title.toLowerCase().includes(value)
-    || item.category.toLowerCase().includes(value)
-  ))
+  return categories.value.find((entry) => entry.id === selectedId.value)?.name
+    || props.direction?.menuTitle
+    || props.direction?.title
+    || 'Все'
 })
 
-const toggleFilter = (name) => {
-  openFilter.value = openFilter.value === name ? '' : name
+const items = computed(() =>
+  courses.value.map((course, index) => ({
+    id: course.documentId || course.id || course.slug,
+    slug: course.slug,
+    category: course.category_direction?.title || props.direction?.title || '',
+    title: course.title || '',
+    text: course.subtitle || '',
+    hours: formatHours(course.time),
+    format: course.form_learning || '—',
+    price: course.default_price != null ? `${course.default_price} ₽` : '',
+    color: colors[index % colors.length],
+    to: courseUrl(directionSlug.value, course.slug),
+  })),
+)
+
+const hasMore = computed(() => page.value < pageCount.value)
+
+function buildCoursesQuery(nextPage) {
+  const params = {
+    'filters[direction][slug][$eq]': directionSlug.value,
+    'fields[0]': 'title',
+    'fields[1]': 'slug',
+    'fields[2]': 'subtitle',
+    'fields[3]': 'time',
+    'fields[4]': 'form_learning',
+    'fields[5]': 'default_price',
+    'populate[category_direction][fields][0]': 'title',
+    'populate[category_direction][fields][1]': 'slug',
+    'pagination[page]': nextPage,
+    'pagination[pageSize]': PAGE_SIZE,
+    sort: 'title:asc',
+  }
+
+  if (selectedId.value) {
+    params['filters[category_direction][slug][$eq]'] = selectedId.value
+  }
+
+  if (activeSearch.value) {
+    params['filters[title][$containsi]'] = activeSearch.value
+  }
+
+  return params
 }
 
-const setFormat = (option) => {
-  formatLabel.value = option
-  openFilter.value = ''
+let requestId = 0
+
+async function fetchCourses({ reset = false } = {}) {
+  if (!directionSlug.value) return
+  if (!reset && isLoading.value) return
+
+  const nextPage = reset ? 1 : page.value + 1
+  const currentRequest = ++requestId
+  isLoading.value = true
+
+  try {
+    const response = await $fetch(`${config.public.strapiUrl}/api/courses`, {
+      query: buildCoursesQuery(nextPage),
+    })
+
+    if (currentRequest !== requestId) return
+
+    const list = response?.data || []
+    courses.value = reset ? list : [...courses.value, ...list]
+    page.value = nextPage
+    pageCount.value = Number(response?.meta?.pagination?.pageCount) || 1
+  } catch (error) {
+    if (currentRequest !== requestId) return
+    if (reset) {
+      courses.value = []
+      page.value = 1
+      pageCount.value = 1
+    }
+  } finally {
+    if (currentRequest === requestId) {
+      isLoading.value = false
+    }
+  }
 }
 
-const setTerm = (option) => {
-  termLabel.value = option
-  openFilter.value = ''
-}
-
-const setSort = (option) => {
-  sortLabel.value = option
-  openFilter.value = ''
-}
-
-const resetFilters = () => {
-  selectedId.value = 'avtomatizaciya'
+function selectCategory(id) {
+  selectedId.value = id
   query.value = ''
-  formatLabel.value = 'Формат обучения'
-  termLabel.value = 'Срок обучения'
-  sortLabel.value = 'По умолчанию'
-  page.value = 1
-  openFilter.value = ''
+  activeSearch.value = ''
 }
+
+function showAll() {
+  selectedId.value = null
+  query.value = ''
+  activeSearch.value = ''
+}
+
+function submitSearch() {
+  if (!selectedId.value) return
+
+  activeSearch.value = query.value.trim()
+}
+
+function clearSearch() {
+  query.value = ''
+  activeSearch.value = ''
+}
+
+async function loadMore() {
+  if (!hasMore.value || isLoading.value) return
+  await fetchCourses({ reset: false })
+}
+
+await fetchCourses({ reset: true })
+
+watch([selectedId, activeSearch], async () => {
+  await fetchCourses({ reset: true })
+})
 </script>

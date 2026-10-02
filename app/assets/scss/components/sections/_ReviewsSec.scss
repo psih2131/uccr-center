@@ -29,8 +29,9 @@
 
 .review-card {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	width: 466px;
-	height: 353px;
 	padding: 25px;
 	background: $white;
 	border-radius: 10px;
@@ -95,15 +96,17 @@
 }
 
 .review-card__more {
-	position: absolute;
-	left: 25px;
-	bottom: 24px;
+	margin-top: auto;
+	padding-top: 24px;
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
+	border: 0;
+	background: transparent;
 	font-size: 16px;
 	letter-spacing: 0.03em;
 	color: $darkBlue;
+	cursor: pointer;
 }
 
 .review-card__icon {
@@ -138,5 +141,110 @@
 
 	&--active {
 		background: $darkBlue;
+	}
+}
+
+.review-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 210;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.54);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+}
+
+.review-modal__panel {
+	position: relative;
+	width: min(720px, calc(100% - 40px));
+	max-height: min(80vh, 760px);
+	overflow: auto;
+	padding: 40px 40px 48px;
+	border-radius: 20px;
+	background: $white;
+}
+
+.review-modal__close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.review-modal__top {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	padding-right: 48px;
+}
+
+.review-modal__num,
+.review-modal__tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 37px;
+	padding: 0 12px;
+	border-radius: 4px;
+	font-size: 18px;
+	letter-spacing: 0.02em;
+}
+
+.review-modal__num {
+	min-width: 54px;
+	background: rgba(214, 234, 225, 0.29);
+	color: $darkBlue;
+}
+
+.review-modal__tag {
+	background: #D6F7F7;
+	color: $cyan;
+}
+
+.review-modal__logo {
+	display: block;
+	width: 144px;
+	height: 35px;
+	margin: 30px 0 24px;
+	object-fit: contain;
+	object-position: left center;
+}
+
+.review-modal__company {
+	margin: 0 0 16px;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 1.2;
+	color: $darkBlue;
+}
+
+.review-modal__text {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.4;
+	color: $gray1;
+	white-space: pre-wrap;
+}
+
+.review-modal-enter-active,
+.review-modal-leave-active {
+	transition: opacity 0.35s ease;
+
+	.review-modal__panel {
+		transition: transform 0.35s ease;
+	}
+}
+
+.review-modal-enter-from,
+.review-modal-leave-to {
+	opacity: 0;
+
+	.review-modal__panel {
+		transform: translateY(40px);
 	}
 }

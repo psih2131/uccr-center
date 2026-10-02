@@ -304,6 +304,34 @@
 	}
 }
 
+.catalog__search-clear {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	border: 0;
+	padding: 0;
+	background: transparent;
+	color: rgba(153, 170, 201, 0.9);
+	cursor: pointer;
+}
+
+.catalog__empty {
+	margin: 0 0 30px;
+	font-family: $mainFont;
+	font-size: 18px;
+	line-height: 1.3;
+	letter-spacing: 0.02em;
+	color: $gray1;
+}
+
+.catalog__more {
+	display: flex;
+	justify-content: center;
+}
+
 .catalog__search-btn {
 	display: inline-flex;
 	align-items: center;

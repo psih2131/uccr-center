@@ -1,5 +1,5 @@
 <template>
-  <section class="articles">
+  <section v-if="items.length" class="articles">
     <div class="container">
       <div class="articles__head">
         <h2 class="section-title articles__title">{{ title }}</h2>
@@ -15,8 +15,9 @@
 
 <script setup>
 import { posts } from '~/data/posts'
+import { mapBlogCard } from '~/utils/mapBlog'
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     default: 'Читайте интересные статьи',
@@ -25,7 +26,21 @@ defineProps({
     type: Boolean,
     default: true,
   },
+  items: {
+    type: Array,
+    default: null,
+  },
 })
 
-const items = posts.slice(0, 3)
+const config = useRuntimeConfig()
+
+const items = computed(() => {
+  if (props.items == null) {
+    return posts.slice(0, 3)
+  }
+
+  return props.items
+    .map((item) => mapBlogCard(item, config.public.strapiUrl))
+    .filter(Boolean)
+})
 </script>

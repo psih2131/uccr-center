@@ -235,6 +235,40 @@
 	text-align: center;
 }
 
+.alpha-index-layer__loader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 18px;
+	min-height: 280px;
+	padding: 40px 28px;
+	border-radius: 14px;
+	background: $white;
+
+	p {
+		margin: 0;
+		font-size: 18px;
+		line-height: 1.3;
+		color: $gray1;
+	}
+}
+
+.alpha-index-layer__spinner {
+	width: 36px;
+	height: 36px;
+	border: 3px solid rgba(153, 170, 201, 0.25);
+	border-top-color: $darkBlue;
+	border-radius: 50%;
+	animation: alpha-index-spin 0.7s linear infinite;
+}
+
+@keyframes alpha-index-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 .alpha-index-group {
 	& + & {
 		margin-top: 28px;

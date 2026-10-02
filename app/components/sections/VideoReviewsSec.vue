@@ -1,7 +1,7 @@
 <template>
-  <section class="video-reviews">
+  <section v-if="videoReviewsSection?.data" class="video-reviews">
     <div class="container">
-      <h2 class="section-title video-reviews__title">Видео-отзывы наших клиентов</h2>
+      <h2 class="section-title video-reviews__title">{{ videoReviewsSection.data.title_section }}</h2>
 
       <div class="video-reviews__slider-wrap">
         <button class="slider-nav video-reviews__nav video-reviews__nav--prev" type="button" aria-label="Назад" @click="swiper.prev()">
@@ -12,8 +12,8 @@
 
         <ClientOnly>
           <swiper-container ref="sliderRef" class="video-reviews__slider" :init="false">
-            <swiper-slide v-for="(item, index) in items" :key="index">
-              <article class="video-card">
+            <swiper-slide v-for="item in items" :key="item.id">
+              <article class="video-card" @click="openVideo(item)">
                 <img class="video-card__image" :src="item.image" :alt="item.name">
                 <button class="video-card__play" type="button" aria-label="Смотреть видео">
                   <span></span>
@@ -36,8 +36,8 @@
 
       <div class="video-reviews__dots">
         <button
-          v-for="(_, index) in items"
-          :key="index"
+          v-for="(item, index) in items"
+          :key="item.id || index"
           class="video-reviews__dot"
           :class="{ 'video-reviews__dot--active': activeIndex === index }"
           type="button"
@@ -46,18 +46,55 @@
         ></button>
       </div>
     </div>
+
+    <ModalVideoReview
+      :open="isVideoModalOpen"
+      :review="activeVideo"
+      @close="closeVideo"
+    />
   </section>
 </template>
 
 <script setup>
-import rw1 from '~/assets/images/reviews/rw1.jpg'
-import rw2 from '~/assets/images/reviews/rw2.png'
-import rw3 from '~/assets/images/reviews/rw3.jpg'
-import rw4 from '~/assets/images/reviews/rw4.png'
-import rw5 from '~/assets/images/reviews/rw5.jpg'
+import ModalVideoReview from '~/components/modals/ModalVideoReview.vue'
+const config = useRuntimeConfig()
+
+const { data: videoReviewsSection } = await useFetch(`${config.public.strapiUrl}/api/video-reviews-section`, {
+  key: 'video-reviews-section',
+  query: {
+    'populate[video_reviews][populate][video_preview]': true,
+    'populate[video_reviews][populate][video]': true,
+  },
+})
+
+function mediaUrl(file) {
+  if (!file?.url) return ''
+  if (file.url.startsWith('http')) return file.url
+  return `${config.public.strapiUrl}${file.url}`
+}
+
+const items = (videoReviewsSection.value?.data?.video_reviews || []).map((item) => ({
+  id: item.documentId || item.id,
+  name: item.title || '',
+  age: item.subtitle || '',
+  image: mediaUrl(item.video_preview),
+  video: mediaUrl(item.video),
+}))
 
 const sliderRef = ref(null)
 const activeIndex = ref(0)
+const isVideoModalOpen = ref(false)
+const activeVideo = ref(null)
+
+function openVideo(item) {
+  activeVideo.value = item
+  isVideoModalOpen.value = true
+}
+
+function closeVideo() {
+  isVideoModalOpen.value = false
+  activeVideo.value = null
+}
 
 const swiper = useSwiper(sliderRef, {
   slidesPerView: 5,
@@ -81,13 +118,4 @@ const goTo = (index) => {
   }
   instance.slideTo?.(index)
 }
-
-const items = [
-  { name: 'Алексей Дмитриев', age: '32 года', image: rw1 },
-  { name: 'Алексей Дмитриев', age: '32 года', image: rw2 },
-  { name: 'Алексей Дмитриев', age: '32 года', image: rw3 },
-  { name: 'Алексей Дмитриев', age: '32 года', image: rw4 },
-  { name: 'Алексей Дмитриев', age: '32 года', image: rw5 },
-  { name: 'Алексей Дмитриев', age: '32 года', image: rw1 },
-]
 </script>

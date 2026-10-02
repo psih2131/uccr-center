@@ -9,7 +9,7 @@
       <div class="directions__list">
         <article
           v-for="(item, index) in items"
-          :key="item.title"
+          :key="item.slug"
           class="directions__item"
           :class="{ 'directions__item--open': isOpen(index) }"
         >
@@ -38,32 +38,17 @@
 
           <Collapse :when="isOpen(index)" class="directions__collapse">
             <div class="directions__grid">
-              <NuxtLink
-                v-for="card in item.cards"
-                :key="card.title"
+              <CardsCategoryDirectionCard
+                v-for="(card, cardIndex) in item.cards"
+                :key="card.slug"
+                :title="card.title"
                 :to="card.to"
-                class="dir-card"
-              >
-                <div class="dir-card__top">
-                  <span class="dir-card__num">№{{ card.num }}</span>
-                  <span v-if="card.isNew" class="dir-card__new">Новое</span>
-                  <svg class="dir-card__plus" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
-                    <path d="M7.5 2V13M2 7.5H13" stroke="#99AAC9" stroke-width="1.4" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <h3 class="dir-card__title">{{ card.title }}</h3>
-                <p class="dir-card__count"><b>{{ card.professions }}</b> профессий</p>
-                <span class="dir-card__more">
-                  <span class="dir-card__icon">
-                    <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
-                      <path d="M2 12L12 2M12 2H4.5M12 2V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                  </span>
-                  Подробнее
-                </span>
-              </NuxtLink>
+                :professions="card.professions"
+                :index="cardIndex"
+                :created-at="card.createdAt"
+              />
 
-              <NuxtLink :to="catalogUrl('rabochie-professii')" class="dir-card dir-card--cta">
+              <NuxtLink :to="item.catalogTo" class="dir-card dir-card--cta">
                 <span class="dir-card__line dir-card__line--h dir-card__line--h1"></span>
                 <span class="dir-card__line dir-card__line--h dir-card__line--h2"></span>
                 <span class="dir-card__line dir-card__line--v dir-card__line--v1"></span>
@@ -71,16 +56,15 @@
                 <span class="dir-card__line dir-card__line--v dir-card__line--v3"></span>
                 <img src="@/assets/icons/dir-1.png" alt="" class="dir-card__cta-img" aria-hidden="true">
                 <p class="dir-card__cta-title">Смотреть список всех курсов и програм</p>
-                
+
                 <div class="dir-card__cta-count-wrapper">
-                  <p class="dir-card__cta-count">Количество курсов: <b>235</b></p>
+                  <p class="dir-card__cta-count">Количество курсов: <b>{{ item.coursesCount }}</b></p>
                   <span class="dir-card__icon dir-card__icon--light">
                     <svg width="24" height="24" viewBox="0 0 14 14" fill="none">
                       <path d="M2 12L12 2M12 2H4.5M12 2V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                   </span>
                 </div>
-                
               </NuxtLink>
             </div>
           </Collapse>
@@ -91,32 +75,60 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import { Collapse } from 'vue-collapsed'
 
-const { catalogUrl, courseUrl } = useCity()
+const config = useRuntimeConfig()
+const { catalogUrl } = useCity()
 
-const professionCards = computed(() => [
-  { num: '01', title: 'Бурильщик', professions: 15, isNew: true, slug: 'burilshchik' },
-  { num: '02', title: 'Водитель погрузчика', professions: 15, isNew: true, slug: 'voditel-pogruzchika' },
-  { num: '03', title: 'Кассир', professions: 15, isNew: true, slug: 'kassir' },
-  { num: '04', title: 'Машинист', professions: 15, isNew: true, slug: 'mashinist' },
-  { num: '05', title: 'Младший медперсонал', professions: 15, isNew: true, slug: 'medpersonal' },
-  { num: '01', title: 'Монтажник', professions: 15, isNew: true, slug: 'montazhnik' },
-  { num: '02', title: 'Оператор', professions: 15, isNew: true, slug: 'operator' },
-  { num: '03', title: 'Сварщик', professions: 15, isNew: true, slug: 'svarshchik' },
-].map((card) => ({
-  ...card,
-  to: courseUrl('rabochie-professii', card.slug),
-})))
+const { data: directionsResponse } = await useFetch(`${config.public.strapiUrl}/api/directions`, {
+  key: 'directions-sec',
+  query: {
+    'fields[0]': 'title',
+    'fields[1]': 'slug',
+    'populate[courses][count]': true,
+    'populate[category_directions][fields][0]': 'title',
+    'populate[category_directions][fields][1]': 'slug',
+    'populate[category_directions][fields][2]': 'createdAt',
+    'populate[category_directions][populate][courses][count]': true,
+    'pagination[pageSize]': 100,
+    sort: 'updatedAt:asc',
+  },
+})
 
-const items = computed(() => [
-  { title: 'Рабочие профессии', count: 24, cards: professionCards.value },
-  { title: 'Курсы повышения квалификации', count: 24, cards: professionCards.value },
-  { title: 'Переподготовка', count: 12, cards: professionCards.value },
-  { title: 'Аттестация', count: 40, cards: professionCards.value },
-  { title: 'Охрана труда', count: 43, cards: professionCards.value },
-])
+function relationCount(value) {
+  if (typeof value?.count === 'number') return value.count
+  if (Array.isArray(value)) return value.length
+  return 0
+}
+
+const items = computed(() =>
+  (directionsResponse.value?.data || [])
+    .filter((item) => item?.slug && item?.title)
+    .map((direction) => {
+      const coursesCount = relationCount(direction.courses)
+
+      const cards = (direction.category_directions || [])
+        .filter((category) => category?.slug && category?.title)
+        .map((category) => ({
+          title: category.title,
+          slug: category.slug,
+          createdAt: category.createdAt || '',
+          professions: relationCount(category.courses),
+          to: catalogUrl(direction.slug),
+        }))
+        .sort((a, b) => b.professions - a.professions)
+        .slice(0, 8)
+
+      return {
+        title: direction.title,
+        slug: direction.slug,
+        count: coursesCount,
+        coursesCount,
+        catalogTo: catalogUrl(direction.slug),
+        cards,
+      }
+    }),
+)
 
 const openIndexes = ref([0])
 

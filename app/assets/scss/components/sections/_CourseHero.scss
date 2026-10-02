@@ -4,7 +4,7 @@
 
 .course-hero__top {
 	display: flex;
-	align-items: flex-start;
+	align-items: flex-end;
 	justify-content: space-between;
 	gap: 70px;
 	margin-bottom: 42px;
@@ -33,7 +33,8 @@
 .course-hero__title {
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	
+	gap: 8px;
 	margin: 0;
 	font-weight: 500;
 	font-size: 53px;
@@ -44,8 +45,7 @@
 }
 
 .course-hero__title-row {
-	display: flex;
-	align-items: center;
+	display: inline-block;
 }
 
 .course-hero__title-decor {
@@ -54,21 +54,22 @@
 	height: 52px;
 	margin: 0 16px;
 	border-radius: 31px;
+	margin-bottom: -5px;
 	background: url('@/assets/images/course/course-hero-pill.png') center / cover no-repeat;
 }
 
 .course-hero__title-plus {
-	display: inline-flex;
+	display: inline-block;
 	margin-left: 16px;
 
 	svg {
-		display: block;
+		display: inline-block;
 	}
 }
 
 .course-hero__lead {
 	width: 432px;
-	margin: 114px 0 0;
+	
 	flex-shrink: 0;
 	font-size: 20px;
 	line-height: 1.2;

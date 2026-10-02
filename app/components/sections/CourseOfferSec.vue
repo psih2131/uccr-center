@@ -16,24 +16,24 @@
             <span class="course-offer__tag course-offer__tag--green">Запись на курс ежедневно</span>
             <span class="course-offer__tag course-offer__tag--blue">
               <img src="@/assets/icons/program-book.svg" alt="" width="14" height="14">
-              Дистанционное обучение
+              {{ course.form_learning || 'Дистанционное обучение' }}
             </span>
           </div>
 
-          <h2 class="course-offer__title">{{ course.specialty }}</h2>
+          <h2 class="course-offer__title">{{ course.title }}</h2>
           <p class="course-offer__label">Продолжительность обучения:</p>
 
           <div class="course-offer__row">
-            <div class="course-offer__hours">
+            <div v-if="priceItems.length" class="course-offer__hours">
               <button
-                v-for="item in hours"
-                :key="item"
+                v-for="item in priceItems"
+                :key="item.hour"
                 class="course-offer__hour"
-                :class="{ 'course-offer__hour--active': activeHour === item }"
+                :class="{ 'course-offer__hour--active': activeHour === item.hour }"
                 type="button"
-                @click="activeHour = item"
+                @click="activeHour = item.hour"
               >
-                {{ item }} ак.ч
+                {{ item.hour }} ак.ч
               </button>
             </div>
 
@@ -45,12 +45,12 @@
                 <b>от <em>458р/мес</em></b>
                 <button type="button" @click="openConsult">Узнать подробнее</button>
               </div>
-              <div class="course-offer__price">
+              <div v-if="activePrice" class="course-offer__price">
                 <span>Стоимость обучения</span>
-                <strong>7600р</strong>
-                <span class="course-offer__old">
-                  <s>4200р</s>
-                  <em>-800р</em>
+                <strong>{{ activePrice.current_price }}р</strong>
+                <span v-if="hasOldPrice" class="course-offer__old">
+                  <s>{{ activePrice.old_price }}р</s>
+                  <em>-{{ priceDiff }}р</em>
                 </span>
               </div>
             </div>
@@ -153,17 +153,71 @@ import license1 from '~/assets/images/licenses/license-1.png'
 import license2 from '~/assets/images/licenses/license-2.png'
 import licenseDir from '~/assets/images/licenses/license-dir.png'
 
-defineProps({
+const props = defineProps({
   course: {
     type: Object,
     required: true,
   },
 })
 
+const config = useRuntimeConfig()
 const store = useCounterStore()
-const images = [licenseDir, license1, license2]
-const hours = ['36', '46', '52', '72', '88', '92']
-const activeHour = ref('36')
+
+const fallbackImages = [licenseDir, license1, license2]
+
+function mediaUrl(file) {
+  if (!file?.url) return ''
+  if (file.url.startsWith('http')) return file.url
+  return `${config.public.strapiUrl}${file.url}`
+}
+
+const priceItems = computed(() => {
+  const items = props.course?.price_v1_section?.price_item || []
+  return items
+    .filter((item) => item?.hour != null)
+    .map((item) => ({
+      hour: item.hour,
+      current_price: item.current_price,
+      old_price: item.old_price,
+    }))
+    .sort((a, b) => a.hour - b.hour)
+})
+
+const activeHour = ref(null)
+
+watch(
+  priceItems,
+  (items) => {
+    if (!items.length) {
+      activeHour.value = null
+      return
+    }
+    if (!items.some((item) => item.hour === activeHour.value)) {
+      activeHour.value = items[0].hour
+    }
+  },
+  { immediate: true },
+)
+
+const activePrice = computed(() =>
+  priceItems.value.find((item) => item.hour === activeHour.value) || null,
+)
+
+const hasOldPrice = computed(() =>
+  activePrice.value?.old_price != null && activePrice.value?.current_price != null,
+)
+
+const priceDiff = computed(() => {
+  if (!hasOldPrice.value) return 0
+  return Math.abs(activePrice.value.old_price - activePrice.value.current_price)
+})
+
+const images = computed(() => {
+  const docs = props.course?.price_v1_section?.docs || []
+  const urls = docs.map(mediaUrl).filter(Boolean)
+  return urls.length ? urls : fallbackImages
+})
+
 const activeIndex = ref(0)
 const sliderRef = ref(null)
 
@@ -200,7 +254,7 @@ const goTo = (index) => {
 const openDoc = async (index) => {
   const { Fancybox } = await import('@fancyapps/ui')
   Fancybox.show(
-    images.map((src, i) => ({
+    images.value.map((src, i) => ({
       src,
       type: 'image',
       caption: `Удостоверение ${i + 1}`,

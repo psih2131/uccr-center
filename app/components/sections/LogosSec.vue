@@ -1,10 +1,18 @@
 <template>
-  <section class="logos" aria-label="Компании-партнёры">
+  <section v-if="group.length" class="logos" aria-label="Компании-партнёры">
     <div class="logos__viewport">
       <div class="logos__track">
         <div class="logos__group" v-for="copy in 2" :key="copy" :aria-hidden="copy > 1">
           <div class="logos__item" v-for="(logo, index) in group" :key="`${copy}-${index}`">
-            <img :src="logo" alt="" >
+            <a
+              v-if="logo.href"
+              :href="logo.href"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img :src="logo.src" alt="">
+            </a>
+            <img v-else :src="logo.src" alt="">
           </div>
         </div>
       </div>
@@ -21,6 +29,41 @@ import logo5 from '~/assets/images/logos/logo-5.png'
 import logo6 from '~/assets/images/logos/logo-6.png'
 import logo7 from '~/assets/images/logos/logo-7.png'
 
-const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7]
-const group = [...logos, ...logos]
+const props = defineProps({
+  items: {
+    type: Array,
+    default: null,
+  },
+})
+
+const config = useRuntimeConfig()
+
+const fallbackLogos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7].map((src) => ({
+  src,
+  href: '',
+}))
+
+function mediaUrl(file) {
+  if (!file?.url) return ''
+  if (file.url.startsWith('http')) return file.url
+  return `${config.public.strapiUrl}${file.url}`
+}
+
+const logos = computed(() => {
+  if (!props.items) {
+    return fallbackLogos
+  }
+
+  return props.items
+    .map((item) => ({
+      src: mediaUrl(item.logo),
+      href: item.url || '',
+    }))
+    .filter((item) => item.src)
+})
+
+const group = computed(() => {
+  if (!logos.value.length) return []
+  return [...logos.value, ...logos.value]
+})
 </script>

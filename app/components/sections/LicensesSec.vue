@@ -1,5 +1,5 @@
 <template>
-  <section class="licenses">
+  <section v-if="items.length" class="licenses">
     <div class="container">
       <div class="licenses__head">
         <h2 class="section-title licenses__title">Лицензии компании</h2>
@@ -7,7 +7,13 @@
       </div>
 
       <div class="licenses__slider-wrap">
-        <button class="slider-nav licenses__nav licenses__nav--prev" type="button" aria-label="Назад" @click="swiper.prev()">
+        <button
+          v-if="showControls"
+          class="slider-nav licenses__nav licenses__nav--prev"
+          type="button"
+          aria-label="Назад"
+          @click="swiper.prev()"
+        >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289L19.7071 11.2929C19.8946 11.4804 20 11.7348 20 12C20 12.2652 19.8946 12.5196 19.7071 12.7071L13.7071 18.7071C13.3166 19.0976 12.6834 19.0976 12.2929 18.7071C11.9024 18.3166 11.9024 17.6834 12.2929 17.2929L16.5858 13L5 13C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11L16.5858 11L12.2929 6.70711C11.9024 6.31658 11.9024 5.68342 12.2929 5.29289Z" fill="#145771"/>
           </svg>
@@ -15,7 +21,7 @@
 
         <ClientOnly>
           <swiper-container ref="sliderRef" class="licenses__slider" :init="false">
-            <swiper-slide v-for="(item, index) in items" :key="index">
+            <swiper-slide v-for="(item, index) in items" :key="item.id || index">
               <article class="license-card">
                 <button
                   class="license-card__preview"
@@ -36,14 +42,20 @@
           </swiper-container>
         </ClientOnly>
 
-        <button class="slider-nav licenses__nav licenses__nav--next" type="button" aria-label="Вперёд" @click="swiper.next()">
+        <button
+          v-if="showControls"
+          class="slider-nav licenses__nav licenses__nav--next"
+          type="button"
+          aria-label="Вперёд"
+          @click="swiper.next()"
+        >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289L19.7071 11.2929C19.8946 11.4804 20 11.7348 20 12C20 12.2652 19.8946 12.5196 19.7071 12.7071L13.7071 18.7071C13.3166 19.0976 12.6834 19.0976 12.2929 18.7071C11.9024 18.3166 11.9024 17.6834 12.2929 17.2929L16.5858 13L5 13C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11L16.5858 11L12.2929 6.70711C11.9024 6.31658 11.9024 5.68342 12.2929 5.29289Z" fill="#145771"/>
           </svg>
         </button>
       </div>
 
-      <div class="licenses__dots">
+      <div v-if="showControls" class="licenses__dots">
         <button
           v-for="(_, index) in items"
           :key="index"
@@ -59,24 +71,47 @@
 </template>
 
 <script setup>
-import license1 from '~/assets/images/licenses/license-1.png'
-import license2 from '~/assets/images/licenses/license-2.png'
-import license3 from '~/assets/images/licenses/license-3.png'
-import license4 from '~/assets/images/licenses/license-4.png'
+const props = defineProps({
+  items: {
+    type: Array,
+    default: () => [],
+  },
+})
+
+const config = useRuntimeConfig()
 
 const sliderRef = ref(null)
 const activeIndex = ref(0)
+const slidesPerView = 5
+
+const items = computed(() =>
+  (props.items || [])
+    .map((item) => ({
+      id: item.id,
+      title: item.title || '',
+      image: mediaUrl(item.photo),
+    }))
+    .filter((item) => item.image),
+)
+
+const showControls = computed(() => items.value.length > slidesPerView)
 
 const swiper = useSwiper(sliderRef, {
-  slidesPerView: 5,
+  slidesPerView,
   spaceBetween: 20,
-  loop: true,
+  loop: items.value.length > slidesPerView,
   on: {
     slideChange(instance) {
       activeIndex.value = instance.realIndex
     },
   },
 })
+
+function mediaUrl(file) {
+  if (!file?.url) return ''
+  if (file.url.startsWith('http')) return file.url
+  return `${config.public.strapiUrl}${file.url}`
+}
 
 const getInstance = () => sliderRef.value?.swiper ?? sliderRef.value
 
@@ -91,23 +126,15 @@ const goTo = (index) => {
 }
 
 const openLicense = async (index) => {
-  const { Fancybox } = await import('@fancyapps/ui')
-  Fancybox.show(
-    items.map((item) => ({
-      src: item.image,
-      type: 'image',
-      caption: item.title,
-    })),
-    { startIndex: index },
-  )
-}
+  const gallery = items.value.map((item) => ({
+    src: item.image,
+    type: 'image',
+    caption: item.title,
+  }))
 
-const items = [
-  { title: 'Лицензия на образовательную деятельность', image: license1 },
-  { title: 'Лицензия на образовательную деятельность', image: license2 },
-  { title: 'Лицензия на образовательную деятельность', image: license3 },
-  { title: 'Лицензия на образовательную деятельность', image: license4 },
-  { title: 'Лицензия на образовательную деятельность', image: license3 },
-  { title: 'Лицензия на образовательную деятельность', image: license1 },
-]
+  if (!gallery.length) return
+
+  const { Fancybox } = await import('@fancyapps/ui')
+  Fancybox.show(gallery, { startIndex: index })
+}
 </script>

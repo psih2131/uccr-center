@@ -1,5 +1,5 @@
 <template>
-  <section class="about-hero">
+  <section v-if="hero" class="about-hero">
     <div class="about-hero__inner">
       <div class="about-hero__grid" aria-hidden="true">
         <span class="about-hero__line about-hero__line--v-left"></span>
@@ -40,36 +40,44 @@
         </p>
 
         <div class="about-hero__main">
-          <img class="about-hero__photo" :src="heroImage" alt="Учебный центр УЦЦР" width="387" height="483">
+          <img
+            class="about-hero__photo"
+            :src="imageUrl"
+            :alt="hero.image?.alternativeText || 'Учебный центр УЦЦР'"
+            width="387"
+            height="483"
+          >
 
           <div class="about-hero__info">
-            <h1 class="about-hero__lead">
+            <h1 v-if="hero.title" class="about-hero__lead">
               <span class="about-hero__label">
                 <span class="about-hero__dot"></span>
                 О компании
               </span>
-              «Центр развития» — удостоверяющий центр для компаний, ИП и специалистов.
-              Электронная подпись, обучение и поддержка на всех этапах работы с КЭП.
-              <img class="about-hero__lead-pic" :src="heroPill" alt="" width="97" height="37">
-        
+              <span v-html="formatTitle(hero.title)"></span>
+              <img
+                v-if="!hasTitleDecor"
+                class="about-hero__lead-pic"
+                :src="heroPill"
+                alt=""
+                width="97"
+                height="37"
+              >
             </h1>
 
-            <div class="about-hero__texts">
-              <p>
-                Учебный центр «УЦЦР» реализует программы профессионального обучения, повышения квалификации и профессиональной переподготовки для специалистов транспортной, производственной и технической сфер.
-              </p>
-              <p>
-                включен в официальный Перечень учебных организаций, осуществляющих дополнительное обучение в области профессиональной компетентности международных автомобильных перевозчиков, который размещен на сайте Росавтотранса (раздел Перечень).
-              </p>
-            </div>
+            <div
+              v-if="textHtml"
+              class="about-hero__texts"
+              v-html="textHtml"
+            ></div>
           </div>
         </div>
 
         <article
-          v-for="item in stats"
-          :key="item.value"
+          v-for="(item, index) in stats"
+          :key="item.value + index"
           class="about-hero__stat"
-          :class="`about-hero__stat--${item.id}`"
+          :class="`about-hero__stat--${statIds[index] || 'exp'}`"
         >
           <span class="about-hero__stat-value">{{ item.value }}</span>
           <p class="about-hero__stat-text">{{ item.text }}</p>
@@ -80,8 +88,23 @@
 </template>
 
 <script setup>
+import { marked } from 'marked'
 import heroImage from '~/assets/images/about/about-hero.png'
 import heroPill from '~/assets/images/about/about-hero-pill.png'
+
+const props = defineProps({
+  data: {
+    type: Object,
+    default: null,
+  },
+})
+
+const config = useRuntimeConfig()
+
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+})
 
 const corners = [
   { x: 275, y: 750, dir: 'tl' },
@@ -98,9 +121,34 @@ const corners = [
   { x: 1020, y: 1125, dir: 'br' },
 ]
 
-const stats = [
-  { id: 'exp', value: '12+', text: 'Лет опыта в области професионального образования' },
-  { id: 'partners', value: '100+', text: 'Компаний партнеров которые с нами сотрудничают' },
-  { id: 'offices', value: '30', text: 'Офисов на реритории Росийской Федирации' },
-]
+const statIds = ['exp', 'partners', 'offices']
+
+const hero = computed(() => props.data?.about_hero_section || null)
+
+function mediaUrl(file) {
+  if (!file?.url) return ''
+  if (file.url.startsWith('http')) return file.url
+  return `${config.public.strapiUrl}${file.url}`
+}
+
+const hasTitleDecor = computed(() => String(hero.value?.title || '').includes('{{}}'))
+
+function formatTitle(title) {
+  return String(title || '').replaceAll(
+    '{{}}',
+    `<img class="about-hero__lead-pic" src="${heroPill}" alt="" width="97" height="37">`,
+  )
+}
+
+const imageUrl = computed(() => mediaUrl(hero.value?.image) || heroImage)
+
+const textHtml = computed(() => {
+  const text = hero.value?.text
+  if (!text) return ''
+  return marked.parse(String(text))
+})
+
+const stats = computed(() =>
+  (hero.value?.about_items || []).filter((item) => item?.value || item?.text),
+)
 </script>

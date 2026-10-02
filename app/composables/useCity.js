@@ -1,7 +1,4 @@
-import {
-  getCityBySlug,
-  getDefaultCity,
-} from '~/data/cities'
+import { RESERVED_PATH_SLUGS, getDefaultCity } from '~/data/cities'
 
 /**
  * Город из URL (/abakan/directions/...).
@@ -9,18 +6,17 @@ import {
  */
 export function useCity() {
   const route = useRoute()
+  const { data: cities } = useCities()
 
   const citySlug = computed(() => {
     const slug = route.params.city
-    if (typeof slug === 'string' && getCityBySlug(slug)) {
-      return slug
-    }
-    return null
+    if (typeof slug !== 'string' || RESERVED_PATH_SLUGS.includes(slug)) return null
+    return (cities.value || []).some((item) => item.slug === slug) ? slug : null
   })
 
   const city = computed(() => {
-    if (citySlug.value) return getCityBySlug(citySlug.value)
-    return null
+    if (!citySlug.value) return null
+    return (cities.value || []).find((item) => item.slug === citySlug.value) || null
   })
 
   const hasCity = computed(() => Boolean(citySlug.value))

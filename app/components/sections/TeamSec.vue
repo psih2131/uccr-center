@@ -1,7 +1,7 @@
 <template>
-  <section class="team">
+  <section v-if="teamSection?.data" class="team">
     <div class="container">
-      <h2 class="section-title team__title">Наша команда специалистов</h2>
+      <h2 class="section-title team__title">{{ teamSection.data.section_title }}</h2>
 
       <div class="team__slider-wrap">
         <button class="slider-nav team__nav team__nav--prev" type="button" aria-label="Назад" @click="swiper.prev()">
@@ -12,11 +12,11 @@
 
         <ClientOnly>
           <swiper-container ref="sliderRef" class="team__slider" :init="false">
-            <swiper-slide v-for="person in people" :key="person.name">
+            <swiper-slide v-for="person in teamSection.data.teams_list" :key="person.documentId || person.id">
               <article class="team-card">
-                <img class="team-card__photo" :src="person.photo" :alt="person.name">
+                <img class="team-card__photo" :src="mediaUrl(person.photo)" :alt="person.name">
                 <h3 class="team-card__name">{{ person.name }}</h3>
-                <p class="team-card__role">{{ person.role }}</p>
+                <p class="team-card__role">{{ person.position }}</p>
               </article>
             </swiper-slide>
           </swiper-container>
@@ -31,8 +31,8 @@
 
       <div class="team__dots">
         <button
-          v-for="(_, index) in people"
-          :key="index"
+          v-for="(person, index) in teamSection.data.teams_list"
+          :key="person.documentId || person.id || index"
           class="team__dot"
           :class="{ 'team__dot--active': activeIndex === index }"
           type="button"
@@ -45,11 +45,20 @@
 </template>
 
 <script setup>
-import tm1 from '~/assets/images/team/tm1.jpg'
-import tm2 from '~/assets/images/team/tm2.jpg'
-import tm3 from '~/assets/images/team/tm3.jpg'
-import tm4 from '~/assets/images/team/tm4.jpg'
-import tm5 from '~/assets/images/team/tm5.jpg'
+const config = useRuntimeConfig()
+
+const { data: teamSection } = await useFetch(`${config.public.strapiUrl}/api/team-section`, {
+  key: 'team-section',
+  query: {
+    'populate[teams_list][populate][photo]': true,
+  },
+})
+
+function mediaUrl(file) {
+  if (!file?.url) return ''
+  if (file.url.startsWith('http')) return file.url
+  return `${config.public.strapiUrl}${file.url}`
+}
 
 const sliderRef = ref(null)
 const activeIndex = ref(0)
@@ -76,13 +85,4 @@ const goTo = (index) => {
   }
   instance.slideTo?.(index)
 }
-
-const people = [
-  { name: 'Юлия Никитина', role: 'Директор', photo: tm1 },
-  { name: 'Алексей Дмитриев', role: 'Методист', photo: tm2 },
-  { name: 'Анна Соколова', role: 'Преподаватель', photo: tm3 },
-  { name: 'Дмитрий Козлов', role: 'Куратор', photo: tm4 },
-  { name: 'Мария Волкова', role: 'Специалист', photo: tm5 },
-  { name: 'Игорь Петров', role: 'Преподаватель', photo: tm1 },
-]
 </script>

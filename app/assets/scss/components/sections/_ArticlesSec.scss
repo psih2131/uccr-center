@@ -38,13 +38,15 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 68px;
-	height: 30px;
+	width: auto;
+	min-height: 30px;
+	padding: 4px 12px;
 	border-radius: 5px;
 	background: $mint;
 	font-size: 18px;
 	letter-spacing: 0.02em;
 	color: $darkBlue;
+	white-space: nowrap;
 }
 
 .article-card__title {

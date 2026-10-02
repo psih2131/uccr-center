@@ -6,8 +6,8 @@
           <p class="direction-hero__crumbs">
             <NuxtLink to="/">Главная</NuxtLink>
             <span> - </span>
-            <NuxtLink v-if="catalog" :to="directionUrl(direction.slug)">{{ direction.menuTitle }}</NuxtLink>
-            <span v-else class="direction-hero__crumbs-current">{{ direction.menuTitle }}</span>
+            <NuxtLink v-if="catalog" :to="directionUrl(direction.slug)">{{ direction.menuTitle || direction.title }}</NuxtLink>
+            <span v-else class="direction-hero__crumbs-current">{{ direction.menuTitle || direction.title }}</span>
             <template v-if="catalog">
               <span> - </span>
               <span class="direction-hero__crumbs-current">Каталог</span>
@@ -15,12 +15,7 @@
           </p>
           <h1 class="direction-hero__title">
             <span class="direction-hero__title-row">
-              {{ firstWord }}
-              <span class="direction-hero__title-decor" aria-hidden="true"></span>
-              {{ firstRest }}
-            </span>
-            <span v-if="secondLine" class="direction-hero__title-row">
-              {{ secondLine }}
+              <span v-html="formatTitle(hero?.section_title || direction.title)"></span>
               <span class="direction-hero__title-plus" aria-hidden="true">
                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="11.6387" width="2.32143" height="25" rx="1.16071" fill="#D92139"/>
@@ -31,7 +26,8 @@
           </h1>
         </div>
 
-        <p class="direction-hero__lead">
+        <p v-if="hero?.description" class="direction-hero__lead" v-html="hero.description"></p>
+        <p v-else class="direction-hero__lead">
           Обучение для новичков без опыта и действующих рабочих, которым нужен официальный документ, с учетом перечня профессий <b>2026</b> года. <b>Более 7000 программ рабочих специальностей</b>: присвоение разряда по ЕТКС, практика на оборудовании, квалификационный экзамен и помощь с трудоустройством. Свидетельство и удостоверение установленного образца с внесением в ФИС ФРДО.
         </p>
       </div>
@@ -46,23 +42,23 @@
           <span class="direction-hero__line direction-hero__line--h4"></span>
 
           <ul class="direction-hero__list">
-            <li v-for="item in benefits" :key="item">
+            <li v-for="item in (hero?.advantages?.length ? hero.advantages : fallbackBenefits)" :key="item.id || item.text">
               <span class="direction-hero__check" aria-hidden="true">
                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
                   <path d="M3.5 8.5L7 12L13.5 5" stroke="#145771" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
-              {{ item }}
+              {{ item.text }}
             </li>
           </ul>
         </article>
 
         <article class="direction-hero__card direction-hero__card--photo">
-          <img :src="heroImage1" alt="">
+          <img :src="mediaUrl(hero?.img_1) || heroImage1" :alt="hero?.img_1?.alternativeText || ''">
         </article>
 
         <article class="direction-hero__card direction-hero__card--photo">
-          <img :src="heroImage2" alt="">
+          <img :src="mediaUrl(hero?.img_2) || heroImage2" :alt="hero?.img_2?.[0]?.alternativeText || ''">
         </article>
       </div>
     </div>
@@ -78,24 +74,37 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  hero: {
+    type: Object,
+    default: null,
+  },
   catalog: {
     type: Boolean,
     default: false,
   },
 })
 
+const config = useRuntimeConfig()
 const { directionUrl } = useCity()
 
-const benefits = [
-  'Работаем на основании Лицензии Мин. Образования',
-  'До оплаты можете ознакомиться с учебным планом',
-  'Все сведения вносим в ФИС ФРДО',
-  'Рассрочка 0% на все курсы',
+const fallbackBenefits = [
+  { text: 'Работаем на основании Лицензии Мин. Образования' },
+  { text: 'До оплаты можете ознакомиться с учебным планом' },
+  { text: 'Все сведения вносим в ФИС ФРДО' },
+  { text: 'Рассрочка 0% на все курсы' },
 ]
 
-const titleLines = computed(() => props.direction.title.split('\n'))
-const firstLine = computed(() => titleLines.value[0] ?? '')
-const secondLine = computed(() => titleLines.value[1] ?? '')
-const firstWord = computed(() => firstLine.value.split(' ')[0] ?? '')
-const firstRest = computed(() => firstLine.value.split(' ').slice(1).join(' '))
+function formatTitle(title) {
+  return String(title || '').replaceAll(
+    '{{}}',
+    '<span class="direction-hero__title-decor" aria-hidden="true"></span>',
+  )
+}
+
+function mediaUrl(file) {
+  const image = Array.isArray(file) ? file[0] : file
+  if (!image?.url) return ''
+  if (image.url.startsWith('http')) return image.url
+  return `${config.public.strapiUrl}${image.url}`
+}
 </script>

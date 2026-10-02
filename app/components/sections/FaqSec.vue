@@ -3,7 +3,7 @@
     <div class="container">
       <div class="faq__head">
         <h2 class="section-title faq__title">Часто-задаваемые вопросы</h2>
-        <ButtonsBtnPill title="Задать свой вопрос" type="modal" />
+        <ButtonsBtnPill title="Задать свой вопрос" type="modal" @click="openConsult" />
       </div>
 
       <div class="faq__cols">
@@ -57,7 +57,20 @@
 import { computed, ref } from 'vue'
 import { Collapse } from 'vue-collapsed'
 
-const questions = [
+const store = useCounterStore()
+
+const openConsult = () => {
+  store.openModal('consult')
+}
+
+const props = defineProps({
+  items: {
+    type: Array,
+    default: null,
+  },
+})
+
+const defaultQuestions = [
   {
     q: 'Как проходит обучение?',
     a: 'Обучение проходит дистанционно: вы изучаете материалы в личном кабинете и сдаёте итоговый тест в удобное время.',
@@ -88,12 +101,19 @@ const questions = [
   },
 ]
 
+const questions = computed(() => {
+  if (!props.items) return defaultQuestions
+  return props.items
+    .filter((item) => item?.questions)
+    .map((item) => ({ q: item.questions, a: item.answer || '' }))
+})
+
 const openIndex = ref(-1)
 
 const toggle = (index) => {
   openIndex.value = openIndex.value === index ? -1 : index
 }
 
-const leftItems = computed(() => questions.map((item, i) => ({ ...item, i })).filter((_, i) => i % 2 === 0))
-const rightItems = computed(() => questions.map((item, i) => ({ ...item, i })).filter((_, i) => i % 2 === 1))
+const leftItems = computed(() => questions.value.map((item, i) => ({ ...item, i })).filter((_, i) => i % 2 === 0))
+const rightItems = computed(() => questions.value.map((item, i) => ({ ...item, i })).filter((_, i) => i % 2 === 1))
 </script>

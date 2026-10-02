@@ -95,6 +95,7 @@
 	line-height: 1.2;
 	letter-spacing: 0.02em;
 	color: $darkBlue;
+	text-decoration: none;
 	cursor: pointer;
 	transition: background 0.2s ease, color 0.2s ease;
 
@@ -169,6 +170,16 @@
 	justify-content: center;
 	gap: 30px;
 	margin-top: 74px;
+}
+
+.blog__more {
+	display: flex;
+	justify-content: center;
+	margin-top: 74px;
+
+	.btn-pill {
+		min-width: 220px;
+	}
 }
 
 .blog__pages {

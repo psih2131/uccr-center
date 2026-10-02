@@ -1,15 +1,15 @@
 <template>
-  <main class="course-page">
+  <main v-if="course" class="course-page">
     <SectionsCourseHero :course="course" :direction="direction" />
-    <SectionsCourseProgramSec />
+    <SectionsCourseProgramSec :items="course.what_waiting_for_section || []" />
     <SectionsCourseOfferSec :course="course" />
-    <SectionsCourseTariffsSec />
+    <SectionsCourseTariffsSec :section="course.price_sec_v2" />
     <SectionsCourseStepsSec />
-    <SectionsCourseAudienceSec />
+    <SectionsCourseAudienceSec :section="course.for_who_section" />
     <SectionsCourseDocsNeedSec />
-    <SectionsDirectionDocSec title="Документ подтверждающий прохождение курса" />
-    <SectionsReviewsSec />
-    <SectionsFaqSec />
+    <SectionsDirectionDocSec  />
+    <SectionsCourseReviewsSec />
+    <SectionsCourseFaqSec />
     <SectionsCourseSimilarSec />
     <SectionsAboutSec />
     <SectionsFormSec />
@@ -17,22 +17,35 @@
 </template>
 
 <script setup>
-import { getCourseBySlug } from '~/data/courses'
-import { getDirectionBySlug } from '~/data/directions'
-
 const route = useRoute()
-const direction = computed(() => getDirectionBySlug(route.params.id))
-const course = computed(() => getCourseBySlug(route.params.course))
+const config = useRuntimeConfig()
 
-if (!direction.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Направление не найдено' })
-}
+const { data: courseResponse } = await useFetch(`${config.public.strapiUrl}/api/courses`, {
+  key: () => `course-${route.params.course}`,
+  query: {
+    'filters[slug][$eq]': route.params.course,
+    'populate[page_preview]': true,
+    'populate[what_waiting_for_section]': true,
+    'populate[direction]': true,
+    'populate[price_v1_section][populate][price_item]': true,
+    'populate[price_v1_section][populate][docs]': true,
+    'populate[price_sec_v2][populate][price_list]': true,
+    'populate[for_who_section][populate][for_who_items][populate][image]': true,
+  },
+})
+
+const course = computed(() => courseResponse.value?.data?.[0] || null)
+const direction = computed(() => course.value?.direction || null)
 
 if (!course.value) {
   throw createError({ statusCode: 404, statusMessage: 'Курс не найден' })
 }
 
+if (direction.value?.slug && direction.value.slug !== route.params.id) {
+  throw createError({ statusCode: 404, statusMessage: 'Курс не найден' })
+}
+
 useSeoMeta({
-  title: () => course.value?.shortTitle,
+  title: () => course.value?.title,
 })
 </script>

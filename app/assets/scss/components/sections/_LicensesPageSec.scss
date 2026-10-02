@@ -33,7 +33,7 @@
 .licenses-page-sec__title {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 8px;
 	margin: 0;
 	font-weight: 500;
 	font-size: 53px;
@@ -44,16 +44,15 @@
 }
 
 .licenses-page-sec__title-row {
-	display: flex;
-	align-items: center;
+	display: inline-block;
 }
 
 .licenses-page-sec__title-plus {
-	display: inline-flex;
+	display: inline-block;
 	margin-left: 16px;
 
 	svg {
-		display: block;
+		display: inline-block;
 	}
 }
 
@@ -61,7 +60,7 @@
 	display: inline-block;
 	width: 134px;
 	height: 52px;
-	margin-right: 18px;
+	margin: 0 16px -5px;
 	border-radius: 31px;
 	background: url('@/assets/images/licenses/licenses-title-pill.png') center / cover no-repeat;
 }
@@ -194,22 +193,44 @@
 
 .license-doc__text {
 	margin: 0 0 35px;
+	font-size: 20px;
+	line-height: 1.2;
+	letter-spacing: 0.02em;
+	color: $gray1;
 
 	p {
 		margin: 0;
-		font-size: 20px;
-		line-height: 1.2;
-		letter-spacing: 0.02em;
-		color: $gray1;
 
 		+ p {
 			margin-top: 24px;
 		}
 	}
 
-	b {
+	ul,
+	ol {
+		margin: 0;
+		padding-left: 1.2em;
+
+		+ p,
+		+ ul,
+		+ ol {
+			margin-top: 24px;
+		}
+	}
+
+	li + li {
+		margin-top: 8px;
+	}
+
+	b,
+	strong {
 		font-weight: 400;
 		color: $darkBlue;
+	}
+
+	a {
+		color: $darkBlue;
+		text-decoration: underline;
 	}
 }
 

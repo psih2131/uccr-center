@@ -70,9 +70,14 @@
 	justify-content: center;
 	transition: background 0.2s ease, transform 0.2s ease;
 
-	img {
+	img,
+	svg {
 		width: 18px;
 		height: 18px;
+		display: block;
+	}
+
+	img {
 		object-fit: contain;
 		filter: brightness(0) invert(1);
 	}
@@ -176,15 +181,7 @@
 	gap: 25px;
 }
 
-.footer__cookie {
-	color: $white;
-	transition: color 0.2s ease;
-
-	&:hover {
-		color: $gray1;
-	}
-}
-
+.footer__cookie,
 .footer__policy {
 	color: $gray1;
 	transition: color 0.2s ease;

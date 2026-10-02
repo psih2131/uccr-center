@@ -33,6 +33,7 @@
 	height: 380px;
 	border-radius: 10px;
 	overflow: hidden;
+	cursor: pointer;
 }
 
 .video-card__image {
@@ -113,5 +114,83 @@
 
 	&--active {
 		background: $darkBlue;
+	}
+}
+
+.video-review-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 210;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.54);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+}
+
+.video-review-modal__panel {
+	position: relative;
+	width: min(860px, calc(100% - 40px));
+	padding: 24px;
+	border-radius: 20px;
+	background: $white;
+}
+
+.video-review-modal__close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	z-index: 2;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.video-review-modal__video {
+	display: block;
+	width: 100%;
+	max-height: min(70vh, 560px);
+	border-radius: 12px;
+	background: #000;
+	object-fit: contain;
+}
+
+.video-review-modal__info {
+	margin-top: 16px;
+	padding-right: 40px;
+}
+
+.video-review-modal__name {
+	margin: 0 0 4px;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.2;
+	color: $darkBlue;
+}
+
+.video-review-modal__age {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.2;
+	color: $gray1;
+}
+
+.video-review-modal-enter-active,
+.video-review-modal-leave-active {
+	transition: opacity 0.35s ease;
+
+	.video-review-modal__panel {
+		transition: transform 0.35s ease;
+	}
+}
+
+.video-review-modal-enter-from,
+.video-review-modal-leave-to {
+	opacity: 0;
+
+	.video-review-modal__panel {
+		transform: translateY(40px);
 	}
 }

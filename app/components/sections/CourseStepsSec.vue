@@ -1,10 +1,10 @@
 <template>
-  <section class="course-steps">
+  <section v-if="steps.length" class="course-steps">
     <div class="container">
       <h2 class="section-title">Как пройти обучение</h2>
 
       <div class="course-steps__grid">
-        <article v-for="item in steps" :key="item.num" class="course-step">
+        <article v-for="item in steps" :key="item.id || item.num" class="course-step">
           <span class="course-step__num">№{{ item.num }}</span>
           <h3 class="course-step__title">{{ item.title }}</h3>
           <p class="course-step__text">{{ item.text }}</p>
@@ -15,36 +15,21 @@
 </template>
 
 <script setup>
-const steps = [
-  {
-    num: '01',
-    title: 'Вы отправляете заявку на обучение',
-    text: 'Наш специалист свяжется с вами и подробно расскажет о процессе обучения и получении удостоверения.',
+const config = useRuntimeConfig()
+
+const { data: stepsSection } = await useFetch(`${config.public.strapiUrl}/api/course-staps-section`, {
+  key: 'course-staps-section',
+  query: {
+    'populate[staps_item]': true,
   },
-  {
-    num: '02',
-    title: 'Мы готовим документы и договор',
-    text: 'Все гарантийные обязательства прописаны в договоре, к нему прилагается счёт на оплату.',
-  },
-  {
-    num: '03',
-    title: 'Вы получаете доступ к учебным материалам',
-    text: 'Доступ к личному кабинету высылается по электронной почте вместе с логином и паролем.',
-  },
-  {
-    num: '04',
-    title: 'Изучаете материалы курса',
-    text: 'Проходите лекции, изучаете документы и презентации, сдаёте итоговый тест — в удобное для вас время и темпе.',
-  },
-  {
-    num: '05',
-    title: 'Мы вносим сведения в ФИС ФРДО',
-    text: 'Информация о выданных удостоверениях и дипломах передаётся в федеральный реестр в течение 20–60 дней.',
-  },
-  {
-    num: '06',
-    title: 'Вы получаете оригиналы документов',
-    text: 'Скан-копии направляем на почту в день окончания курса, оригиналы доставляем Почтой России бесплатно.',
-  },
-]
+})
+
+const steps = computed(() =>
+  (stepsSection.value?.data?.staps_item || []).map((item, index) => ({
+    id: item.id,
+    num: String(index + 1).padStart(2, '0'),
+    title: item.title || '',
+    text: item.subtitle || '',
+  })),
+)
 </script>

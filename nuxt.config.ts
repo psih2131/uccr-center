@@ -2,6 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  runtimeConfig: {
+    strapiUrl: process.env.NUXT_STRAPI_URL || '',
+    public: {
+      strapiUrl: process.env.NUXT_STRAPI_URL || '',
+    },
+  },
   css: ['~/assets/scss/main.scss', '@fancyapps/ui/dist/fancybox/fancybox.css'],
   ssr: true,
   modules: ['@pinia/nuxt', 'nuxt-swiper', 'vue-yandex-maps/nuxt'],

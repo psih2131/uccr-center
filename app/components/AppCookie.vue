@@ -1,8 +1,6 @@
 <template>
-  <div v-if="isVisible" class="cookie-bar">
-    <p class="cookie-bar__text">
-      Мы используем cookie, чтобы сайт работал стабильно и вам было удобнее им пользоваться. Продолжая работу с сайтом, вы соглашаетесь с этим.
-    </p>
+  <div v-if="isVisible && cookieText" class="cookie-bar">
+    <p class="cookie-bar__text">{{ cookieText }}</p>
     <div class="cookie-bar__actions">
       <button class="cookie-bar__btn cookie-bar__btn--accept" type="button" @click="hideBar('accept')">
         Принять
@@ -16,8 +14,15 @@
 
 <script setup>
 const STORAGE_KEY = 'cookieBar'
+const config = useRuntimeConfig()
 
 const isVisible = ref(false)
+
+const { data: cookieResponse } = await useFetch(`${config.public.strapiUrl}/api/cookie-component`, {
+  key: 'cookie-component',
+})
+
+const cookieText = computed(() => cookieResponse.value?.data?.text || '')
 
 onMounted(() => {
   isVisible.value = !sessionStorage.getItem(STORAGE_KEY)

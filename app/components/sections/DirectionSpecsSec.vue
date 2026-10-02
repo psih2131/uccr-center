@@ -2,39 +2,21 @@
   <section class="direction-specs">
     <div class="container">
       <div class="direction-specs__bar">
-        <h2 class="direction-specs__title">Рабочие специальности</h2>
-        <p class="direction-specs__meta">
-          Количество специализаций: <b>24</b>
+        <h2 class="direction-specs__title" v-html="sectionTitle"></h2>
+        <p class="direction-specs__meta" v-if="totalCourses">
+          Количество специализаций: <b>{{ totalCourses }}</b>
         </p>
         <AlphabeticalIndex />
       </div>
 
       <div class="direction-specs__grid">
-        <NuxtLink
-          v-for="card in cards"
-          :key="card.to"
-          :to="card.to"
-          class="spec-card"
-        >
-          <div class="spec-card__top">
-            <span class="spec-card__num">№{{ card.num }}</span>
-            <span v-if="card.isNew" class="spec-card__new">Новое</span>
-            <svg class="spec-card__plus" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
-              <path d="M7.5 2V13M2 7.5H13" stroke="#99AAC9" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="spec-card__title">{{ card.title }}</h3>
-          <p class="spec-card__count"><b>{{ card.professions }}</b> профессий</p>
-          <img class="spec-card__image" :src="card.image" :alt="card.title">
-          <span class="spec-card__more">
-            <span class="spec-card__icon">
-              <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
-                <path d="M2 12L12 2M12 2H4.5M12 2V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </span>
-            Подробнее
-          </span>
-        </NuxtLink>
+        <CourseCard
+          v-for="(course, index) in courses"
+          :key="course.documentId || course.id"
+          :course="course"
+          :index="index"
+          :to="courseUrl(directionSlug, course.slug)"
+        />
       </div>
 
       <div class="direction-specs__more">
@@ -45,41 +27,53 @@
 </template>
 
 <script setup>
-import tm1 from '~/assets/images/team/tm1.jpg'
-import tm2 from '~/assets/images/team/tm2.jpg'
-import tm3 from '~/assets/images/team/tm3.jpg'
-import tm4 from '~/assets/images/team/tm4.jpg'
-import tm5 from '~/assets/images/team/tm5.jpg'
-
-const photos = [tm1, tm2, tm3, tm4, tm5]
+import CourseCard from '~/components/cards/CourseCard.vue'
 
 const props = defineProps({
+  sectionTitle: {
+    type: String,
+    default: '',
+  },
+  totalCourses: {
+    type: Number,
+  },
   catalogTo: {
     type: String,
     default: '',
   },
+  directionSlug: {
+    type: String,
+    default: '',
+  },
+  courseIds: {
+    type: Array,
+    default: () => [],
+  },
 })
 
-const { catalogUrl } = useCity()
+const config = useRuntimeConfig()
+const { catalogUrl, courseUrl } = useCity()
 
 const resolvedCatalogTo = computed(
-  () => props.catalogTo || catalogUrl('rabochie-professii'),
+  () => props.catalogTo || catalogUrl(props.directionSlug),
 )
 
-const cards = computed(() => [
-  { num: '01', title: 'Бурильщик', professions: 15, isNew: true, slug: 'burilshchik' },
-  { num: '02', title: 'Каменщик', professions: 12, isNew: true, slug: 'kamenshchik' },
-  { num: '03', title: 'Слесарь', professions: 12, isNew: true, slug: 'slesar' },
-  { num: '04', title: 'Сварщик', professions: 12, isNew: true, slug: 'svarshchik' },
-  { num: '05', title: 'Маляр', professions: 12, isNew: true, slug: 'malyar' },
-  { num: '01', title: 'Сварщик', professions: 12, isNew: true, slug: 'svarshchik-2' },
-  { num: '02', title: 'Маляр', professions: 12, isNew: true, slug: 'malyar-2' },
-  { num: '03', title: 'Каменщик', professions: 12, isNew: true, slug: 'kamenshchik-2' },
-  { num: '04', title: 'Слесарь', professions: 12, isNew: true, slug: 'slesar-2' },
-  { num: '05', title: 'Бурильщик', professions: 15, isNew: true, slug: 'burilshchik-2' },
-].map((card, index) => ({
-  ...card,
-  to: `${resolvedCatalogTo.value}/${card.slug}`,
-  image: photos[index % photos.length],
-})))
+const courseQuery = { populate: 'preview' }
+props.courseIds.forEach((id, index) => {
+  courseQuery[`filters[documentId][$in][${index}]`] = id
+})
+
+const { data: coursesResponse } = await useFetch(`${config.public.strapiUrl}/api/courses`, {
+  key: `popular-courses-${props.courseIds.join('-')}`,
+  immediate: props.courseIds.length > 0,
+  query: courseQuery,
+})
+
+const courses = computed(() => {
+  const list = coursesResponse.value?.data || []
+  const order = new Map(props.courseIds.map((id, index) => [id, index]))
+  return [...list].sort(
+    (a, b) => (order.get(a.documentId) ?? 0) - (order.get(b.documentId) ?? 0),
+  )
+})
 </script>

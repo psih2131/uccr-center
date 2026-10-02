@@ -24,28 +24,19 @@
         :aria-selected="item.slug === selectedSlug"
         @click="selectCity(item.slug)"
       >
-        {{ item.name }}
+        {{ item.title }}
       </button>
     </div>
   </div>
 </template>
 
 <script setup>
-const cities = [
-  { slug: 'abakan', name: 'Абакан' },
-  { slug: 'moskva', name: 'Москва' },
-  { slug: 'spb', name: 'Санкт-Петербург' },
-  { slug: 'novosibirsk', name: 'Новосибирск' },
-  { slug: 'ekaterinburg', name: 'Екатеринбург' },
-  { slug: 'kazan', name: 'Казань' },
-  { slug: 'krasnodar', name: 'Краснодар' },
-  { slug: 'samara', name: 'Самара' },
-]
+const { data: cities } = await useCities()
 
-const options = [
-  { slug: null, name: 'Выберите город' },
-  ...cities,
-]
+const options = computed(() => [
+  { slug: null, title: 'Выберите город' },
+  ...(cities.value || []),
+])
 
 const route = useRoute()
 const { citySlug, pathForCity } = useCity()
@@ -57,7 +48,7 @@ const selectedSlug = computed(() => citySlug.value || null)
 
 const currentLabel = computed(() => {
   if (!selectedSlug.value) return 'Выберите город'
-  return cities.find((item) => item.slug === selectedSlug.value)?.name || 'Выберите город'
+  return cities.value?.find((item) => item.slug === selectedSlug.value)?.title || 'Выберите город'
 })
 
 function toggle() {

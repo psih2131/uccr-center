@@ -1,7 +1,7 @@
 <template>
-  <section class="course-audience">
+  <section v-if="section?.section_title" class="course-audience">
     <div class="container">
-      <h2 class="section-title course-audience__title">Для кого эта программа?</h2>
+      <h2 class="section-title course-audience__title">{{ section.section_title }}</h2>
 
       <div class="course-audience__slider-wrap">
         <button
@@ -17,7 +17,7 @@
 
         <ClientOnly>
           <swiper-container ref="sliderRef" class="course-audience__slider" :init="false">
-            <swiper-slide v-for="(item, index) in items" :key="`${item.title}-${index}`">
+            <swiper-slide v-for="(item, index) in items" :key="item.id || `${item.title}-${index}`">
               <article class="course-audience__card">
                 <div class="course-audience__photo">
                   <img :src="item.photo" :alt="item.title">
@@ -45,29 +45,33 @@
 </template>
 
 <script setup>
-import photo1 from '~/assets/images/for-who/x1.jpg'
-import photo2 from '~/assets/images/for-who/x2.jpg'
-import photo3 from '~/assets/images/for-who/x3.jpg'
-import photo4 from '~/assets/images/for-who/x4.jpg'
-import photo5 from '~/assets/images/for-who/x5.png'
-import photo6 from '~/assets/images/for-who/x6.jpg'
+const props = defineProps({
+  section: {
+    type: Object,
+    default: null,
+  },
+})
 
+const config = useRuntimeConfig()
 const sliderRef = ref(null)
+
+function mediaUrl(file) {
+  if (!file?.url) return ''
+  if (file.url.startsWith('http')) return file.url
+  return `${config.public.strapiUrl}${file.url}`
+}
+
+const items = computed(() =>
+  (props.section?.for_who_items || []).map((item) => ({
+    id: item.id,
+    title: item.title || '',
+    photo: mediaUrl(item.image),
+  })),
+)
 
 const swiper = useSwiper(sliderRef, {
   slidesPerView: 6,
   spaceBetween: 10,
   loop: true,
 })
-
-const items = [
-  { title: 'Пилотам частных самолетов', photo: photo1 },
-  { title: 'Техникам аэропортов', photo: photo2 },
-  { title: 'Инженерам АТБ', photo: photo3 },
-  { title: 'Слушателям без опыта', photo: photo4 },
-  { title: 'Специалистам по обслуживанию', photo: photo5 },
-  { title: 'Механикам 2 разряда', photo: photo6 },
-  { title: 'Кандидатам на повышение', photo: photo1 },
-  { title: 'Сотрудникам авиакомпаний', photo: photo3 },
-]
 </script>

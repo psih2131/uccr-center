@@ -6,18 +6,12 @@
           <p class="course-hero__crumbs">
             <NuxtLink to="/">Главная</NuxtLink>
             <span> - </span>
-            <span class="course-hero__crumbs-current">{{ course.shortTitle }}</span>
+            <span class="course-hero__crumbs-current">{{ course.title }}</span>
           </p>
 
           <h1 class="course-hero__title">
-            <span class="course-hero__title-row">Обучение Авиационный механик</span>
             <span class="course-hero__title-row">
-              по
-              <span class="course-hero__title-decor" aria-hidden="true"></span>
-              криогенным системам 2
-            </span>
-            <span class="course-hero__title-row">
-              разряда в Москве
+              <span v-html="formatTitle(course.H1_title || course.title)"></span>
               <span class="course-hero__title-plus" aria-hidden="true">
                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                   <rect x="11.6387" width="2.32143" height="25" rx="1.16071" fill="#D92139"/>
@@ -67,27 +61,27 @@
         </article>
 
         <article class="course-hero__photo">
-          <img :src="heroImage" alt="">
+          <img :src="previewUrl" :alt="course.page_preview?.alternativeText || course.title || ''">
           <div class="course-hero__stats">
             <div class="course-hero__stat course-hero__stat--format">
               <span class="course-hero__stat-label">
                 <img src="@/assets/icons/program-book.svg" alt="" width="18" height="18">
                 Формат обучения
               </span>
-              <b>Дистанционно</b>
+              <b>{{ course.form_learning || 'Дистанционно' }}</b>
             </div>
             <div class="course-hero__stat">
               <span class="course-hero__stat-label">
                 <img src="@/assets/icons/program-clock.svg" alt="" width="18" height="18">
                 Срок обучения
               </span>
-              <b>100 часов</b>
+              <b>{{ durationLabel }}</b>
             </div>
-            <div class="course-hero__stat course-hero__stat--price">
-              <strong>7600р</strong>
-              <span class="course-hero__stat-old">
-                <s>4200р</s>
-                <em>-800р</em>
+            <div v-if="course.default_price != null" class="course-hero__stat course-hero__stat--price">
+              <strong>{{ course.default_price }}р</strong>
+              <span v-if="hasOldPrice" class="course-hero__stat-old">
+                <s>{{ course.old_price_rub }}р</s>
+                <em>-{{ priceDiff }}р</em>
               </span>
             </div>
           </div>
@@ -100,17 +94,18 @@
 <script setup>
 import heroImage from '~/assets/images/course/course-hero.png'
 
-defineProps({
+const props = defineProps({
   course: {
     type: Object,
     required: true,
   },
   direction: {
     type: Object,
-    required: true,
+    default: null,
   },
 })
 
+const config = useRuntimeConfig()
 const store = useCounterStore()
 
 const benefits = [
@@ -119,6 +114,36 @@ const benefits = [
   'Все сведения вносим в ФИС ФРДО',
   'Рассрочка 0% на все курсы',
 ]
+
+function formatTitle(title) {
+  return String(title || '').replaceAll(
+    '{{}}',
+    '<span class="course-hero__title-decor" aria-hidden="true"></span>',
+  )
+}
+
+function mediaUrl(file) {
+  if (!file?.url) return ''
+  if (file.url.startsWith('http')) return file.url
+  return `${config.public.strapiUrl}${file.url}`
+}
+
+const previewUrl = computed(() => mediaUrl(props.course.page_preview) || heroImage)
+
+const durationLabel = computed(() => {
+  const time = props.course.time
+  if (!time) return '100 часов'
+  return /час/i.test(String(time)) ? time : `${time} часов`
+})
+
+const hasOldPrice = computed(() => {
+  return props.course.old_price_rub != null && props.course.default_price != null
+})
+
+const priceDiff = computed(() => {
+  if (!hasOldPrice.value) return 0
+  return Math.abs(props.course.old_price_rub - props.course.default_price)
+})
 
 const sendLead = () => {
   store.openModal('success')

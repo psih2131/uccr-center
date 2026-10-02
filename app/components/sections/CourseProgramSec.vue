@@ -1,5 +1,5 @@
 <template>
-  <section class="course-program">
+  <section v-if="programItems.length" class="course-program">
     <div class="container">
       <h2 class="section-title course-program__title">Что вас ждет на курсе?</h2>
 
@@ -48,9 +48,9 @@
             <h3 class="course-block__title">{{ slot.title }}</h3>
             <p class="course-block__text">{{ slot.text }}</p>
 
-            <p class="course-block__time">
+            <p v-if="slot.time" class="course-block__time">
               <img src="@/assets/icons/program-clock.svg" alt="" width="20" height="20">
-              20-30 часов
+              {{ slot.time }}
             </p>
           </article>
 
@@ -76,54 +76,68 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  items: {
+    type: Array,
+    default: () => [],
+  },
+})
+
 const store = useCounterStore()
 
-const items = [
-  {
-    num: '01',
-    accent: true,
-    title: 'Блок 1. Основы химии',
-    text: 'Основные понятия и законы химии. Неорганические вещества и растворы. Электролитическая диссоциация, электролиз и гидролиз.',
-  },
-  {
-    num: '02',
-    title: 'Блок 2. Охрана труда и электробезопасность',
-    text: 'Требования охраны труда. Основы трудового законодательства. Организация безопасного выполнения работ. Средства защиты. Пожарная безопасность. Оказание первой помощи. Электробезопасность.',
-  },
-  {
-    num: '03',
-    title: 'Блок 3. Материаловедение',
-    text: 'Металлы и сплавы. Коррозия и способы защиты материалов.',
-  },
-  {
-    num: '04',
-    title: 'Блок 4. Процессы и оборудование электролиза',
-    text: 'Основы гидростатики и гидродинамики. Гидравлические машины. Основы электротехники. Устройство и виды электролизеров.',
-  },
-  {
-    num: '05',
-    title: 'Блок 5. Практика на предприятии',
-    text: 'Эксплуатация и техническое обслуживание электролизных установок. Правила устройства электроустановок. Эксплуатация оборудования в соответствии с технологическими инструкциями.',
-  },
-]
+const programItems = computed(() =>
+  (props.items || []).map((item, index) => ({
+    num: String(index + 1).padStart(2, '0'),
+    accent: index === 0,
+    title: item.title || '',
+    text: item.text || '',
+    time: item.time || '',
+  })),
+)
 
 const cta = { isCta: true }
 
-// Макет: row1 = 01 | empty | 02 | 03 ; row2 = empty | 04 | 05 | cta
-const emptySlots = new Set([1, 4])
+// 5:
+// [01] [  ] [02] [03]
+// [  ] [04] [05] [CTA]
+// 6:
+// [01] [  ] [02] [03]
+// [04] [05] [06] [CTA]
+// 7+:
+// [01] [02] [03] [04]
+// [05] [06] [07] [CTA]
+// 8+ — обычным рядом после сетки
+const SLOTS_UP_TO_5 = [0, 2, 3, 5, 6]
+const SLOTS_FROM_6 = [0, 2, 3, 4, 5, 6]
+const SLOTS_FROM_7 = [0, 1, 2, 3, 4, 5, 6]
+const CTA_SLOT = 7
 
-const slots = (() => {
-  const list = [...items, cta]
-  const result = Array.from({ length: 8 }, () => null)
-  let i = 0
+const slots = computed(() => {
+  const cards = programItems.value
+  const count = cards.length
+  const grid = Array.from({ length: 8 }, () => null)
+  grid[CTA_SLOT] = cta
 
-  for (let s = 0; s < 8 && i < list.length; s++) {
-    if (emptySlots.has(s)) continue
-    result[s] = list[i++]
+  if (count <= 5) {
+    cards.forEach((card, i) => {
+      grid[SLOTS_UP_TO_5[i]] = card
+    })
+    return grid
   }
 
-  return result
-})()
+  if (count === 6) {
+    cards.forEach((card, i) => {
+      grid[SLOTS_FROM_6[i]] = card
+    })
+    return grid
+  }
+
+  cards.slice(0, 7).forEach((card, i) => {
+    grid[SLOTS_FROM_7[i]] = card
+  })
+
+  return [...grid, ...cards.slice(7)]
+})
 
 const openConsult = () => {
   store.openModal('consult')

@@ -1,23 +1,20 @@
 <template>
-  <section class="course-docs">
+  <section v-if="docs.length" class="course-docs">
     <div class="container">
       <h2 class="section-title course-docs__title">Какие документы нужны?</h2>
 
       <div class="course-docs__grid">
-        <article v-for="item in docs" :key="item.title" class="course-docs__card">
+        <article v-for="item in docs" :key="item.id || item.title" class="course-docs__card">
           <span class="course-docs__line course-docs__line--v1" aria-hidden="true"></span>
           <span class="course-docs__line course-docs__line--v2" aria-hidden="true"></span>
 
-          <span class="course-docs__icon">
+          <span v-if="item.icon" class="course-docs__icon">
             <img :src="item.icon" alt="" width="60" height="60">
           </span>
 
           <h3>{{ item.title }}</h3>
 
-          <ul v-if="item.lines">
-            <li v-for="line in item.lines" :key="line">{{ line }}</li>
-          </ul>
-          <p v-else class="course-docs__text">{{ item.text }}</p>
+          <div v-if="item.text" class="course-docs__text" v-html="item.text"></div>
         </article>
       </div>
     </div>
@@ -25,31 +22,27 @@
 </template>
 
 <script setup>
-import icon1 from '~/assets/images/icons/doc1.png'
-import icon2 from '~/assets/images/icons/doc2.png'
-import icon3 from '~/assets/images/icons/doc3.png'
-import icon4 from '~/assets/images/icons/doc4.png'
+const config = useRuntimeConfig()
 
-const docs = [
-  {
-    title: 'Заявка на обучение',
-    icon: icon1,
-    lines: ['ФИО', 'Специальность', 'Разряд'],
+const { data: docsSection } = await useFetch(`${config.public.strapiUrl}/api/course-docs-list-sec`, {
+  key: 'course-docs-list-sec',
+  query: {
+    'populate[docs_items][populate][icon]': true,
   },
-  {
-    title: 'Паспорт',
-    icon: icon2,
-    text: 'Паспортные данные для заключения договора (фото / скан / текст)',
-  },
-  {
-    title: 'Фото на светлом фоне',
-    icon: icon3,
-    text: 'Для оформления удостоверения',
-  },
-  {
-    title: 'Адрес',
-    icon: icon4,
-    text: 'Для доставки оригиналов документов',
-  },
-]
+})
+
+function mediaUrl(file) {
+  if (!file?.url) return ''
+  if (file.url.startsWith('http')) return file.url
+  return `${config.public.strapiUrl}${file.url}`
+}
+
+const docs = computed(() =>
+  (docsSection.value?.data?.docs_items || []).map((item) => ({
+    id: item.id,
+    title: item.title || '',
+    text: item.text || '',
+    icon: mediaUrl(item.icon),
+  })),
+)
 </script>

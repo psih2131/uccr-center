@@ -44,8 +44,7 @@
 }
 
 .direction-hero__title-row {
-	display: flex;
-	align-items: center;
+display: inline-block;
 }
 
 .direction-hero__title-decor {
@@ -54,15 +53,16 @@
 	height: 52px;
 	margin: 0 16px;
 	border-radius: 31px;
+	margin-bottom: -5px;
 	background: url('@/assets/images/licenses/licenses-title-pill.png') center / cover no-repeat;
 }
 
 .direction-hero__title-plus {
-	display: inline-flex;
+	display: inline-block;
 	margin-left: 16px;
 
 	svg {
-		display: block;
+		display: inline-block;
 	}
 }
 
