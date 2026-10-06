@@ -237,3 +237,213 @@
 .license-doc__body .btn-pill {
 	width: 250px;
 }
+
+
+
+@media only screen and (max-width: 1460px) {
+	.licenses-page-sec__title{
+		font-size: 45px;
+		line-height: 1.2;
+	}
+	.licenses-page-sec__title-decor{
+		width: 100px;
+		height: 45px;
+	}
+	.licenses-page-sec{
+		padding-top: 60px;
+		padding-bottom: 100px;
+	}
+	.licenses-page-sec__crumbs{
+		font-size: 18px;
+	}
+	.licenses-page-sec__lead{
+		font-size: 18px;
+		width: 550px;
+	}
+	.licenses-page-sec__intro{
+		margin-bottom: 100px;
+	}
+	.license-doc__title{
+		font-size: 28px;
+	}
+	.license-doc__text{
+		font-size: 18px;
+	}
+	.license-doc__body{
+		width: calc(100% - 303px);
+		padding-right: 50px;
+		margin-left: 0;
+		padding-left: 35px;
+	}
+	.license-doc__text p + p{
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (max-width: 1240px) {
+	.licenses-page-sec{
+		padding-top: 50px;
+	}
+	.licenses-page-sec__intro{
+		flex-wrap: wrap;
+		gap: 0;
+	}
+	.licenses-page-sec__title{
+		font-size: 40px;
+	}
+	.licenses-page-sec__title-decor{
+		height: 40px;
+		width: 80px;
+	}
+	.licenses-page-sec__lead{
+		width: calc(45% - 20px);
+		font-size: 16px;
+		margin-top: 48px;
+	}
+	.licenses-page-sec__intro-main{
+		width: calc(55% - 20px);
+	}
+	.licenses-page-sec__intro{
+		margin-bottom: 60px;
+	}
+	.license-doc{
+		padding: 25px;
+		min-height: 0;
+	}
+	.license-doc__preview{
+		width: 250px;
+		height: 250px;padding: 30px;
+	}
+	.license-doc__image{
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: 100%;
+	}
+	.license-doc__body{
+		padding-top: 0;
+		width: calc(100% - 250px);
+	}
+	.license-doc__title{
+		font-size: 25px;
+		margin-bottom: 20px;
+	}
+	.license-doc__text{
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width: 940px) {
+	.licenses-page-sec__intro-main{
+		width: 100%;
+	}
+	.licenses-page-sec__title{
+		padding-right: 100px;
+	}
+	.licenses-page-sec__lead{
+		margin-top: 30px;
+		width: 100%;
+		font-size: 18px;
+	}
+	.license-doc__preview{
+		width: 200px;
+		height: 200px;
+		padding: 20px;
+	}
+	.license-doc__line--4{
+		right: 5px;
+	}
+	.license-doc__line--3{
+		right: 10px;
+	}
+	.license-doc__line--2{
+		right: 20px;
+	}
+	.license-doc__line--1{
+		right: 30px;
+	}
+	.license-doc__body{
+		width: calc(100% - 200px);
+		padding-right: 30px;
+		padding-left: 25px;
+	}
+
+}
+
+@media only screen and (max-width: 760px) {
+	.licenses-page-sec{
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+	.licenses-page-sec__crumbs{
+		font-size: 16px;
+		margin-bottom: 15px;
+	}
+	.licenses-page-sec__title{
+		padding-right: 0;
+		font-size: 32px;
+	}
+	.licenses-page-sec__title-decor{
+		height: 28px;
+		width: 50px;
+		margin: 0 10px ;
+		margin-top: 0;
+	}
+	.licenses-page-sec__title-plus{
+		margin-left: 10px;
+		svg{
+			width: 20px;
+			height: auto;
+		}
+	}
+	.licenses-page-sec__intro{
+		margin-bottom: 40px;
+	}
+	.license-doc{
+		flex-wrap: wrap;
+		padding: 20px;
+		justify-content: center;
+		align-items: center;
+	}
+	.license-doc__preview{
+		width: 120px;
+		height: 120px;
+		padding: 10px;
+	}
+	.license-doc__body{
+		width: calc(100% - 120px);
+		padding: 0 0 0 15px;
+
+		.btn-pill{
+			font-size: 14px;
+			width: auto;
+			padding-right: 40px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 15px;
+			height: auto;
+		}
+		.btn-pill__icon{
+			width: 28px;
+			height: 28px;
+			svg{
+				width: 15px;
+				height: auto;
+			}
+		}
+	}
+	.license-doc__line{
+		display: none;
+	}
+	.license-doc__title{
+		font-size: 18px;
+		line-height: 1.2;
+	}
+	.license-doc__text{
+		display: none;
+	}
+
+	.licenses-page-sec__list{
+		gap: 20px;
+	}
+}

@@ -3,7 +3,9 @@
     <div class="container">
       <div class="programs__head">
         <h2 class="section-title programs__title">Популярные програмы</h2>
-        <ButtonsBtnPill title="Смотреть все програмы" type="link" :to="catalogUrl('rabochie-professii')" />
+        <div class="programs__head-action">
+          <ButtonsBtnPill title="Смотреть все програмы" type="link" :to="catalogUrl('rabochie-professii')" />
+        </div>
       </div>
 
       <div class="programs__slider-wrap">
@@ -96,6 +98,10 @@
           @click="goTo(index)"
         ></button>
       </div>
+
+      <div class="programs__foot">
+        <ButtonsBtnPill title="Смотреть все програмы" type="link" :to="catalogUrl('rabochie-professii')" />
+      </div>
     </div>
   </section>
 </template>
@@ -110,7 +116,7 @@ const props = defineProps({
 
 const sliderRef = ref(null)
 const activeIndex = ref(0)
-const slidesPerView = 3
+const slidesPerView = ref(3)
 const colors = ['#5DA0BA', '#66AF5E', '#966DC3']
 const { catalogUrl, courseUrl } = useCity()
 
@@ -138,12 +144,32 @@ const items = computed(() =>
   }),
 )
 
-const showControls = computed(() => items.value.length > slidesPerView)
+function syncSlidesPerView() {
+  const width = window.innerWidth
+  if (width <= 760) slidesPerView.value = 1
+  else if (width <= 1240) slidesPerView.value = 2
+  else slidesPerView.value = 3
+}
+
+onMounted(() => {
+  syncSlidesPerView()
+  window.addEventListener('resize', syncSlidesPerView)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', syncSlidesPerView)
+})
+
+const showControls = computed(() => items.value.length > slidesPerView.value)
 
 const swiper = useSwiper(sliderRef, {
-  slidesPerView,
+  slidesPerView: 1,
   spaceBetween: 23,
-  loop: items.value.length > slidesPerView,
+  breakpoints: {
+    761: { slidesPerView: 2 },
+    1241: { slidesPerView: 3 },
+  },
+  loop: items.value.length > 1,
   on: {
     slideChange(instance) {
       activeIndex.value = instance.realIndex

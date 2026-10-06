@@ -32,13 +32,15 @@
             </div>
 
             <div class="home-form__bottom">
-              <span class="home-form__check" aria-hidden="true"></span>
-              <p class="home-form__policy">
-                Отправляя форму, я соглашаюсь с
-                <NuxtLink to="/docs/polzovatelskoe-soglashenie">Пользовательским соглашением</NuxtLink>
-                и даю согласие на обработку персональных данных в соответствии с
-                <NuxtLink to="/docs/politika-konfidencialnosti">Политикой конфиденциальности</NuxtLink>
-              </p>
+              <div class="home-form__consent">
+                <span class="home-form__check" aria-hidden="true"></span>
+                <p class="home-form__policy">
+                  Отправляя форму, я соглашаюсь с
+                  <NuxtLink to="/docs/polzovatelskoe-soglashenie">Пользовательским соглашением</NuxtLink>
+                  и даю согласие на обработку персональных данных в соответствии с
+                  <NuxtLink to="/docs/politika-konfidencialnosti">Политикой конфиденциальности</NuxtLink>
+                </p>
+              </div>
               <div v-if="socials.length" class="home-form__socials">
                 <a
                   v-for="(social, index) in socials"

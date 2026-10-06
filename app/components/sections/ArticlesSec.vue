@@ -3,11 +3,17 @@
     <div class="container">
       <div class="articles__head">
         <h2 class="section-title articles__title">{{ title }}</h2>
-        <ButtonsBtnPill v-if="showLink" title="Смотреть все статьи" type="link" to="/blog" />
+        <div v-if="showLink" class="articles__head-action">
+          <ButtonsBtnPill title="Смотреть все статьи" type="link" to="/blog" />
+        </div>
       </div>
 
       <div class="articles__grid">
         <ArticleCard v-for="item in items" :key="item.slug" :item="item" />
+      </div>
+
+      <div v-if="showLink" class="articles__foot">
+        <ButtonsBtnPill title="Смотреть все статьи" type="link" to="/blog" />
       </div>
     </div>
   </section>

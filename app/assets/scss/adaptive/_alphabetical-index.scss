@@ -1,0 +1,38 @@
+// Adaptive: alphabetical index modal
+
+@media only screen and (max-width: 1460px) {
+}
+
+@media only screen and (max-width: 1240px) {
+}
+
+@media only screen and (max-width: 1100px) {
+	.alpha-index-layer__panel {
+		padding: 22px 18px 24px;
+		max-height: calc(100vh - 120px);
+	}
+
+	.alpha-index-group__list {
+		column-gap: 24px;
+	}
+}
+
+@media only screen and (max-width: 940px) {
+}
+
+@media only screen and (max-width: 760px) {
+	.alpha-index__btn {
+		font-size: 16px;
+		height: 40px;
+	}
+
+	.alpha-index-group__list {
+		grid-template-columns: 1fr;
+	}
+
+	.alpha-index-layer__tab {
+		font-size: 14px;
+		height: 38px;
+		padding: 0 12px;
+	}
+}

@@ -33,10 +33,28 @@
 <script setup>
 const { data: cities } = await useCities()
 
-const options = computed(() => [
-  { slug: null, title: 'Выберите город' },
-  ...(cities.value || []),
-])
+const PRIORITY_CITIES = [
+  'Москва',
+  'Санкт-Петербург',
+  'Казань',
+  'Ростов-на-Дону',
+  'Екатеринбург',
+]
+
+const options = computed(() => {
+  const list = cities.value || []
+  const priorityTitles = new Set(PRIORITY_CITIES)
+  const priority = PRIORITY_CITIES
+    .map((title) => list.find((item) => item.title === title))
+    .filter(Boolean)
+  const rest = list.filter((item) => !priorityTitles.has(item.title))
+
+  return [
+    { slug: null, title: 'Выберите город' },
+    ...priority,
+    ...rest,
+  ]
+})
 
 const route = useRoute()
 const { citySlug, pathForCity } = useCity()

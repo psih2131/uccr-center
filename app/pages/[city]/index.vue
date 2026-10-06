@@ -1,5 +1,6 @@
 <template>
-  <main class="home-page">
+  <DirectionPage v-if="!city && directionSlug" :slug="directionSlug" />
+  <main v-else class="home-page">
     <SectionsHomeHero :data="home" />
     <SectionsDirectionsSec />
     <SectionsAboutSec />
@@ -16,25 +17,19 @@
 </template>
 
 <script setup>
-import { isKnownCitySlug } from '~/utils/fetchCities'
-
-definePageMeta({
-  validate: (route) => isKnownCitySlug(String(route.params.city || '')),
-})
-
 const route = useRoute()
 const config = useRuntimeConfig()
 const { data: cities } = await useCities()
-const city = computed(() =>
-  (cities.value || []).find((item) => item.slug === route.params.city) || null,
-)
 
-if (!city.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Город не найден' })
-}
+const directionSlug = computed(() => String(route.params.city || ''))
+const city = computed(() =>
+  (cities.value || []).find((item) => item.slug === directionSlug.value) || null,
+)
 
 const { data: homeResponse } = await useFetch(`${config.public.strapiUrl}/api/home`, {
   key: 'home-page',
+  immediate: Boolean(city.value),
+  watch: [city],
   query: {
     'populate[hero_sec][populate][box_4_socials]': true,
     'populate[hero_sec][populate][box_1_image]': true,
@@ -51,6 +46,6 @@ const { data: homeResponse } = await useFetch(`${config.public.strapiUrl}/api/ho
 const home = computed(() => homeResponse.value?.data || null)
 
 useSeoMeta({
-  title: () => `УЦЦР — ${city.value?.title}`,
+  title: () => (city.value ? `УЦЦР — ${city.value.title}` : undefined),
 })
 </script>

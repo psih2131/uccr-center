@@ -49,7 +49,7 @@
             <li v-for="item in directions" :key="item.slug">
               <NuxtLink
                 :to="directionUrl(item.slug)"
-                :class="{ 'footer__link--active': $route.params.id === item.slug }"
+                :class="{ 'footer__link--active': isDirectionPath(item.slug) }"
               >
                 {{ item.title }}
               </NuxtLink>
@@ -103,7 +103,7 @@ defineProps({
 })
 
 const config = useRuntimeConfig()
-const { directionUrl } = useCity()
+const { directionUrl, isDirectionPath } = useCity()
 
 const { data: footerResponse } = await useFetch(`${config.public.strapiUrl}/api/footer-component`, {
   key: 'footer-component',

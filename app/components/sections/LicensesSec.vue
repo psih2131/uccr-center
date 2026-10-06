@@ -3,7 +3,9 @@
     <div class="container">
       <div class="licenses__head">
         <h2 class="section-title licenses__title">Лицензии компании</h2>
-        <ButtonsBtnPill title="Смотреть все лицензии" type="link" to="/licenzii" />
+        <div class="licenses__head-action">
+          <ButtonsBtnPill title="Смотреть все лицензии" type="link" to="/licenzii" />
+        </div>
       </div>
 
       <div class="licenses__slider-wrap">
@@ -66,6 +68,10 @@
           @click="goTo(index)"
         ></button>
       </div>
+
+      <div class="licenses__foot">
+        <ButtonsBtnPill title="Смотреть все лицензии" type="link" to="/licenzii" />
+      </div>
     </div>
   </section>
 </template>
@@ -82,7 +88,25 @@ const config = useRuntimeConfig()
 
 const sliderRef = ref(null)
 const activeIndex = ref(0)
-const slidesPerView = 5
+const slidesPerView = ref(5)
+
+function syncSlidesPerView() {
+  const width = window.innerWidth
+  if (width <= 760) slidesPerView.value = 2
+  else if (width <= 940) slidesPerView.value = 2
+  else if (width <= 1240) slidesPerView.value = 3
+  else if (width <= 1460) slidesPerView.value = 4
+  else slidesPerView.value = 5
+}
+
+onMounted(() => {
+  syncSlidesPerView()
+  window.addEventListener('resize', syncSlidesPerView)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', syncSlidesPerView)
+})
 
 const items = computed(() =>
   (props.items || [])
@@ -94,12 +118,18 @@ const items = computed(() =>
     .filter((item) => item.image),
 )
 
-const showControls = computed(() => items.value.length > slidesPerView)
+const showControls = computed(() => items.value.length > slidesPerView.value)
 
 const swiper = useSwiper(sliderRef, {
-  slidesPerView,
+  slidesPerView: 2,
   spaceBetween: 20,
-  loop: items.value.length > slidesPerView,
+  breakpoints: {
+    761: { slidesPerView: 2 },
+    941: { slidesPerView: 3 },
+    1241: { slidesPerView: 4 },
+    1461: { slidesPerView: 5 },
+  },
+  loop: items.value.length > slidesPerView.value,
   on: {
     slideChange(instance) {
       activeIndex.value = instance.realIndex

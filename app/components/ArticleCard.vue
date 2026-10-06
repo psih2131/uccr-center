@@ -16,7 +16,7 @@
         v-for="(bar, index) in bars"
         :key="index"
         class="article-card__bar"
-        :style="{ left: `${bar.left}px`, width: `${bar.width}px` }"
+        :style="{ left: bar.left, width: `${bar.width}px` }"
       ></span>
     </div>
   </article>
@@ -31,14 +31,14 @@ defineProps({
 })
 
 const bars = [
-  { left: 362, width: 1 },
-  { left: 366, width: 1 },
-  { left: 370, width: 1 },
-  { left: 374, width: 1 },
-  { left: 385, width: 2 },
-  { left: 397, width: 2 },
-  { left: 409, width: 4 },
-  { left: 427, width: 4 },
-  { left: 445, width: 4 },
+  { left: '77.68%', width: 1 },
+  { left: '78.54%', width: 1 },
+  { left: '79.4%', width: 1 },
+  { left: '80.26%', width: 1 },
+  { left: '82.62%', width: 2 },
+  { left: '85.19%', width: 2 },
+  { left: '87.77%', width: 4 },
+  { left: '91.63%', width: 4 },
+  { left: '95.49%', width: 4 },
 ]
 </script>

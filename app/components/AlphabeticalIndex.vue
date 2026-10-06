@@ -9,6 +9,7 @@
       class="alpha-index__btn"
       :aria-expanded="isOpen"
       aria-haspopup="dialog"
+      @click="toggle"
       @mouseenter="onEnter"
       @mouseleave="onLeave"
       @keydown.escape="close"
@@ -374,10 +375,14 @@ function close() {
 }
 
 function onEnter() {
-  open()
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    open()
+  }
 }
 
 function onLeave() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
+
   clearTimeout(closeTimer)
   closeTimer = setTimeout(() => {
     const overTrigger = triggerRef.value?.matches(':hover')
@@ -385,6 +390,18 @@ function onLeave() {
     if (overTrigger || overPanel) return
     close()
   }, 220)
+}
+
+function toggle() {
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+
+  if (canHover) {
+    open()
+    return
+  }
+
+  if (isOpen.value) close()
+  else open()
 }
 
 function updatePosition() {

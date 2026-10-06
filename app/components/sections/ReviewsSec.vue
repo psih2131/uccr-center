@@ -133,8 +133,16 @@ const items = computed(() => {
 })
 
 const showSection = computed(() => items.value.length > 0)
-const slidesPerView = 3
-const showControls = computed(() => items.value.length > slidesPerView)
+const slidesPerView = ref(3)
+
+function syncSlidesPerView() {
+  const width = window.innerWidth
+  if (width <= 760) slidesPerView.value = 1
+  else if (width <= 1460) slidesPerView.value = 2
+  else slidesPerView.value = 3
+}
+
+const showControls = computed(() => items.value.length > slidesPerView.value)
 
 const sliderRef = ref(null)
 const activeIndex = ref(0)
@@ -184,6 +192,7 @@ async function measureCardHeight() {
 }
 
 async function initSlider() {
+  syncSlidesPerView()
   const el = sliderRef.value
   if (!el || !items.value.length) return
 
@@ -196,9 +205,13 @@ async function initSlider() {
   }
 
   Object.assign(el, {
-    slidesPerView,
+    slidesPerView: 1,
     spaceBetween: 21,
-    loop: items.value.length > slidesPerView,
+    breakpoints: {
+      761: { slidesPerView: 2 },
+      1461: { slidesPerView: 3 },
+    },
+    loop: items.value.length > 1,
     on: {
       slideChange(instance) {
         activeIndex.value = instance.realIndex

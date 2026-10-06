@@ -3,7 +3,9 @@
     <div class="container">
       <div class="faq__head">
         <h2 class="section-title faq__title">Часто-задаваемые вопросы</h2>
-        <ButtonsBtnPill title="Задать свой вопрос" type="modal" @click="openConsult" />
+        <div class="faq__head-action">
+          <ButtonsBtnPill title="Задать свой вопрос" type="modal" @click="openConsult" />
+        </div>
       </div>
 
       <div class="faq__cols">
@@ -48,6 +50,10 @@
             </Collapse>
           </article>
         </div>
+      </div>
+
+      <div class="faq__foot">
+        <ButtonsBtnPill title="Задать свой вопрос" type="modal" @click="openConsult" />
       </div>
     </div>
   </section>

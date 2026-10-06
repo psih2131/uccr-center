@@ -97,8 +97,14 @@ function closeVideo() {
 }
 
 const swiper = useSwiper(sliderRef, {
-  slidesPerView: 5,
+  slidesPerView: 2,
   spaceBetween: 10,
+  breakpoints: {
+    761: { slidesPerView: 2 },
+    941: { slidesPerView: 3 },
+    1241: { slidesPerView: 4 },
+    1461: { slidesPerView: 5 },
+  },
   loop: true,
   on: {
     slideChange(instance) {

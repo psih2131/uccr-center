@@ -1,17 +1,22 @@
 import { RESERVED_PATH_SLUGS, getDefaultCity } from '~/data/cities'
 
 /**
- * Город из URL (/abakan/directions/...).
- * Если города нет — дефолтные ссылки без города: /directions/...
+ * Город из URL (/moskva/...).
+ * Если города нет — ссылки без города: /rabochie-professii/burilshhik
  */
 export function useCity() {
   const route = useRoute()
   const { data: cities } = useCities()
 
-  const citySlug = computed(() => {
-    const slug = route.params.city
-    if (typeof slug !== 'string' || RESERVED_PATH_SLUGS.includes(slug)) return null
+  function knownCitySlug(slug) {
+    if (typeof slug !== 'string' || !slug || RESERVED_PATH_SLUGS.includes(slug)) return null
     return (cities.value || []).some((item) => item.slug === slug) ? slug : null
+  }
+
+  const citySlug = computed(() => {
+    if (typeof route.params.city === 'string') return knownCitySlug(route.params.city)
+    const [first] = route.path.split('/').filter(Boolean)
+    return knownCitySlug(first)
   })
 
   const city = computed(() => {
@@ -32,7 +37,15 @@ export function useCity() {
   }
 
   function directionUrl(directionSlug) {
-    return cityUrl('directions', directionSlug)
+    return cityUrl(directionSlug)
+  }
+
+  function isDirectionPath(slug) {
+    if (!slug) return false
+    const parts = route.path.replace(/\/+$/, '').split('/').filter(Boolean)
+    if (knownCitySlug(parts[0])) parts.shift()
+    if (parts[0] === 'directions') parts.shift()
+    return parts[0] === slug
   }
 
   function catalogUrl(directionSlug) {
@@ -40,12 +53,12 @@ export function useCity() {
   }
 
   function courseUrl(directionSlug, courseSlug) {
-    return cityUrl('directions', directionSlug, 'catalog', courseSlug)
+    return cityUrl(directionSlug, courseSlug)
   }
 
   /**
    * Собирает URL той же страницы для другого города (или без города).
-   * Сначала парсит path (надёжнее params) — так не теряется /catalog/[course].
+   * Сначала парсит path (надёжнее params).
    */
   function pathForCity(nextCitySlug) {
     const path = route.path.replace(/\/+$/, '') || '/'
@@ -60,11 +73,6 @@ export function useCity() {
       rest = path.slice(`/${current}`.length) || '/'
     }
 
-    const courseMatch = rest.match(/^\/directions\/([^/]+)\/catalog\/([^/]+)$/)
-    if (courseMatch) {
-      return withCity(`/directions/${courseMatch[1]}/catalog/${courseMatch[2]}`)
-    }
-
     const catalogMatch = rest.match(/^\/directions\/([^/]+)\/catalog$/)
     if (catalogMatch) {
       return withCity(`/directions/${catalogMatch[1]}/catalog`)
@@ -72,7 +80,17 @@ export function useCity() {
 
     const directionMatch = rest.match(/^\/directions\/([^/]+)$/)
     if (directionMatch) {
-      return withCity(`/directions/${directionMatch[1]}`)
+      return withCity(`/${directionMatch[1]}`)
+    }
+
+    const courseMatch = rest.match(/^\/([^/]+)\/([^/]+)$/)
+    if (courseMatch && !RESERVED_PATH_SLUGS.includes(courseMatch[1])) {
+      return withCity(`/${courseMatch[1]}/${courseMatch[2]}`)
+    }
+
+    const bareMatch = rest.match(/^\/([^/]+)$/)
+    if (bareMatch && !RESERVED_PATH_SLUGS.includes(bareMatch[1])) {
+      return withCity(`/${bareMatch[1]}`)
     }
 
     if (rest === '/') {
@@ -98,6 +116,7 @@ export function useCity() {
     defaultCity: getDefaultCity(),
     cityUrl,
     directionUrl,
+    isDirectionPath,
     catalogUrl,
     courseUrl,
     pathForCity,
