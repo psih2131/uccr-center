@@ -40,6 +40,18 @@
           </svg>
         </button>
       </div>
+
+      <div v-if="items.length > 2" class="course-audience__dots">
+        <button
+          v-for="(item, index) in items"
+          :key="item.id || `${item.title}-${index}`"
+          class="course-audience__dot"
+          :class="{ 'course-audience__dot--active': activeIndex === index }"
+          type="button"
+          :aria-label="`Слайд ${index + 1}`"
+          @click="goTo(index)"
+        ></button>
+      </div>
     </div>
   </section>
 </template>
@@ -54,6 +66,7 @@ const props = defineProps({
 
 const config = useRuntimeConfig()
 const sliderRef = ref(null)
+const activeIndex = ref(0)
 
 function mediaUrl(file) {
   if (!file?.url) return ''
@@ -70,8 +83,31 @@ const items = computed(() =>
 )
 
 const swiper = useSwiper(sliderRef, {
-  slidesPerView: 6,
-  spaceBetween: 10,
-  loop: true,
+  slidesPerView: 2,
+  spaceBetween: 12,
+  breakpoints: {
+    761: { slidesPerView: 2, spaceBetween: 12 },
+    941: { slidesPerView: 3, spaceBetween: 10 },
+    1241: { slidesPerView: 4, spaceBetween: 10 },
+    1461: { slidesPerView: 6, spaceBetween: 10 },
+  },
+  loop: items.value.length > 2,
+  on: {
+    slideChange(instance) {
+      activeIndex.value = instance.realIndex
+    },
+  },
 })
+
+const getInstance = () => sliderRef.value?.swiper ?? sliderRef.value
+
+const goTo = (index) => {
+  const instance = getInstance()
+  if (!instance) return
+  if (typeof instance.slideToLoop === 'function') {
+    instance.slideToLoop(index)
+    return
+  }
+  instance.slideTo?.(index)
+}
 </script>

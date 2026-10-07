@@ -44,10 +44,15 @@
       <div class="container">
         <div class="blog-similar__head">
           <h2 class="section-title blog-similar__title">Похожие посты</h2>
-          <ButtonsBtnPill title="Смотреть все статьи" type="link" to="/blog" />
+          <div class="blog-similar__head-action">
+            <ButtonsBtnPill title="Смотреть все статьи" type="link" to="/blog" />
+          </div>
         </div>
         <div class="blog-similar__grid">
           <ArticleCard v-for="item in related" :key="item.slug" :item="item" />
+        </div>
+        <div class="blog-similar__foot">
+          <ButtonsBtnPill title="Смотреть все статьи" type="link" to="/blog" />
         </div>
       </div>
     </section>

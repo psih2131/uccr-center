@@ -5,7 +5,13 @@
 
       <template v-if="items.length">
         <div class="reviews__slider-wrap">
-          <button class="slider-nav reviews__nav reviews__nav--prev" type="button" aria-label="Назад" @click="slidePrev">
+          <button
+            v-if="showControls"
+            class="slider-nav reviews__nav reviews__nav--prev"
+            type="button"
+            aria-label="Назад"
+            @click="slidePrev"
+          >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289L19.7071 11.2929C19.8946 11.4804 20 11.7348 20 12C20 12.2652 19.8946 12.5196 19.7071 12.7071L13.7071 18.7071C13.3166 19.0976 12.6834 19.0976 12.2929 18.7071C11.9024 18.3166 11.9024 17.6834 12.2929 17.2929L16.5858 13L5 13C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11L16.5858 11L12.2929 6.70711C11.9024 6.31658 11.9024 5.68342 12.2929 5.29289Z" fill="#145771"/>
             </svg>
@@ -39,14 +45,20 @@
             </swiper-container>
           </ClientOnly>
 
-          <button class="slider-nav reviews__nav reviews__nav--next" type="button" aria-label="Вперёд" @click="slideNext">
+          <button
+            v-if="showControls"
+            class="slider-nav reviews__nav reviews__nav--next"
+            type="button"
+            aria-label="Вперёд"
+            @click="slideNext"
+          >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289L19.7071 11.2929C19.8946 11.4804 20 11.7348 20 12C20 12.2652 19.8946 12.5196 19.7071 12.7071L13.7071 18.7071C13.3166 19.0976 12.6834 19.0976 12.2929 18.7071C11.9024 18.3166 11.9024 17.6834 12.2929 17.2929L16.5858 13L5 13C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11L16.5858 11L12.2929 6.70711C11.9024 6.31658 11.9024 5.68342 12.2929 5.29289Z" fill="#145771"/>
             </svg>
           </button>
         </div>
 
-        <div class="reviews__dots">
+        <div v-if="showControls" class="reviews__dots">
           <button
             v-for="(item, index) in items"
             :key="item.id || index"
@@ -112,6 +124,17 @@ const items = computed(() =>
   })),
 )
 
+const slidesPerView = ref(3)
+
+function syncSlidesPerView() {
+  const width = window.innerWidth
+  if (width <= 760) slidesPerView.value = 1
+  else if (width <= 1460) slidesPerView.value = 2
+  else slidesPerView.value = 3
+}
+
+const showControls = computed(() => items.value.length > slidesPerView.value)
+
 const sliderRef = ref(null)
 const activeIndex = ref(0)
 const cardHeight = ref(null)
@@ -160,6 +183,7 @@ async function measureCardHeight() {
 }
 
 async function initSlider() {
+  syncSlidesPerView()
   const el = sliderRef.value
   if (!el || !items.value.length) return
 
@@ -172,9 +196,13 @@ async function initSlider() {
   }
 
   Object.assign(el, {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 21,
-    loop: true,
+    breakpoints: {
+      761: { slidesPerView: 2 },
+      1461: { slidesPerView: 3 },
+    },
+    loop: items.value.length > 1,
     on: {
       slideChange(instance) {
         activeIndex.value = instance.realIndex

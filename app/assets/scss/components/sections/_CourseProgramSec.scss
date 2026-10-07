@@ -169,3 +169,173 @@
 		height: 100%;
 	}
 }
+
+
+@media only screen and (max-width: 1460px) {
+	.course-program {
+		padding-bottom: 100px;
+	}
+
+	.course-program__title {
+		margin-bottom: 40px;
+	}
+
+	.course-program__grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 16px;
+	}
+
+	.course-program__empty {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1;
+		min-height: 0;
+	}
+
+	.course-block {
+		width: 100%;
+		height: auto;
+		min-height: 280px;
+	}
+
+	.course-block__title {
+		font-size: 26px;
+		line-height: 1.1;
+	}
+
+	.course-block__line--h1,
+	.course-block__line--h2 {
+		display: none;
+	}
+
+	.course-block__line--v1 {
+		left: auto;
+		right: 21px;
+		height: 100%;
+	}
+
+	.course-block__line--v2 {
+		left: auto;
+		right: 12px;
+		height: 100%;
+	}
+	.course-block--cta .btn-pill{
+		width: 235px;
+		font-size: 16px;
+	}
+	.btn-pill__icon {
+		right: 5px;
+		top: 5px;
+	}
+	.course-block__title{
+		font-size: 24px;
+	}
+}
+
+@media only screen and (max-width: 1240px) {
+	.course-program__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 20px;
+	}
+
+	.course-program__empty {
+		display: none;
+	}
+
+	.course-block__title {
+		font-size: 24px;
+	}
+
+	.course-block--cta .btn-pill {
+		width: 100%;
+		max-width: 270px;
+	}
+	.btn-pill__icon {
+        right: 3px;
+        top: 3px;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+	.course-program__title {
+		margin-bottom: 32px;
+	}
+
+	.course-block {
+		min-height: 240px;
+		padding: 20px;
+	}
+
+	.course-block__title {
+		margin-top: 20px;
+		font-size: 22px;
+	}
+
+	.course-block__text {
+		font-size: 15px;
+	}
+
+	.course-block__time {
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	.course-program {
+		padding-bottom: 80px;
+	}
+
+	.course-program__title {
+		width: 100%;
+		margin-bottom: 24px;
+		text-align: center;
+	}
+
+	.course-program__grid {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.course-block {
+		min-height: 0;
+		padding: 20px 16px;
+	}
+
+	.course-block__title {
+		font-size: 20px;
+		line-height: 1.2;
+	}
+
+	.course-block__text {
+		font-size: 14px;
+	}
+
+	.course-block__time {
+		font-size: 14px;
+		margin-top: 20px;
+	}
+
+	.course-block--cta .btn-pill {
+		width: 100%;
+		max-width: none;
+		margin-top: 24px;
+	}
+
+	.course-block__line--h1 {
+		top: auto;
+		bottom: 88px;
+		display: block;
+	}
+
+	.course-block__line--h2 {
+		top: auto;
+		bottom: 79px;
+		display: block;
+	}
+	.course-block--cta {
+		padding-right: 30px;
+	}
+	.course-block--cta .btn-pill{
+		margin-top: 40px;
+	}
+}

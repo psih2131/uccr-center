@@ -192,3 +192,158 @@ display: inline-block;
 	border-radius: 5px;
 	background: $mint;
 }
+
+
+@media only screen and (max-width: 1460px) {
+	.direction-hero{
+		padding-top: 60px;
+		padding-bottom: 100px;
+	}
+	.direction-hero__title{
+		font-size: 45px;
+		line-height: 1.2;
+	}
+	.direction-hero__title-decor{
+		height: 45px;
+		width: 100px;
+	}
+	.direction-hero__crumbs{
+		font-size: 18px;
+	}
+	.direction-hero__lead{
+		width: 550px;
+		font-size: 18px;
+	}
+	.direction-hero__card{
+		width: calc(33.333% - 14px);
+		height: 280px;
+	}
+	.direction-hero__cards{
+		display: flex;
+		justify-content: space-between;
+	}
+	.direction-hero__list{
+		margin-left: 0;
+		margin-top: 0;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.direction-hero__card--info{
+		display: flex;
+		align-items: center;
+	}
+	.direction-hero__top{
+		margin-bottom: 35px;
+	}
+
+}
+
+@media only screen and (max-width: 1240px) {
+	.direction-hero__lead{
+		width: calc(45% - 20px);
+		font-size: 16px;
+	}
+	.direction-hero__title{
+		font-size: 40px;
+	}
+	.direction-hero__title-decor{
+		height: 35px;
+		width: 80px;
+	}
+	
+	.direction-hero__card{
+		width: calc(25% - 10px);
+	}
+
+	.direction-hero__card--info{
+		width: calc(50% - 10px);
+	}
+}
+
+@media only screen and (max-width: 940px) {
+	.direction-hero__card--photo{
+		&:last-child{
+			display: none;
+		}
+	}
+	.direction-hero__card{
+		width: calc(50% - 10px);
+	}
+	.direction-hero__top{
+		flex-wrap: wrap;
+		gap: 0;
+	}
+	.direction-hero__lead{
+		width: 100%;
+		margin-top: 30px;
+	}
+	.direction-hero{
+		padding-top: 50px;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	.direction-hero{
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+	.direction-hero__crumbs{
+		font-size: 16px;
+		margin-bottom: 15px;
+	}
+	.direction-hero__title{
+		font-size: 29px;
+	}
+	.direction-hero__title-decor{
+		height: 25px;
+		width: 45px;
+		margin: 0 10px;
+	}
+	.direction-hero__title-plus{
+		margin-left: 10px;
+		svg{
+			width: 20px;
+			height: 20px;
+		}
+	}
+	.direction-hero__lead{
+		font-size: 16px;
+		margin-top: 20px;
+	}
+	.direction-hero__cards{
+		flex-wrap: wrap;
+		gap: 0;
+		row-gap: 10px;
+	}
+	.direction-hero__card{
+		width: 100%;
+		border-radius: 10px;
+	}
+	.direction-hero__card--info{
+		height: auto;
+		padding: 40px 0;
+	}
+	.direction-hero__check{
+		width: 20px;
+		height: 20px;
+		svg{
+			width: 20px;
+			height: 20px;
+		}
+	}
+	.direction-hero__list li{
+		font-size: 14px;
+		line-height: 1.2;
+		gap: 10px;
+	}
+	.direction-hero__card--photo{
+		&:last-child{
+			display: block;
+		}
+		width: calc(50% - 5px);
+		height: 170px;
+	}
+	
+}
+
+

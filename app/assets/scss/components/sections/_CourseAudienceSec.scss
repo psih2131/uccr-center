@@ -94,3 +94,149 @@
 	text-align: center;
 	color: $white;
 }
+
+.course-audience__dots {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	width: 268px;
+	height: 5px;
+	margin: 40px auto 0;
+}
+
+.course-audience__dot {
+	width: 40px;
+	height: 5px;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	background: $gray2;
+	cursor: pointer;
+
+	&--active {
+		background: $darkBlue;
+	}
+}
+
+@media only screen and (max-width: 1460px) {
+	.course-audience {
+		padding-bottom: 100px;
+	}
+
+	.course-audience__title {
+		font-size: 45px;
+		line-height: 1.2;
+	}
+
+	.course-audience__slider-wrap {
+		margin-top: 40px;
+	}
+
+	.course-audience__card {
+		width: 100%;
+		height: auto;
+	}
+
+	.course-audience__photo {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 231 / 248;
+	}
+
+	.course-audience__caption {
+		width: 100%;
+		height: auto;
+		min-height: 68px;
+		padding: 12px 10px;
+	}
+
+	.course-audience__nav {
+		top: 50%;
+
+		&--prev {
+			left: -25px;
+			transform: translateY(-50%) rotate(180deg);
+		}
+
+		&--next {
+			right: -25px;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+@media only screen and (max-width: 1240px) {
+	.course-audience__title {
+		font-size: 40px;
+	}
+
+	.course-audience__caption {
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width: 940px) {
+	.course-audience__title {
+		font-size: 36px;
+	}
+
+	.course-audience__slider-wrap {
+		margin-top: 32px;
+	}
+
+	.course-audience__num {
+		width: 32px;
+		height: 32px;
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	.course-audience {
+		padding-bottom: 80px;
+	}
+
+	.course-audience__title {
+		width: 100%;
+		font-size: 30px;
+		line-height: 1;
+		text-align: center;
+	}
+
+	.course-audience__slider-wrap {
+		margin-top: 24px;
+	}
+
+	.course-audience__slider-wrap .course-audience__nav {
+		display: none;
+	}
+
+	.course-audience__dots {
+		display: flex;
+		width: auto;
+		height: auto;
+		gap: 5px;
+		margin-top: 16px;
+	}
+
+	.course-audience__dot {
+		width: 18px;
+		height: 3px;
+	}
+
+	.course-audience__caption {
+		min-height: 56px;
+		padding: 10px 8px;
+		font-size: 14px;
+		line-height: 1.15;
+	}
+
+	.course-audience__num {
+		top: 6px;
+		left: 8px;
+		width: 28px;
+		height: 28px;
+		font-size: 13px;
+	}
+}

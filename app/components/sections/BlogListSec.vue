@@ -69,7 +69,7 @@
           </div>
         </div>
 
-        <div class="blog__grid">
+        <div class="blog-list__grid">
           <ArticleCard v-for="item in visiblePosts" :key="item.slug" :item="item" />
         </div>
 

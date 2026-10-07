@@ -3,7 +3,9 @@
     <div class="container">
       <div class="course-similar__head">
         <h2 class="section-title">Похожие программы</h2>
-        <ButtonsBtnPill title="Смотреть все программы" type="link" :to="catalogTo" />
+        <div class="course-similar__head-action">
+          <ButtonsBtnPill title="Смотреть все программы" type="link" :to="catalogTo" />
+        </div>
       </div>
 
       <div class="course-similar__grid">
@@ -48,6 +50,10 @@
             <ButtonsBtnPill title="Подробнее" type="link" :to="item.to" />
           </div>
         </article>
+      </div>
+
+      <div class="course-similar__foot">
+        <ButtonsBtnPill title="Смотреть все программы" type="link" :to="catalogTo" />
       </div>
     </div>
   </section>

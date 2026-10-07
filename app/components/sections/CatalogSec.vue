@@ -16,54 +16,31 @@
 
       <div class="catalog__body">
         <aside class="catalog__aside">
-          <div v-if="popular.length" class="catalog-nav">
-            <div class="catalog-nav__head">
-              <h3 class="catalog-nav__title">
-                Популярные направления <span>({{ popular.length }})</span>
-              </h3>
-              <img class="catalog-nav__plus" src="@/assets/icons/catalog-nav-plus.svg" alt="" width="21" height="21">
-            </div>
-            <div class="catalog-nav__list">
-              <div
-                v-for="item in popular"
-                :key="`popular-${item.id}`"
-                class="catalog-nav__item"
-                :class="{ 'catalog-nav__item--active': selectedId === item.id }"
-                @click="selectCategory(item.id)"
-              >
-                <span class="catalog-nav__radio"></span>
-                <span class="catalog-nav__name">{{ item.name }}</span>
-                <span class="catalog-nav__count">{{ item.count }} программы</span>
-              </div>
-            </div>
-          </div>
-
-          <div v-if="others.length" class="catalog-nav">
-            <div class="catalog-nav__head">
-              <h3 class="catalog-nav__title">
-                Другие направления <span>({{ others.length }})</span>
-              </h3>
-              <img class="catalog-nav__plus" src="@/assets/icons/catalog-nav-plus.svg" alt="" width="21" height="21">
-            </div>
-            <div class="catalog-nav__list">
-              <div
-                v-for="item in others"
-                :key="`other-${item.id}`"
-                class="catalog-nav__item"
-                :class="{ 'catalog-nav__item--active': selectedId === item.id }"
-                @click="selectCategory(item.id)"
-              >
-                <span class="catalog-nav__radio"></span>
-                <span class="catalog-nav__name">{{ item.name }}</span>
-                <span class="catalog-nav__count">{{ item.count }} программы</span>
-              </div>
-            </div>
-          </div>
+          <CatalogCategoryNav
+            :popular="popular"
+            :others="others"
+            :selected-id="selectedId"
+            @select="selectCategory"
+          />
         </aside>
 
         <div class="catalog__main">
-          <form class="catalog__search" @submit.prevent="submitSearch">
-            <label class="catalog__search-field">
+          <div ref="searchBarRef" class="catalog__search-wrap">
+            <form class="catalog__search" @submit.prevent="submitSearch">
+              <button
+                type="button"
+                class="catalog__filter-btn"
+                :class="{ 'catalog__filter-btn--active': categoriesOpen }"
+                :aria-expanded="categoriesOpen"
+                aria-controls="catalog-categories-panel"
+                @click.stop="toggleCategoriesPanel"
+              >
+                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true">
+                  <path d="M1 3h18M4 9h12M7 15h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                Фильтр
+              </button>
+              <label class="catalog__search-field">
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
                 <circle cx="6.5" cy="6.5" r="5.2" stroke="currentColor" stroke-width="1.6"/>
                 <path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
@@ -85,14 +62,31 @@
                 </svg>
               </button>
             </label>
-            <button class="catalog__search-btn" type="submit">
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
-                <circle cx="6.5" cy="6.5" r="5.2" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-              Поиск
-            </button>
-          </form>
+              <button class="catalog__search-btn" type="submit">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <circle cx="6.5" cy="6.5" r="5.2" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                Поиск
+              </button>
+            </form>
+
+            <div
+              v-if="categoriesOpen"
+              id="catalog-categories-panel"
+              class="catalog__filter-panel"
+            >
+              <button type="button" class="catalog__filter-all" @click="pickCategory(null)">
+                Все направления
+              </button>
+              <CatalogCategoryNav
+                :popular="popular"
+                :others="others"
+                :selected-id="selectedId"
+                @select="pickCategory"
+              />
+            </div>
+          </div>
 
           <!--
           <div class="catalog__toolbar">
@@ -235,6 +229,8 @@
 </template>
 
 <script setup>
+import CatalogCategoryNav from '~/components/catalog/CatalogCategoryNav.vue'
+
 const PAGE_SIZE = 8
 const colors = ['#5DA0BA', '#66AF5E', '#966DC3']
 
@@ -251,6 +247,8 @@ const { courseUrl } = useCity()
 const directionSlug = computed(() => props.direction?.slug || '')
 
 const selectedId = ref(null)
+const categoriesOpen = ref(false)
+const searchBarRef = ref(null)
 const query = ref('')
 const activeSearch = ref('')
 const page = ref(1)
@@ -383,6 +381,31 @@ async function fetchCourses({ reset = false } = {}) {
     }
   }
 }
+
+function toggleCategoriesPanel() {
+  categoriesOpen.value = !categoriesOpen.value
+}
+
+function pickCategory(id) {
+  selectCategory(id)
+  categoriesOpen.value = false
+}
+
+function onDocumentClick(event) {
+  if (!categoriesOpen.value) return
+  const root = searchBarRef.value
+  if (root && !root.contains(event.target)) {
+    categoriesOpen.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', onDocumentClick)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', onDocumentClick)
+})
 
 function selectCategory(id) {
   selectedId.value = id
