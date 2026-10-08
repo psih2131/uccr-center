@@ -3,5 +3,8 @@
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+    <ClientOnly>
+      <AppTelegramNotice />
+    </ClientOnly>
   </div>
 </template>
