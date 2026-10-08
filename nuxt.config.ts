@@ -2,6 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  app: {
+    head: {
+      meta: [{ name: 'robots', content: 'noindex, nofollow' }],
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+    },
+  },
   runtimeConfig: {
     strapiUrl: process.env.NUXT_STRAPI_URL || '',
     public: {
