@@ -16,7 +16,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /root/opt/autotechnologi
+            cd /root/opt/uccr-center
             git pull
             npm install
             npm run build
