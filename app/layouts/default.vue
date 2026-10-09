@@ -5,6 +5,7 @@
     <AppFooter :directions="directions" />
     <AppCookie />
     <AppPreloader />
+    <AppSocialWidget />
     <ModalsAppModals />
   </div>
 </template>

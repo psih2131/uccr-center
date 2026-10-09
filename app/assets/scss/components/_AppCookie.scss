@@ -46,3 +46,74 @@
 		background: $red;
 	}
 }
+
+@media only screen and (max-width: 1240px) {
+	.cookie-bar {
+		width: calc(100% - 48px);
+		max-width: 819px;
+		padding: 0 20px;
+	}
+
+	.cookie-bar__text {
+		width: auto;
+		flex: 1;
+		min-width: 0;
+	}
+}
+
+@media only screen and (max-width: 940px) {
+	.cookie-bar {
+		width: calc(100% - 32px);
+		height: auto;
+		min-height: 64px;
+		padding: 14px 16px;
+		bottom: 48px;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.cookie-bar__text {
+		width: 100%;
+		font-size: 14px;
+	}
+
+	.cookie-bar__actions {
+		width: 100%;
+		margin-left: 0;
+		justify-content: flex-end;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	.cookie-bar {
+		width: calc(100% - 24px);
+		padding: 14px 14px;
+		bottom: 12px;
+		border-radius: 12px;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 14px;
+	}
+
+	.cookie-bar__text {
+		font-size: 13px;
+		line-height: 1.35;
+		text-align: center;
+	}
+
+	.cookie-bar__actions {
+		justify-content: center;
+		gap: 8px;
+	}
+
+	.cookie-bar__btn {
+		flex: 1;
+		max-width: 120px;
+		height: 32px;
+		font-size: 13px;
+	}
+
+	.app-wrapper:has(.cookie-bar) .social-widget {
+		bottom: 132px;
+	}
+}
