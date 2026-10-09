@@ -1,5 +1,15 @@
 <template>
-  <div class="social-widget" :class="{ 'social-widget--open': isOpen }">
+  <Teleport to="body">
+    <Transition name="social-widget-backdrop">
+      <div
+        v-if="isOpen"
+        class="social-widget__backdrop"
+        aria-hidden="true"
+        @click="toggle"
+      />
+    </Transition>
+
+    <div class="social-widget" :class="{ 'social-widget--open': isOpen }">
     <TransitionGroup name="social-widget-item" tag="div" class="social-widget__list">
       <a
         v-for="item in visibleLinks"
@@ -78,7 +88,8 @@
         </svg>
       </span>
     </button>
-  </div>
+    </div>
+  </Teleport>
 </template>
 
 <script setup>
@@ -107,16 +118,46 @@ function toggle() {
 function onLinkClick() {
   isOpen.value = false
 }
+
+watch(isOpen, (open) => {
+  if (!import.meta.client) return
+  document.body.style.overflow = open ? 'hidden' : ''
+})
+
+onUnmounted(() => {
+  if (import.meta.client) {
+    document.body.style.overflow = ''
+  }
+})
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/vars';
 
+.social-widget__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.54);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.social-widget-backdrop-enter-active,
+.social-widget-backdrop-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.social-widget-backdrop-enter-from,
+.social-widget-backdrop-leave-to {
+  opacity: 0;
+}
+
 .social-widget {
   position: fixed;
   right: 24px;
   bottom: 24px;
-  z-index: 200;
+  z-index: 201;
   display: flex;
   flex-direction: column;
   align-items: center;
