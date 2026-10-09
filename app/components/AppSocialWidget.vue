@@ -10,106 +10,80 @@
     </Transition>
 
     <div class="social-widget" :class="{ 'social-widget--open': isOpen }">
-    <TransitionGroup name="social-widget-item" tag="div" class="social-widget__list">
-      <a
-        v-for="item in visibleLinks"
-        :key="item.id"
-        class="social-widget__link"
-        :href="item.href"
-        :aria-label="item.label"
-        :target="item.external ? '_blank' : undefined"
-        :rel="item.external ? 'noopener noreferrer' : undefined"
-        @click="onLinkClick"
-      >
-        <img
-          v-if="item.id === 'telegram'"
-          class="social-widget__brand-icon"
-          :src="telegramIcon"
-          alt=""
-          width="32"
-          height="32"
+      <TransitionGroup name="social-widget-item" tag="div" class="social-widget__list">
+        <a
+          v-for="(item, index) in visibleSocials"
+          :key="item.id ?? index"
+          class="social-widget__link"
+          :href="item.link || '#'"
+          target="_blank"
+          rel="noopener noreferrer"
+          @click="onLinkClick"
         >
-        <img
-          v-else-if="item.id === 'whatsapp'"
-          class="social-widget__brand-icon"
-          :src="whatsappIcon"
-          alt=""
-          width="32"
-          height="32"
-        >
-        <img
-          v-else-if="item.id === 'max'"
-          class="social-widget__brand-icon"
-          :src="maxIcon"
-          alt=""
-          width="32"
-          height="32"
-        >
-        <img
-          v-else-if="item.id === 'phone'"
-          class="social-widget__brand-icon"
-          :src="phoneIcon"
-          alt=""
-          width="32"
-          height="32"
-        >
-        <img
-          v-else-if="item.id === 'email'"
-          class="social-widget__brand-icon"
-          :src="mailIcon"
-          alt=""
-          width="32"
-          height="32"
-        >
-      </a>
-    </TransitionGroup>
+          <img
+            class="social-widget__brand-icon"
+            :src="iconUrl(item.img)"
+            alt=""
+            width="32"
+            height="32"
+          >
+        </a>
+      </TransitionGroup>
 
-    <button
-      type="button"
-      class="social-widget__toggle"
-      :class="{ 'social-widget__toggle--pulse': !isOpen }"
-      :aria-expanded="isOpen"
-      aria-label="Связаться с нами"
-      @click="toggle"
-    >
-      <span v-if="!isOpen" class="social-widget__toggle-icon" aria-hidden="true">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z"
-            fill="currentColor"
-          />
-          <path d="M7 9H17V11H7V9ZM7 12H14V14H7V12Z" fill="currentColor" />
-        </svg>
-      </span>
-      <span v-else class="social-widget__toggle-icon" aria-hidden="true">
-        <svg width="26" height="26" viewBox="0 0 38 38" fill="none">
-          <rect x="8.41992" y="10.2959" width="2.64654" height="26.4654" rx="1.32327" transform="rotate(-45 8.41992 10.2959)" fill="currentColor" />
-          <rect x="10.291" y="29.0068" width="2.64654" height="26.4654" rx="1.32327" transform="rotate(-135 10.291 29.0068)" fill="currentColor" />
-        </svg>
-      </span>
-    </button>
+      <button
+        type="button"
+        class="social-widget__toggle"
+        :class="{ 'social-widget__toggle--pulse': !isOpen }"
+        :aria-expanded="isOpen"
+        aria-label="Связаться с нами"
+        @click="toggle"
+      >
+        <span v-if="!isOpen" class="social-widget__toggle-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z"
+              fill="currentColor"
+            />
+            <path d="M7 9H17V11H7V9ZM7 12H14V14H7V12Z" fill="currentColor" />
+          </svg>
+        </span>
+        <span v-else class="social-widget__toggle-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 38 38" fill="none">
+            <rect x="8.41992" y="10.2959" width="2.64654" height="26.4654" rx="1.32327" transform="rotate(-45 8.41992 10.2959)" fill="currentColor" />
+            <rect x="10.291" y="29.0068" width="2.64654" height="26.4654" rx="1.32327" transform="rotate(-135 10.291 29.0068)" fill="currentColor" />
+          </svg>
+        </span>
+      </button>
     </div>
   </Teleport>
 </template>
 
 <script setup>
-import maxIcon from '@/assets/icons/max-colored.png'
-import telegramIcon from '@/assets/icons/telegram-colored.png'
-import whatsappIcon from '@/assets/icons/whatsapp-colored.png'
-import phoneIcon from '@/assets/icons/phone-colored.png'
-import mailIcon from '@/assets/icons/mail-colored.png'
+const config = useRuntimeConfig()
+
+const { data: widgetResponse } = await useFetch(`${config.public.strapiUrl}/api/contacts-widget`, {
+  key: 'contacts-widget',
+  query: {
+    'populate[sicials_item][populate][img]': true,
+  },
+})
+
+function mediaUrl(file) {
+  if (!file?.url) return ''
+  if (file.url.startsWith('http')) return file.url
+  return `${config.public.strapiUrl}${file.url}`
+}
+
+function iconUrl(media) {
+  const file = Array.isArray(media) ? media[0] : media
+  return mediaUrl(file)
+}
+
+const socials = computed(() => widgetResponse.value?.data?.sicials_item || [])
 
 const isOpen = ref(false)
 
-const links = [
-  { id: 'telegram', label: 'Telegram', href: 'https://t.me/roman_dev_space', external: true },
-  { id: 'whatsapp', label: 'WhatsApp', href: 'https://wa.me/78001234567', external: true },
-  { id: 'max', label: 'MAX', href: 'https://max.ru/', external: true },
-  { id: 'phone', label: 'Телефон', href: 'tel:+78001234567', external: false },
-  { id: 'email', label: 'Email', href: 'mailto:info@uccr.ru', external: false },
-]
-
-const visibleLinks = computed(() => (isOpen.value ? [...links].reverse() : []))
+const visibleSocials = computed(() => (isOpen.value ? [...socials.value].reverse() : []))
 
 function toggle() {
   isOpen.value = !isOpen.value
@@ -265,5 +239,4 @@ onUnmounted(() => {
     transform: scale(1.04);
   }
 }
-
 </style>
