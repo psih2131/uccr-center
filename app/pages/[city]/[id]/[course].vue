@@ -12,10 +12,15 @@
     <SectionsCourseDocsNeedSec />
     <SectionsDirectionDocSec />
     <SectionsCourseReviewsSec />
-    <SectionsCourseFaqSec />
-    <SectionsCourseSimilarSec />
+    <SectionsCourseFaqSec :items="course.faq_section || []" />
+    <SectionsCourseSeoTextSec :content="course.seo_text_section" />
+    <SectionsCourseRecommendedSec
+      :items="course.recommended_courses_item || []"
+      :direction-slug="direction?.slug || ''"
+    />
     <SectionsAboutSec />
     <SectionsFormSec />
+    <SectionsCourseSeoTextDownSec :content="course.seo_text_down" />
   </main>
 </template>
 
@@ -45,6 +50,9 @@ const { data: courseResponse } = await useFetch(`${config.public.strapiUrl}/api/
     'populate[price_v1_section][populate][docs]': true,
     'populate[price_sec_v2][populate][price_list]': true,
     'populate[for_who_section][populate][for_who_items][populate][image]': true,
+    'populate[faq_section]': true,
+    'populate[recommended_courses_item]': true,
+    'populate[Seo]': true,
   },
 })
 
@@ -63,7 +71,5 @@ if (direction.value?.slug && direction.value.slug !== route.params.id) {
   throw createError({ statusCode: 404, statusMessage: 'Курс не найден' })
 }
 
-useSeoMeta({
-  title: () => course.value?.title,
-})
+usePageSeo(() => course.value?.Seo)
 </script>

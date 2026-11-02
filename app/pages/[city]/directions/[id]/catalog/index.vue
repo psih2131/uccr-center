@@ -37,6 +37,7 @@ const { data: directionResponse } = await useFetch(`${config.public.strapiUrl}/a
     'fields[0]': 'title',
     'fields[1]': 'slug',
     'populate[hero_section][populate]': '*',
+    'populate[Seo]': true,
   },
 })
 
@@ -46,7 +47,5 @@ if (!direction.value) {
   throw createError({ statusCode: 404, statusMessage: 'Направление не найдено' })
 }
 
-useSeoMeta({
-  title: () => `Каталог — ${direction.value?.title}`,
-})
+usePageSeo(() => direction.value?.Seo)
 </script>

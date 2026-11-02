@@ -40,12 +40,11 @@ const { data: homeResponse } = await useFetch(`${config.public.strapiUrl}/api/ho
     'populate[partners_section][populate][logo]': true,
     'populate[home_news_sections][populate][image]': true,
     'populate[home_news_sections][populate][blog_categories]': true,
+    'populate[Seo]': true,
   },
 })
 
 const home = computed(() => homeResponse.value?.data || null)
 
-useSeoMeta({
-  title: () => (city.value ? `УЦЦР — ${city.value.title}` : undefined),
-})
+usePageSeo(() => (city.value ? home.value?.Seo : null))
 </script>

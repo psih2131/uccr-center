@@ -62,6 +62,13 @@
 <script setup>
 import { Collapse } from 'vue-collapsed'
 
+const props = defineProps({
+  items: {
+    type: Array,
+    default: null,
+  },
+})
+
 const config = useRuntimeConfig()
 const store = useCounterStore()
 
@@ -69,18 +76,26 @@ const openConsult = () => {
   store.openModal('consult')
 }
 
+const mapFaqItems = (list) =>
+  (list || [])
+    .filter((item) => item?.questions)
+    .map((item) => ({ q: item.questions, a: item.answer || '' }))
+
+const courseQuestions = computed(() => mapFaqItems(props.items))
+const hasCourseQuestions = computed(() => courseQuestions.value.length > 0)
+
 const { data: faqSection } = await useFetch(`${config.public.strapiUrl}/api/course-faq-sec`, {
   key: 'course-faq-sec',
+  immediate: !hasCourseQuestions.value,
   query: {
     'populate[faq_items]': true,
   },
 })
 
-const questions = computed(() =>
-  (faqSection.value?.data?.faq_items || [])
-    .filter((item) => item?.questions)
-    .map((item) => ({ q: item.questions, a: item.answer || '' })),
-)
+const questions = computed(() => {
+  if (hasCourseQuestions.value) return courseQuestions.value
+  return mapFaqItems(faqSection.value?.data?.faq_items)
+})
 
 const openIndex = ref(-1)
 

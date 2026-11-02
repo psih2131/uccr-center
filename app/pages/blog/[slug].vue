@@ -80,6 +80,7 @@ const { data: blogResponse } = await useFetch(`${config.public.strapiUrl}/api/bl
     'populate[blog_categories]': true,
     'populate[recommended_posts][populate][image]': true,
     'populate[recommended_posts][populate][blog_categories]': true,
+    'populate[Seo]': true,
     'pagination[pageSize]': 1,
   })),
 })
@@ -103,7 +104,5 @@ const related = computed(() =>
     .filter(Boolean),
 )
 
-useSeoMeta({
-  title: () => post.value?.postTitle || 'Статья',
-})
+usePageSeo(() => rawPost.value?.Seo)
 </script>

@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "../../../../.."
+		},
+		{
+			"path": "../../../../../../../node_scripts/uccr-parser"
+		},
+		{
+			"path": "../../../../../../uccr_parser_interface"
 		}
 	],
 	"settings": {}

@@ -14,6 +14,7 @@ const { data: licenseResponse } = await useFetch(`${config.public.strapiUrl}/api
   key: 'license-page',
   query: {
     'populate[faq_sec]': true,
+    'populate[Seo]': true,
   },
 })
 
@@ -27,7 +28,5 @@ const { data: licensesResponse } = await useFetch(`${config.public.strapiUrl}/ap
 const licensePage = computed(() => licenseResponse.value?.data || null)
 const licenses = computed(() => licensesResponse.value?.data || [])
 
-useSeoMeta({
-  title: 'Лицензии',
-})
+usePageSeo(() => licensePage.value?.Seo)
 </script>

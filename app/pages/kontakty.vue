@@ -13,12 +13,11 @@ const { data: contactResponse } = await useFetch(`${config.public.strapiUrl}/api
   query: {
     'populate[socials_media]': true,
     'populate[map_icon]': true,
+    'populate[Seo]': true,
   },
 })
 
 const contact = computed(() => contactResponse.value?.data || null)
 
-useSeoMeta({
-  title: 'Контакты',
-})
+usePageSeo(() => contact.value?.Seo)
 </script>

@@ -22,12 +22,11 @@ const { data: aboutResponse } = await useFetch(`${config.public.strapiUrl}/api/a
     'populate[about_hero_section][populate][about_items]': true,
     'populate[partners][populate][logo]': true,
     'populate[licenses_lists][populate][photo]': true,
+    'populate[Seo]': true,
   },
 })
 
 const about = computed(() => aboutResponse.value?.data || null)
 
-useSeoMeta({
-  title: 'О компании',
-})
+usePageSeo(() => about.value?.Seo)
 </script>

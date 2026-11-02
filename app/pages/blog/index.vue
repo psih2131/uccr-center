@@ -3,7 +3,5 @@
 </template>
 
 <script setup>
-useSeoMeta({
-  title: 'Блог',
-})
+usePageSeo(null)
 </script>

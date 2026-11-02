@@ -16,6 +16,7 @@ const { data: categoryResponse } = await useFetch(`${config.public.strapiUrl}/ap
     'filters[slug][$eq]': categorySlug.value,
     'fields[0]': 'title',
     'fields[1]': 'slug',
+    'populate[Seo]': true,
     'pagination[pageSize]': 1,
   })),
 })
@@ -26,7 +27,5 @@ if (!category.value) {
   throw createError({ statusCode: 404, statusMessage: 'Категория не найдена' })
 }
 
-useSeoMeta({
-  title: () => category.value?.title ? `Блог — ${category.value.title}` : 'Блог',
-})
+usePageSeo(() => category.value?.Seo)
 </script>

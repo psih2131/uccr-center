@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../../../uccr_parser_interface"
+		},
+		{
+			"path": "../../../../../node_scripts/uccr-parser"
+		},
+		{
+			"path": "../../../../../stapi/uccr"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {}
+}

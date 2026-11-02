@@ -38,6 +38,7 @@ const { data: directionResponse } = await useFetch(`${config.public.strapiUrl}/a
     'populate[populars_courses][fields][0]': 'documentId',
     'populate[courses][count]': true,
     'populate[reviews_section][populate][reviews][populate][logo_company]': true,
+    'populate[Seo]': true,
   })),
 })
 
@@ -47,7 +48,5 @@ if (!direction.value) {
   throw createError({ statusCode: 404, statusMessage: 'Направление не найдено' })
 }
 
-useSeoMeta({
-  title: () => direction.value?.title,
-})
+usePageSeo(() => direction.value?.Seo)
 </script>

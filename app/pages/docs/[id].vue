@@ -25,6 +25,7 @@ const { data: docsResponse } = await useFetch(`${config.public.strapiUrl}/api/do
   key: () => `docs-page-${slug.value}`,
   query: computed(() => ({
     'filters[slug][$eq]': slug.value,
+    'populate[Seo]': true,
     'pagination[pageSize]': 1,
   })),
 })
@@ -40,7 +41,5 @@ const textHtml = computed(() => {
   return marked.parse(String(doc.value.text))
 })
 
-useSeoMeta({
-  title: () => doc.value?.title || 'Документ',
-})
+usePageSeo(() => doc.value?.Seo)
 </script>
