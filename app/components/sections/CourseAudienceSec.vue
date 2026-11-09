@@ -57,6 +57,8 @@
 </template>
 
 <script setup>
+import defaultPhoto from '~/assets/images/for-who/default.jpg'
+
 const props = defineProps({
   section: {
     type: Object,
@@ -78,7 +80,7 @@ const items = computed(() =>
   (props.section?.for_who_items || []).map((item) => ({
     id: item.id,
     title: item.title || '',
-    photo: mediaUrl(item.image),
+    photo: mediaUrl(item.image) || defaultPhoto,
   })),
 )
 

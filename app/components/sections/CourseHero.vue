@@ -61,7 +61,7 @@
         </article>
 
         <article class="course-hero__photo">
-          <img :src="previewUrl" :alt="course.page_preview?.alternativeText || course.title || ''">
+          <img :src="previewUrl" :alt="previewAlt">
           <div class="course-hero__stats">
             <div class="course-hero__stat course-hero__stat--format">
               <span class="course-hero__stat-label">
@@ -70,7 +70,7 @@
               </span>
               <b>{{ course.form_learning || 'Дистанционно' }}</b>
             </div>
-            <div class="course-hero__stat">
+            <div class="course-hero__stat course-hero__stat--duration">
               <span class="course-hero__stat-label">
                 <img src="@/assets/icons/program-clock.svg" alt="" width="18" height="18">
                 Срок обучения
@@ -128,7 +128,30 @@ function mediaUrl(file) {
   return `${config.public.strapiUrl}${file.url}`
 }
 
-const previewUrl = computed(() => mediaUrl(props.course.page_preview) || heroImage)
+const { data: heroMediaResponse } = await useFetch(`${config.public.strapiUrl}/api/courses`, {
+  key: () => `course-hero-media-${props.course?.documentId || props.course?.slug || 'none'}`,
+  query: computed(() => ({
+    'filters[slug][$eq]': props.course?.slug,
+    'fields[0]': 'slug',
+    'populate[page_preview]': true,
+    'populate[category_direction][populate][cat_image]': true,
+    'populate[direction][populate][hero_section][populate][img_1]': true,
+  })),
+})
+
+const heroMedia = computed(() => heroMediaResponse.value?.data?.[0] || null)
+
+const previewFile = computed(() => {
+  return props.course?.page_preview
+    || heroMedia.value?.page_preview
+    || heroMedia.value?.category_direction?.cat_image
+    || heroMedia.value?.direction?.hero_section?.img_1
+    || null
+})
+
+const previewUrl = computed(() => mediaUrl(previewFile.value) || heroImage)
+
+const previewAlt = computed(() => previewFile.value?.alternativeText || props.course?.title || '')
 
 const durationLabel = computed(() => {
   const time = props.course.time

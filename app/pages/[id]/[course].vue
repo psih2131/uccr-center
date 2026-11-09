@@ -1,23 +1,38 @@
 <template>
   <DirectionPage v-if="cityDirectionSlug" :slug="cityDirectionSlug" />
   <main v-else-if="course" class="course-page">
+
     <SectionsCourseHero :course="course" :direction="direction" />
+
     <SectionsCourseProgramSec :items="course.what_waiting_for_section || []" />
+
     <SectionsCourseOfferSec :course="course" />
+
     <SectionsCourseTariffsSec :section="course.price_sec_v2" />
+
     <SectionsCourseStepsSec />
+
     <SectionsCourseAudienceSec :section="course.for_who_section" />
+
     <SectionsCourseDocsNeedSec />
+
     <SectionsDirectionDocSec  />
+
     <SectionsCourseReviewsSec />
+
     <SectionsCourseFaqSec :items="course.faq_section || []" />
+
     <SectionsCourseSeoTextSec :content="course.seo_text_section" />
+
     <SectionsCourseRecommendedSec
       :items="course.recommended_courses_item || []"
       :direction-slug="direction?.slug || ''"
     />
+
     <SectionsAboutSec />
+
     <SectionsFormSec />
+    
     <SectionsCourseSeoTextDownSec :content="course.seo_text_down" />
   </main>
 </template>

@@ -8,17 +8,33 @@
           <div class="course-tariff__person">
             <img :src="avatar" alt="">
             <div class="course-tariff__info">
-              <h3>{{ item.title }}</h3>
+              <div class="course-tariff__title-row">
+                <h3 class="course-tariff__title">{{ tariffTitle(item.title) }}</h3>
+                <button
+                  v-if="isTariffTitleLong(item.title)"
+                  type="button"
+                  class="course-tariff__hint"
+                  aria-label="Полное название"
+                >
+                  <svg viewBox="0 0 20 20" aria-hidden="true">
+                    <circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M10 9.1v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <circle cx="10" cy="6.15" r="0.9" fill="currentColor" />
+                  </svg>
+                  <span class="course-tariff__hint-pop">{{ tariffTitleText(item.title) }}</span>
+                </button>
+              </div>
               <p v-if="item.subtitle">{{ item.subtitle }}</p>
             </div>
           </div>
 
-          <div class="course-tariff__term">
+          <div class="course-tariff__term" >
             <span class="course-tariff__label">
               <img src="@/assets/icons/program-clock.svg" alt="" width="18" height="18">
               Срок обучения
             </span>
-            <b>{{ item.hour }} часов</b>
+            <b v-if="item.hour != null">{{ item.hour }} </b>
+            <b v-else>-</b>
           </div>
 
           <div class="course-tariff__format">
@@ -62,6 +78,18 @@ const props = defineProps({
 const store = useCounterStore()
 
 const tariffs = computed(() => props.section?.price_list || [])
+
+const TARIFF_TITLE_LIMIT = 70
+
+const tariffTitleText = (title) => String(title || '').trim()
+
+const isTariffTitleLong = (title) => tariffTitleText(title).length > TARIFF_TITLE_LIMIT
+
+const tariffTitle = (title) => {
+  const text = tariffTitleText(title)
+  if (text.length <= TARIFF_TITLE_LIMIT) return text
+  return `${text.slice(0, TARIFF_TITLE_LIMIT).trimEnd()}...`
+}
 
 const openConsult = () => {
   store.openModal('consult')

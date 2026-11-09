@@ -150,10 +150,20 @@
 
 	&--format {
 		width: 185px;
+
+		b {
+			font-size: 14px;
+			line-height: 1.2;
+		}
 	}
 
 	&--price {
 		padding: 0 30px;
+	}
+
+	&--duration b {
+		font-size: 14px;
+		line-height: 1.2;
 	}
 }
 
@@ -723,6 +733,12 @@
 			font-size: 15px;
 			line-height: 1.25;
 			color: $white;
+		}
+
+		&--duration b,
+		&--format b {
+			font-size: 13px;
+			line-height: 1.2;
 		}
 	}
 

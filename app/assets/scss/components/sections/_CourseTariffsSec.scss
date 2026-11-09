@@ -35,15 +35,66 @@
 	}
 }
 
-.course-tariff__info {
-	h3 {
-		margin: 0 0 11px;
-		font-weight: 500;
-		font-size: 30px;
-		letter-spacing: 0.02em;
-		line-height: 1;
-		color: $darkBlue;
+.course-tariff__title-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	margin: 0 0 11px;
+}
+
+.course-tariff__title {
+	margin: 0;
+	font-weight: 500;
+	font-size: 24px;
+	letter-spacing: 0.02em;
+	line-height: 1;
+	color: $darkBlue;
+}
+
+.course-tariff__hint {
+	position: relative;
+	flex-shrink: 0;
+	display: inline-flex;
+	margin-top: 1px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: $darkBlue;
+	cursor: help;
+
+	svg {
+		width: 22px;
+		height: 22px;
 	}
+}
+
+.course-tariff__hint-pop {
+	display: none;
+	position: absolute;
+	z-index: 5;
+	left: 50%;
+	bottom: calc(100% + 8px);
+	width: max-content;
+	max-width: 280px;
+	padding: 10px 12px;
+	border-radius: 8px;
+	background: $darkBlue;
+	color: $white;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.35;
+	letter-spacing: 0;
+	text-align: left;
+	box-shadow: 0 8px 20px rgba(20, 87, 113, 0.2);
+	transform: translateX(-50%);
+}
+
+.course-tariff__hint:hover .course-tariff__hint-pop,
+.course-tariff__hint:focus-visible .course-tariff__hint-pop {
+	display: block;
+}
+
+.course-tariff__info {
 
 	p {
 		margin: 0;
@@ -72,11 +123,21 @@
 .course-tariff__term {
 	width: 140px;
 	margin-left: 54px;
+
+	b {
+		font-size: 16px;
+		line-height: 1.2;
+	}
 }
 
 .course-tariff__format {
 	width: 160px;
 	margin-left: 42px;
+
+	b {
+		font-size: 18px;
+		line-height: 1.2;
+	}
 }
 
 .course-tariff__label {
@@ -188,11 +249,11 @@
 		min-width: 0;
 	}
 
-	.course-tariff__info {
-		h3 {
-			font-size: 26px;
-		}
+	.course-tariff__title {
+		font-size: 24px;
+	}
 
+	.course-tariff__info {
 		p {
 			font-size: 18px;
 		}
@@ -282,12 +343,15 @@
 		}
 	}
 
-	.course-tariff__info {
-		h3 {
-			margin-bottom: 8px;
-			font-size: 22px;
-		}
+	.course-tariff__title-row {
+		margin-bottom: 8px;
+	}
 
+	.course-tariff__title {
+		font-size: 24px;
+	}
+
+	.course-tariff__info {
 		p {
 			font-size: 16px;
 		}
@@ -303,7 +367,10 @@
 		width: 130px;
 	}
 
-	.course-tariff__term b,
+	.course-tariff__term b {
+		font-size: 16px;
+	}
+
 	.course-tariff__format b {
 		font-size: 18px;
 	}
@@ -357,11 +424,11 @@
 		}
 	}
 
-	.course-tariff__info {
-		h3 {
-			font-size: 20px;
-		}
+	.course-tariff__title {
+		font-size: 18px;
+	}
 
+	.course-tariff__info {
 		p {
 			font-size: 14px;
 		}
@@ -378,9 +445,12 @@
 		font-size: 14px;
 	}
 
-	.course-tariff__term b,
-	.course-tariff__format b {
+	.course-tariff__term b {
 		font-size: 16px;
+	}
+
+	.course-tariff__format b {
+		font-size: 18px;
 	}
 
 	.course-tariff__price {
@@ -402,13 +472,18 @@
 
 	.course-tariff__btn.btn-pill {
 		flex: 1 1 100%;
+		justify-content: center;
 		width: 100%;
 		max-width: none;
 		margin-left: 0;
 		height: 44px;
+		padding: 0 44px;
 		font-size: 14px;
+		text-align: center;
 
 		.btn-pill__icon {
+			top: 6px;
+			right: 6px;
 			width: 32px;
 			height: 32px;
 		}
