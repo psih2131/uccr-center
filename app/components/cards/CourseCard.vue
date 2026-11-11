@@ -1,15 +1,18 @@
 <template>
   <NuxtLink :to="to" class="spec-card">
-    <div class="spec-card__top">
-      <span class="spec-card__num" >№{{ index + 1 }}</span>
-      <span v-if="statusNew" class="spec-card__new">Новое</span>
-      <svg class="spec-card__plus" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
-        <path d="M7.5 2V13M2 7.5H13" stroke="#99AAC9" stroke-width="1.4" stroke-linecap="round"/>
-      </svg>
+    <div class="spec-card__main-info">
+      <div class="spec-card__top">
+        <span class="spec-card__num" >№{{ index + 1 }}</span>
+        <span v-if="statusNew" class="spec-card__new">Новое</span>
+        <svg class="spec-card__plus" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M7.5 2V13M2 7.5H13" stroke="#99AAC9" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3 class="spec-card__title">{{ course.title }}</h3>
+      <p v-if="metaLine" class="spec-card__count">{{ metaLine }}</p>
     </div>
-    <h3 class="spec-card__title">{{ course.title }}</h3>
-    <p v-if="metaLine" class="spec-card__count">{{ metaLine }}</p>
-    <img class="spec-card__image" :src="mediaUrl(course.preview)" :alt="course.preview?.alternativeText || course.title">
+    
+    <img class="spec-card__image" :src="previewUrl" :alt="course.preview?.alternativeText || course.title">
     <span class="spec-card__more">
       <span class="spec-card__icon">
         <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
@@ -22,6 +25,8 @@
 </template>
 
 <script setup>
+import defaultCardImage from '~/assets/images/course/default-card-spec.jpg'
+
 const props = defineProps({
   course: {
     type: Object,
@@ -76,4 +81,6 @@ function mediaUrl(file) {
   if (file.url.startsWith('http')) return file.url
   return `${config.public.strapiUrl}${file.url}`
 }
+
+const previewUrl = computed(() => mediaUrl(props.course.preview) || defaultCardImage)
 </script>
