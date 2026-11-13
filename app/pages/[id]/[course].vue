@@ -6,7 +6,11 @@
 
     <SectionsCourseProgramSec :items="course.what_waiting_for_section || []" />
 
-    <SectionsCourseOfferSec :course="course" />
+    <SectionsCourseOfferSec
+      :course="course"
+      :old_price_rub="course.old_price_rub"
+      :default_price="course.default_price"
+    />
 
     <SectionsCourseTariffsSec :section="course.price_sec_v2" />
 
@@ -39,9 +43,13 @@
 
 
 <script setup>
+import { cityPrepositional } from '~/utils/cityPrepositional'
+
 const route = useRoute()
 const config = useRuntimeConfig()
 const { data: cities } = await useCities()
+const { city } = useCity()
+const titleCity = computed(() => cityPrepositional(city.value?.title || city.value?.name))
 
 const cityDirectionSlug = computed(() => {
   const first = String(route.params.id || '')
@@ -78,5 +86,6 @@ if (!cityDirectionSlug.value && direction.value?.slug && direction.value.slug !=
   throw createError({ statusCode: 404, statusMessage: 'Курс не найден' })
 }
 
-usePageSeo(() => (cityDirectionSlug.value ? null : course.value?.Seo))
+usePageSeo(() => (cityDirectionSlug.value ? null : course.value?.Seo), titleCity)
+
 </script>

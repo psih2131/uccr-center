@@ -20,36 +20,20 @@
             </span>
           </div>
 
-          <h2 class="course-offer__title">{{ course.title }}</h2>
-          <p class="course-offer__label">Продолжительность обучения:</p>
+          <h2 class="course-offer__title">{{ course.title }}<template v-if="titleCity"> в {{ titleCity }}</template></h2>
 
           <div class="course-offer__row">
-            <div v-if="priceItems.length" class="course-offer__hours">
-              <button
-                v-for="item in priceItems"
-                :key="item.hour"
-                class="course-offer__hour"
-                :class="{ 'course-offer__hour--active': activeHour === item.hour }"
-                type="button"
-                @click="activeHour = item.hour"
-              >
-                {{ item.hour }} ак.ч
-              </button>
-            </div>
-
-            <span class="course-offer__divider" aria-hidden="true"></span>
-
             <div class="course-offer__aside">
               <div class="course-offer__credit">
                 <span>Рассрочка 0%</span>
                 <b>от <em>458р/мес</em></b>
                 <button type="button" @click="openConsult">Узнать подробнее</button>
               </div>
-              <div v-if="activePrice" class="course-offer__price">
+              <div v-if="default_price != null" class="course-offer__price">
                 <span>Стоимость обучения</span>
-                <strong>{{ activePrice.current_price }}р</strong>
+                <strong>{{ default_price }}р</strong>
                 <span v-if="hasOldPrice" class="course-offer__old">
-                  <s>{{ activePrice.old_price }}р</s>
+                  <s>{{ old_price_rub }}р</s>
                   <em>-{{ priceDiff }}р</em>
                 </span>
               </div>
@@ -149,6 +133,7 @@
 </template>
 
 <script setup>
+import { cityPrepositional } from '~/utils/cityPrepositional'
 import license1 from '~/assets/images/licenses/license-1.png'
 import license2 from '~/assets/images/licenses/license-2.png'
 import licenseDir from '~/assets/images/licenses/license-dir.png'
@@ -158,10 +143,21 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  old_price_rub: {
+    type: Number,
+    default: null,
+  },
+  default_price: {
+    type: Number,
+    default: null,
+  },
 })
 
 const config = useRuntimeConfig()
 const store = useCounterStore()
+const { city } = useCity()
+
+const titleCity = computed(() => cityPrepositional(city.value?.title || city.value?.name))
 
 const fallbackImages = [licenseDir, license1, license2]
 
@@ -171,45 +167,13 @@ function mediaUrl(file) {
   return `${config.public.strapiUrl}${file.url}`
 }
 
-const priceItems = computed(() => {
-  const items = props.course?.price_v1_section?.price_item || []
-  return items
-    .filter((item) => item?.hour != null)
-    .map((item) => ({
-      hour: item.hour,
-      current_price: item.current_price,
-      old_price: item.old_price,
-    }))
-    .sort((a, b) => a.hour - b.hour)
-})
-
-const activeHour = ref(null)
-
-watch(
-  priceItems,
-  (items) => {
-    if (!items.length) {
-      activeHour.value = null
-      return
-    }
-    if (!items.some((item) => item.hour === activeHour.value)) {
-      activeHour.value = items[0].hour
-    }
-  },
-  { immediate: true },
-)
-
-const activePrice = computed(() =>
-  priceItems.value.find((item) => item.hour === activeHour.value) || null,
-)
-
 const hasOldPrice = computed(() =>
-  activePrice.value?.old_price != null && activePrice.value?.current_price != null,
+  props.old_price_rub != null && props.default_price != null,
 )
 
 const priceDiff = computed(() => {
   if (!hasOldPrice.value) return 0
-  return Math.abs(activePrice.value.old_price - activePrice.value.current_price)
+  return Math.abs(props.old_price_rub - props.default_price)
 })
 
 const images = computed(() => {

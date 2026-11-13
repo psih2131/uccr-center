@@ -6,12 +6,13 @@
           <p class="course-hero__crumbs">
             <NuxtLink to="/">Главная</NuxtLink>
             <span> - </span>
-            <span class="course-hero__crumbs-current">{{ course.title }}</span>
+            <span class="course-hero__crumbs-current">{{ course.title }}<template v-if="titleCity"> в {{ titleCity }}</template></span>
           </p>
 
           <h1 class="course-hero__title">
             <span class="course-hero__title-row">
               <span v-html="formatTitle(course.H1_title || course.title)"></span>
+              <span v-if="titleCity" class="course-hero__title-city"> в {{ titleCity }}</span>
               <span class="course-hero__title-plus" aria-hidden="true">
                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                   <rect x="11.6387" width="2.32143" height="25" rx="1.16071" fill="#D92139"/>
@@ -93,6 +94,7 @@
 
 <script setup>
 import heroImage from '~/assets/images/course/course-hero.png'
+import { cityPrepositional } from '~/utils/cityPrepositional'
 
 const props = defineProps({
   course: {
@@ -107,6 +109,9 @@ const props = defineProps({
 
 const config = useRuntimeConfig()
 const store = useCounterStore()
+const { city } = useCity()
+
+const titleCity = computed(() => cityPrepositional(city.value?.title || city.value?.name))
 
 const benefits = [
   'Работаем на основании Лицензии Министерства Образования',

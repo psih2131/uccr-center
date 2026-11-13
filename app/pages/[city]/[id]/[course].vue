@@ -5,7 +5,11 @@
 
     <SectionsCourseProgramSec :items="course.what_waiting_for_section || []" />
 
-    <SectionsCourseOfferSec :course="course" />
+    <SectionsCourseOfferSec
+      :course="course"
+      :old_price_rub="course.old_price_rub"
+      :default_price="course.default_price"
+    />
     <SectionsCourseTariffsSec :section="course.price_sec_v2" />
     <SectionsCourseStepsSec />
     <SectionsCourseAudienceSec :section="course.for_who_section" />
@@ -26,6 +30,7 @@
 
 <script setup>
 import { isKnownCitySlug } from '~/utils/fetchCities'
+import { cityPrepositional } from '~/utils/cityPrepositional'
 
 definePageMeta({
   validate: (route) => isKnownCitySlug(String(route.params.city || '')),
@@ -71,5 +76,7 @@ if (direction.value?.slug && direction.value.slug !== route.params.id) {
   throw createError({ statusCode: 404, statusMessage: 'Курс не найден' })
 }
 
-usePageSeo(() => course.value?.Seo)
+const titleCity = computed(() => cityPrepositional(city.value?.title || city.value?.name))
+
+usePageSeo(() => course.value?.Seo, titleCity)
 </script>

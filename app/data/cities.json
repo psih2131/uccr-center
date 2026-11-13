@@ -1,0 +1,3742 @@
+[
+  {
+    "name": "Абакан",
+    "slug": "abakan",
+    "nominative": "Абакан",
+    "genitive": "Абакана",
+    "dative": "Абакану",
+    "accusative": "Абакан",
+    "instrumental": "Абаканом",
+    "prepositional": "Абакане"
+  },
+  {
+    "name": "Азов",
+    "slug": "azov",
+    "nominative": "Азов",
+    "genitive": "Азова",
+    "dative": "Азову",
+    "accusative": "Азов",
+    "instrumental": "Азовом",
+    "prepositional": "Азове"
+  },
+  {
+    "name": "Александров",
+    "slug": "aleksandrov",
+    "nominative": "Александров",
+    "genitive": "Александрова",
+    "dative": "Александрову",
+    "accusative": "Александров",
+    "instrumental": "Александровом",
+    "prepositional": "Александрове"
+  },
+  {
+    "name": "Алексин",
+    "slug": "aleksin",
+    "nominative": "Алексин",
+    "genitive": "Алексина",
+    "dative": "Алексину",
+    "accusative": "Алексин",
+    "instrumental": "Алексином",
+    "prepositional": "Алексине"
+  },
+  {
+    "name": "Алчевск",
+    "slug": "alchevsk",
+    "nominative": "Алчевск",
+    "genitive": "Алчевска",
+    "dative": "Алчевску",
+    "accusative": "Алчевск",
+    "instrumental": "Алчевском",
+    "prepositional": "Алчевске"
+  },
+  {
+    "name": "Альметьевск",
+    "slug": "almetevsk",
+    "nominative": "Альметьевск",
+    "genitive": "Альметьевска",
+    "dative": "Альметьевску",
+    "accusative": "Альметьевск",
+    "instrumental": "Альметьевском",
+    "prepositional": "Альметьевске"
+  },
+  {
+    "name": "Анапа",
+    "slug": "anapa",
+    "nominative": "Анапа",
+    "genitive": "Анапы",
+    "dative": "Анапе",
+    "accusative": "Анапу",
+    "instrumental": "Анапой",
+    "prepositional": "Анапе"
+  },
+  {
+    "name": "Ангарск",
+    "slug": "angarsk",
+    "nominative": "Ангарск",
+    "genitive": "Ангарска",
+    "dative": "Ангарску",
+    "accusative": "Ангарск",
+    "instrumental": "Ангарском",
+    "prepositional": "Ангарске"
+  },
+  {
+    "name": "Анжеро-Судженск",
+    "slug": "anzhero-sudzhensk",
+    "nominative": "Анжеро-Судженск",
+    "genitive": "Анжеро-Судженска",
+    "dative": "Анжеро-Судженску",
+    "accusative": "Анжеро-Судженск",
+    "instrumental": "Анжеро-Судженском",
+    "prepositional": "Анжеро-Судженске"
+  },
+  {
+    "name": "Апрелевка",
+    "slug": "aprelevka",
+    "nominative": "Апрелевка",
+    "genitive": "Апрелевки",
+    "dative": "Апрелевке",
+    "accusative": "Апрелевку",
+    "instrumental": "Апрелевкой",
+    "prepositional": "Апрелевке"
+  },
+  {
+    "name": "Арзамас",
+    "slug": "arzamas",
+    "nominative": "Арзамас",
+    "genitive": "Арзамаса",
+    "dative": "Арзамасу",
+    "accusative": "Арзамас",
+    "instrumental": "Арзамасом",
+    "prepositional": "Арзамасе"
+  },
+  {
+    "name": "Армавир",
+    "slug": "armavir",
+    "nominative": "Армавир",
+    "genitive": "Армавира",
+    "dative": "Армавиру",
+    "accusative": "Армавир",
+    "instrumental": "Армавиром",
+    "prepositional": "Армавире"
+  },
+  {
+    "name": "Артём",
+    "slug": "artyom",
+    "nominative": "Артём",
+    "genitive": "Артёма",
+    "dative": "Артёму",
+    "accusative": "Артём",
+    "instrumental": "Артёмом",
+    "prepositional": "Артёме"
+  },
+  {
+    "name": "Архангельск",
+    "slug": "arhangelsk",
+    "nominative": "Архангельск",
+    "genitive": "Архангельска",
+    "dative": "Архангельску",
+    "accusative": "Архангельск",
+    "instrumental": "Архангельском",
+    "prepositional": "Архангельске"
+  },
+  {
+    "name": "Асбест",
+    "slug": "asbest",
+    "nominative": "Асбест",
+    "genitive": "Асбеста",
+    "dative": "Асбесту",
+    "accusative": "Асбест",
+    "instrumental": "Асбестом",
+    "prepositional": "Асбесте"
+  },
+  {
+    "name": "Астрахань",
+    "slug": "astrahan",
+    "nominative": "Астрахань",
+    "genitive": "Астрахани",
+    "dative": "Астрахани",
+    "accusative": "Астрахань",
+    "instrumental": "Астраханью",
+    "prepositional": "Астрахани"
+  },
+  {
+    "name": "Балаково",
+    "slug": "balakovo",
+    "nominative": "Балаково",
+    "genitive": "Балакова",
+    "dative": "Балакову",
+    "accusative": "Балаково",
+    "instrumental": "Балаковом",
+    "prepositional": "Балакове"
+  },
+  {
+    "name": "Балашиха",
+    "slug": "balashiha",
+    "nominative": "Балашиха",
+    "genitive": "Балашихи",
+    "dative": "Балашихе",
+    "accusative": "Балашиху",
+    "instrumental": "Балашихой",
+    "prepositional": "Балашихе"
+  },
+  {
+    "name": "Балашов",
+    "slug": "balashov",
+    "nominative": "Балашов",
+    "genitive": "Балашова",
+    "dative": "Балашову",
+    "accusative": "Балашов",
+    "instrumental": "Балашовом",
+    "prepositional": "Балашове"
+  },
+  {
+    "name": "Барнаул",
+    "slug": "barnaul",
+    "nominative": "Барнаул",
+    "genitive": "Барнаула",
+    "dative": "Барнаулу",
+    "accusative": "Барнаул",
+    "instrumental": "Барнаулом",
+    "prepositional": "Барнауле"
+  },
+  {
+    "name": "Батайск",
+    "slug": "batajsk",
+    "nominative": "Батайск",
+    "genitive": "Батайска",
+    "dative": "Батайску",
+    "accusative": "Батайск",
+    "instrumental": "Батайском",
+    "prepositional": "Батайске"
+  },
+  {
+    "name": "Белгород",
+    "slug": "belgorod",
+    "nominative": "Белгород",
+    "genitive": "Белгорода",
+    "dative": "Белгороду",
+    "accusative": "Белгород",
+    "instrumental": "Белгородом",
+    "prepositional": "Белгороде"
+  },
+  {
+    "name": "Белебей",
+    "slug": "belebej",
+    "nominative": "Белебей",
+    "genitive": "Белебея",
+    "dative": "Белебею",
+    "accusative": "Белебей",
+    "instrumental": "Белебеем",
+    "prepositional": "Белебее"
+  },
+  {
+    "name": "Белово",
+    "slug": "belovo",
+    "nominative": "Белово",
+    "genitive": "Белова",
+    "dative": "Белову",
+    "accusative": "Белово",
+    "instrumental": "Беловом",
+    "prepositional": "Белове"
+  },
+  {
+    "name": "Белогорск",
+    "slug": "belogorsk",
+    "nominative": "Белогорск",
+    "genitive": "Белогорска",
+    "dative": "Белогорску",
+    "accusative": "Белогорск",
+    "instrumental": "Белогорском",
+    "prepositional": "Белогорске"
+  },
+  {
+    "name": "Белоозёрский",
+    "slug": "beloozyorskij",
+    "nominative": "Белоозёрский",
+    "genitive": "Белоозёрского",
+    "dative": "Белоозёрскому",
+    "accusative": "Белоозёрский",
+    "instrumental": "Белоозёрским",
+    "prepositional": "Белоозёрском"
+  },
+  {
+    "name": "Белорецк",
+    "slug": "beloreczk",
+    "nominative": "Белорецк",
+    "genitive": "Белорецка",
+    "dative": "Белорецку",
+    "accusative": "Белорецк",
+    "instrumental": "Белорецком",
+    "prepositional": "Белорецке"
+  },
+  {
+    "name": "Белореченск",
+    "slug": "belorechensk",
+    "nominative": "Белореченск",
+    "genitive": "Белореченска",
+    "dative": "Белореченску",
+    "accusative": "Белореченск",
+    "instrumental": "Белореченском",
+    "prepositional": "Белореченске"
+  },
+  {
+    "name": "Бердск",
+    "slug": "berdsk",
+    "nominative": "Бердск",
+    "genitive": "Бердска",
+    "dative": "Бердску",
+    "accusative": "Бердск",
+    "instrumental": "Бердском",
+    "prepositional": "Бердске"
+  },
+  {
+    "name": "Березники",
+    "slug": "berezniki",
+    "nominative": "Березники",
+    "genitive": "Березников",
+    "dative": "Березникам",
+    "accusative": "Березники",
+    "instrumental": "Березниками",
+    "prepositional": "Березниках"
+  },
+  {
+    "name": "Берёзовский",
+    "slug": "beryozovskij",
+    "nominative": "Берёзовский",
+    "genitive": "Берёзовского",
+    "dative": "Берёзовскому",
+    "accusative": "Берёзовский",
+    "instrumental": "Берёзовским",
+    "prepositional": "Берёзовском"
+  },
+  {
+    "name": "Бийск",
+    "slug": "bijsk",
+    "nominative": "Бийск",
+    "genitive": "Бийска",
+    "dative": "Бийску",
+    "accusative": "Бийск",
+    "instrumental": "Бийском",
+    "prepositional": "Бийске"
+  },
+  {
+    "name": "Биробиджан",
+    "slug": "birobidzhan",
+    "nominative": "Биробиджан",
+    "genitive": "Биробиджана",
+    "dative": "Биробиджану",
+    "accusative": "Биробиджан",
+    "instrumental": "Биробиджаном",
+    "prepositional": "Биробиджане"
+  },
+  {
+    "name": "Благовещенск",
+    "slug": "blagoveshhensk",
+    "nominative": "Благовещенск",
+    "genitive": "Благовещенска",
+    "dative": "Благовещенску",
+    "accusative": "Благовещенск",
+    "instrumental": "Благовещенском",
+    "prepositional": "Благовещенске"
+  },
+  {
+    "name": "Бор",
+    "slug": "bor",
+    "nominative": "Бор",
+    "genitive": "Бора",
+    "dative": "Бору",
+    "accusative": "Бор",
+    "instrumental": "Бором",
+    "prepositional": "Бору"
+  },
+  {
+    "name": "Борисоглебск",
+    "slug": "borisoglebsk",
+    "nominative": "Борисоглебск",
+    "genitive": "Борисоглебска",
+    "dative": "Борисоглебску",
+    "accusative": "Борисоглебск",
+    "instrumental": "Борисоглебском",
+    "prepositional": "Борисоглебске"
+  },
+  {
+    "name": "Братск",
+    "slug": "bratsk",
+    "nominative": "Братск",
+    "genitive": "Братска",
+    "dative": "Братску",
+    "accusative": "Братск",
+    "instrumental": "Братском",
+    "prepositional": "Братске"
+  },
+  {
+    "name": "Бронницы",
+    "slug": "bronniczy",
+    "nominative": "Бронницы",
+    "genitive": "Бронниц",
+    "dative": "Бронницам",
+    "accusative": "Бронницы",
+    "instrumental": "Бронницами",
+    "prepositional": "Бронницах"
+  },
+  {
+    "name": "Брянск",
+    "slug": "bryansk",
+    "nominative": "Брянск",
+    "genitive": "Брянска",
+    "dative": "Брянску",
+    "accusative": "Брянск",
+    "instrumental": "Брянском",
+    "prepositional": "Брянске"
+  },
+  {
+    "name": "Бугульма",
+    "slug": "bugulma",
+    "nominative": "Бугульма",
+    "genitive": "Бугульмы",
+    "dative": "Бугульме",
+    "accusative": "Бугульму",
+    "instrumental": "Бугульмой",
+    "prepositional": "Бугульме"
+  },
+  {
+    "name": "Будённовск",
+    "slug": "budyonnovsk",
+    "nominative": "Будённовск",
+    "genitive": "Будённовска",
+    "dative": "Будённовску",
+    "accusative": "Будённовск",
+    "instrumental": "Будённовском",
+    "prepositional": "Будённовске"
+  },
+  {
+    "name": "Бузулук",
+    "slug": "buzuluk",
+    "nominative": "Бузулук",
+    "genitive": "Бузулука",
+    "dative": "Бузулуку",
+    "accusative": "Бузулук",
+    "instrumental": "Бузулуком",
+    "prepositional": "Бузулуке"
+  },
+  {
+    "name": "Буйнакск",
+    "slug": "bujnaksk",
+    "nominative": "Буйнакск",
+    "genitive": "Буйнакска",
+    "dative": "Буйнакску",
+    "accusative": "Буйнакск",
+    "instrumental": "Буйнакском",
+    "prepositional": "Буйнакске"
+  },
+  {
+    "name": "Великие Луки",
+    "slug": "velikie-luki",
+    "nominative": "Великие Луки",
+    "genitive": "Великих Лук",
+    "dative": "Великим Лукам",
+    "accusative": "Великие Луки",
+    "instrumental": "Великими Луками",
+    "prepositional": "Великих Луках"
+  },
+  {
+    "name": "Великий Новгород",
+    "slug": "velikij-novgorod",
+    "nominative": "Великий Новгород",
+    "genitive": "Великого Новгорода",
+    "dative": "Великому Новгороду",
+    "accusative": "Великий Новгород",
+    "instrumental": "Великим Новгородом",
+    "prepositional": "Великом Новгороде"
+  },
+  {
+    "name": "Верея",
+    "slug": "vereya",
+    "nominative": "Верея",
+    "genitive": "Вереи",
+    "dative": "Верее",
+    "accusative": "Верею",
+    "instrumental": "Вереей",
+    "prepositional": "Верее"
+  },
+  {
+    "name": "Верхняя Пышма",
+    "slug": "verhnyaya-pyshma",
+    "nominative": "Верхняя Пышма",
+    "genitive": "Верхней Пышмы",
+    "dative": "Верхней Пышме",
+    "accusative": "Верхнюю Пышму",
+    "instrumental": "Верхней Пышмой",
+    "prepositional": "Верхней Пышме"
+  },
+  {
+    "name": "Видное",
+    "slug": "vidnoe",
+    "nominative": "Видное",
+    "genitive": "Видного",
+    "dative": "Видному",
+    "accusative": "Видное",
+    "instrumental": "Видным",
+    "prepositional": "Видном"
+  },
+  {
+    "name": "Владивосток",
+    "slug": "vladivostok",
+    "nominative": "Владивосток",
+    "genitive": "Владивостока",
+    "dative": "Владивостоку",
+    "accusative": "Владивосток",
+    "instrumental": "Владивостоком",
+    "prepositional": "Владивостоке"
+  },
+  {
+    "name": "Владикавказ",
+    "slug": "vladikavkaz",
+    "nominative": "Владикавказ",
+    "genitive": "Владикавказа",
+    "dative": "Владикавказу",
+    "accusative": "Владикавказ",
+    "instrumental": "Владикавказом",
+    "prepositional": "Владикавказе"
+  },
+  {
+    "name": "Владимир",
+    "slug": "vladimir",
+    "nominative": "Владимир",
+    "genitive": "Владимира",
+    "dative": "Владимиру",
+    "accusative": "Владимир",
+    "instrumental": "Владимиром",
+    "prepositional": "Владимире"
+  },
+  {
+    "name": "Волгоград",
+    "slug": "volgograd",
+    "nominative": "Волгоград",
+    "genitive": "Волгограда",
+    "dative": "Волгограду",
+    "accusative": "Волгоград",
+    "instrumental": "Волгоградом",
+    "prepositional": "Волгограде"
+  },
+  {
+    "name": "Волгодонск",
+    "slug": "volgodonsk",
+    "nominative": "Волгодонск",
+    "genitive": "Волгодонска",
+    "dative": "Волгодонску",
+    "accusative": "Волгодонск",
+    "instrumental": "Волгодонском",
+    "prepositional": "Волгодонске"
+  },
+  {
+    "name": "Волжск",
+    "slug": "volzhsk",
+    "nominative": "Волжск",
+    "genitive": "Волжска",
+    "dative": "Волжску",
+    "accusative": "Волжск",
+    "instrumental": "Волжском",
+    "prepositional": "Волжске"
+  },
+  {
+    "name": "Волжский",
+    "slug": "volzhskij",
+    "nominative": "Волжский",
+    "genitive": "Волжского",
+    "dative": "Волжскому",
+    "accusative": "Волжский",
+    "instrumental": "Волжским",
+    "prepositional": "Волжском"
+  },
+  {
+    "name": "Вологда",
+    "slug": "vologda",
+    "nominative": "Вологда",
+    "genitive": "Вологды",
+    "dative": "Вологде",
+    "accusative": "Вологду",
+    "instrumental": "Вологдой",
+    "prepositional": "Вологде"
+  },
+  {
+    "name": "Волоколамск",
+    "slug": "volokolamsk",
+    "nominative": "Волоколамск",
+    "genitive": "Волоколамска",
+    "dative": "Волоколамску",
+    "accusative": "Волоколамск",
+    "instrumental": "Волоколамском",
+    "prepositional": "Волоколамске"
+  },
+  {
+    "name": "Вольск",
+    "slug": "volsk",
+    "nominative": "Вольск",
+    "genitive": "Вольска",
+    "dative": "Вольску",
+    "accusative": "Вольск",
+    "instrumental": "Вольском",
+    "prepositional": "Вольске"
+  },
+  {
+    "name": "Воркута",
+    "slug": "vorkuta",
+    "nominative": "Воркута",
+    "genitive": "Воркуты",
+    "dative": "Воркуте",
+    "accusative": "Воркуту",
+    "instrumental": "Воркутой",
+    "prepositional": "Воркуте"
+  },
+  {
+    "name": "Воронеж",
+    "slug": "voronezh",
+    "nominative": "Воронеж",
+    "genitive": "Воронежа",
+    "dative": "Воронежу",
+    "accusative": "Воронеж",
+    "instrumental": "Воронежем",
+    "prepositional": "Воронеже"
+  },
+  {
+    "name": "Воскресенск",
+    "slug": "voskresensk",
+    "nominative": "Воскресенск",
+    "genitive": "Воскресенска",
+    "dative": "Воскресенску",
+    "accusative": "Воскресенск",
+    "instrumental": "Воскресенском",
+    "prepositional": "Воскресенске"
+  },
+  {
+    "name": "Воткинск",
+    "slug": "votkinsk",
+    "nominative": "Воткинск",
+    "genitive": "Воткинска",
+    "dative": "Воткинску",
+    "accusative": "Воткинск",
+    "instrumental": "Воткинском",
+    "prepositional": "Воткинске"
+  },
+  {
+    "name": "Всеволожск",
+    "slug": "vsevolozhsk",
+    "nominative": "Всеволожск",
+    "genitive": "Всеволожска",
+    "dative": "Всеволожску",
+    "accusative": "Всеволожск",
+    "instrumental": "Всеволожском",
+    "prepositional": "Всеволожске"
+  },
+  {
+    "name": "Выборг",
+    "slug": "vyborg",
+    "nominative": "Выборг",
+    "genitive": "Выборга",
+    "dative": "Выборгу",
+    "accusative": "Выборг",
+    "instrumental": "Выборгом",
+    "prepositional": "Выборге"
+  },
+  {
+    "name": "Высоковск",
+    "slug": "vysokovsk",
+    "nominative": "Высоковск",
+    "genitive": "Высоковска",
+    "dative": "Высоковску",
+    "accusative": "Высоковск",
+    "instrumental": "Высоковском",
+    "prepositional": "Высоковске"
+  },
+  {
+    "name": "Вязьма",
+    "slug": "vyazma",
+    "nominative": "Вязьма",
+    "genitive": "Вязьмы",
+    "dative": "Вязьме",
+    "accusative": "Вязьму",
+    "instrumental": "Вязьмой",
+    "prepositional": "Вязьме"
+  },
+  {
+    "name": "Гатчина",
+    "slug": "gatchina",
+    "nominative": "Гатчина",
+    "genitive": "Гатчины",
+    "dative": "Гатчине",
+    "accusative": "Гатчину",
+    "instrumental": "Гатчиной",
+    "prepositional": "Гатчине"
+  },
+  {
+    "name": "Геленджик",
+    "slug": "gelendzhik",
+    "nominative": "Геленджик",
+    "genitive": "Геленджика",
+    "dative": "Геленджику",
+    "accusative": "Геленджик",
+    "instrumental": "Геленджиком",
+    "prepositional": "Геленджике"
+  },
+  {
+    "name": "Георгиевск",
+    "slug": "georgievsk",
+    "nominative": "Георгиевск",
+    "genitive": "Георгиевска",
+    "dative": "Георгиевску",
+    "accusative": "Георгиевск",
+    "instrumental": "Георгиевском",
+    "prepositional": "Георгиевске"
+  },
+  {
+    "name": "Глазов",
+    "slug": "glazov",
+    "nominative": "Глазов",
+    "genitive": "Глазова",
+    "dative": "Глазову",
+    "accusative": "Глазов",
+    "instrumental": "Глазовом",
+    "prepositional": "Глазове"
+  },
+  {
+    "name": "Голицыно",
+    "slug": "goliczyno",
+    "nominative": "Голицыно",
+    "genitive": "Голицына",
+    "dative": "Голицыну",
+    "accusative": "Голицыно",
+    "instrumental": "Голицыном",
+    "prepositional": "Голицыне"
+  },
+  {
+    "name": "Горловка",
+    "slug": "gorlovka",
+    "nominative": "Горловка",
+    "genitive": "Горловки",
+    "dative": "Горловке",
+    "accusative": "Горловку",
+    "instrumental": "Горловкой",
+    "prepositional": "Горловке"
+  },
+  {
+    "name": "Горно-Алтайск",
+    "slug": "gorno-altajsk",
+    "nominative": "Горно-Алтайск",
+    "genitive": "Горно-Алтайска",
+    "dative": "Горно-Алтайску",
+    "accusative": "Горно-Алтайск",
+    "instrumental": "Горно-Алтайском",
+    "prepositional": "Горно-Алтайске"
+  },
+  {
+    "name": "Грозный",
+    "slug": "groznyj",
+    "nominative": "Грозный",
+    "genitive": "Грозного",
+    "dative": "Грозному",
+    "accusative": "Грозный",
+    "instrumental": "Грозным",
+    "prepositional": "Грозном"
+  },
+  {
+    "name": "Губкин",
+    "slug": "gubkin",
+    "nominative": "Губкин",
+    "genitive": "Губкина",
+    "dative": "Губкину",
+    "accusative": "Губкин",
+    "instrumental": "Губкином",
+    "prepositional": "Губкине"
+  },
+  {
+    "name": "Гудермес",
+    "slug": "gudermes",
+    "nominative": "Гудермес",
+    "genitive": "Гудермеса",
+    "dative": "Гудермесу",
+    "accusative": "Гудермес",
+    "instrumental": "Гудермесом",
+    "prepositional": "Гудермесе"
+  },
+  {
+    "name": "Гуково",
+    "slug": "gukovo",
+    "nominative": "Гуково",
+    "genitive": "Гукова",
+    "dative": "Гукову",
+    "accusative": "Гуково",
+    "instrumental": "Гуковом",
+    "prepositional": "Гукове"
+  },
+  {
+    "name": "Гусь-Хрустальный",
+    "slug": "gus-hrustalnyj",
+    "nominative": "Гусь-Хрустальный",
+    "genitive": "Гуся-Хрустального",
+    "dative": "Гусю-Хрустальному",
+    "accusative": "Гусь-Хрустальный",
+    "instrumental": "Гусем-Хрустальным",
+    "prepositional": "Гусе-Хрустальном"
+  },
+  {
+    "name": "Дедовск",
+    "slug": "dedovsk",
+    "nominative": "Дедовск",
+    "genitive": "Дедовска",
+    "dative": "Дедовску",
+    "accusative": "Дедовск",
+    "instrumental": "Дедовском",
+    "prepositional": "Дедовске"
+  },
+  {
+    "name": "Дербент",
+    "slug": "derbent",
+    "nominative": "Дербент",
+    "genitive": "Дербента",
+    "dative": "Дербенту",
+    "accusative": "Дербент",
+    "instrumental": "Дербентом",
+    "prepositional": "Дербенте"
+  },
+  {
+    "name": "Дзержинск",
+    "slug": "dzerzhinsk",
+    "nominative": "Дзержинск",
+    "genitive": "Дзержинска",
+    "dative": "Дзержинску",
+    "accusative": "Дзержинск",
+    "instrumental": "Дзержинском",
+    "prepositional": "Дзержинске"
+  },
+  {
+    "name": "Дзержинский",
+    "slug": "dzerzhinskij",
+    "nominative": "Дзержинский",
+    "genitive": "Дзержинского",
+    "dative": "Дзержинскому",
+    "accusative": "Дзержинский",
+    "instrumental": "Дзержинским",
+    "prepositional": "Дзержинском"
+  },
+  {
+    "name": "Димитровград",
+    "slug": "dimitrovgrad",
+    "nominative": "Димитровград",
+    "genitive": "Димитровграда",
+    "dative": "Димитровграду",
+    "accusative": "Димитровград",
+    "instrumental": "Димитровградом",
+    "prepositional": "Димитровграде"
+  },
+  {
+    "name": "Дмитров",
+    "slug": "dmitrov",
+    "nominative": "Дмитров",
+    "genitive": "Дмитрова",
+    "dative": "Дмитрову",
+    "accusative": "Дмитров",
+    "instrumental": "Дмитровом",
+    "prepositional": "Дмитрове"
+  },
+  {
+    "name": "Долгопрудный",
+    "slug": "dolgoprudnyj",
+    "nominative": "Долгопрудный",
+    "genitive": "Долгопрудного",
+    "dative": "Долгопрудному",
+    "accusative": "Долгопрудный",
+    "instrumental": "Долгопрудным",
+    "prepositional": "Долгопрудном"
+  },
+  {
+    "name": "Домодедово",
+    "slug": "domodedovo",
+    "nominative": "Домодедово",
+    "genitive": "Домодедова",
+    "dative": "Домодедову",
+    "accusative": "Домодедово",
+    "instrumental": "Домодедовом",
+    "prepositional": "Домодедове"
+  },
+  {
+    "name": "Донецк",
+    "slug": "doneczk",
+    "nominative": "Донецк",
+    "genitive": "Донецка",
+    "dative": "Донецку",
+    "accusative": "Донецк",
+    "instrumental": "Донецком",
+    "prepositional": "Донецке"
+  },
+  {
+    "name": "Донской",
+    "slug": "donskoj",
+    "nominative": "Донской",
+    "genitive": "Донского",
+    "dative": "Донскому",
+    "accusative": "Донской",
+    "instrumental": "Донским",
+    "prepositional": "Донском"
+  },
+  {
+    "name": "Дрезна",
+    "slug": "drezna",
+    "nominative": "Дрезна",
+    "genitive": "Дрезны",
+    "dative": "Дрезне",
+    "accusative": "Дрезну",
+    "instrumental": "Дрезной",
+    "prepositional": "Дрезне"
+  },
+  {
+    "name": "Дубна",
+    "slug": "dubna",
+    "nominative": "Дубна",
+    "genitive": "Дубны",
+    "dative": "Дубне",
+    "accusative": "Дубну",
+    "instrumental": "Дубной",
+    "prepositional": "Дубне"
+  },
+  {
+    "name": "Евпатория",
+    "slug": "evpatoriya",
+    "nominative": "Евпатория",
+    "genitive": "Евпатории",
+    "dative": "Евпатории",
+    "accusative": "Евпаторию",
+    "instrumental": "Евпаторией",
+    "prepositional": "Евпатории"
+  },
+  {
+    "name": "Егорьевск",
+    "slug": "egorevsk",
+    "nominative": "Егорьевск",
+    "genitive": "Егорьевска",
+    "dative": "Егорьевску",
+    "accusative": "Егорьевск",
+    "instrumental": "Егорьевском",
+    "prepositional": "Егорьевске"
+  },
+  {
+    "name": "Ейск",
+    "slug": "ejsk",
+    "nominative": "Ейск",
+    "genitive": "Ейска",
+    "dative": "Ейску",
+    "accusative": "Ейск",
+    "instrumental": "Ейском",
+    "prepositional": "Ейске"
+  },
+  {
+    "name": "Екатеринбург",
+    "slug": "ekaterinburg",
+    "nominative": "Екатеринбург",
+    "genitive": "Екатеринбурга",
+    "dative": "Екатеринбургу",
+    "accusative": "Екатеринбург",
+    "instrumental": "Екатеринбургом",
+    "prepositional": "Екатеринбурге"
+  },
+  {
+    "name": "Елабуга",
+    "slug": "elabuga",
+    "nominative": "Елабуга",
+    "genitive": "Елабуги",
+    "dative": "Елабуге",
+    "accusative": "Елабугу",
+    "instrumental": "Елабугой",
+    "prepositional": "Елабуге"
+  },
+  {
+    "name": "Елец",
+    "slug": "elecz",
+    "nominative": "Елец",
+    "genitive": "Ельца",
+    "dative": "Ельцу",
+    "accusative": "Елец",
+    "instrumental": "Ельцом",
+    "prepositional": "Ельце"
+  },
+  {
+    "name": "Енакиево",
+    "slug": "enakievo",
+    "nominative": "Енакиево",
+    "genitive": "Енакиева",
+    "dative": "Енакиеву",
+    "accusative": "Енакиево",
+    "instrumental": "Енакиевом",
+    "prepositional": "Енакиеве"
+  },
+  {
+    "name": "Ессентуки",
+    "slug": "essentuki",
+    "nominative": "Ессентуки",
+    "genitive": "Ессентуков",
+    "dative": "Ессентукам",
+    "accusative": "Ессентуки",
+    "instrumental": "Ессентуками",
+    "prepositional": "Ессентуках"
+  },
+  {
+    "name": "Железногорск",
+    "slug": "zheleznogorsk",
+    "nominative": "Железногорск",
+    "genitive": "Железногорска",
+    "dative": "Железногорску",
+    "accusative": "Железногорск",
+    "instrumental": "Железногорском",
+    "prepositional": "Железногорске"
+  },
+  {
+    "name": "Жигулёвск",
+    "slug": "zhigulyovsk",
+    "nominative": "Жигулёвск",
+    "genitive": "Жигулёвска",
+    "dative": "Жигулёвску",
+    "accusative": "Жигулёвск",
+    "instrumental": "Жигулёвском",
+    "prepositional": "Жигулёвске"
+  },
+  {
+    "name": "Жуковский",
+    "slug": "zhukovskij",
+    "nominative": "Жуковский",
+    "genitive": "Жуковского",
+    "dative": "Жуковскому",
+    "accusative": "Жуковский",
+    "instrumental": "Жуковским",
+    "prepositional": "Жуковском"
+  },
+  {
+    "name": "Зарайск",
+    "slug": "zarajsk",
+    "nominative": "Зарайск",
+    "genitive": "Зарайска",
+    "dative": "Зарайску",
+    "accusative": "Зарайск",
+    "instrumental": "Зарайском",
+    "prepositional": "Зарайске"
+  },
+  {
+    "name": "Заречный",
+    "slug": "zarechnyj",
+    "nominative": "Заречный",
+    "genitive": "Заречного",
+    "dative": "Заречному",
+    "accusative": "Заречный",
+    "instrumental": "Заречным",
+    "prepositional": "Заречном"
+  },
+  {
+    "name": "Звенигород",
+    "slug": "zvenigorod",
+    "nominative": "Звенигород",
+    "genitive": "Звенигорода",
+    "dative": "Звенигороду",
+    "accusative": "Звенигород",
+    "instrumental": "Звенигородом",
+    "prepositional": "Звенигороде"
+  },
+  {
+    "name": "Зеленогорск",
+    "slug": "zelenogorsk",
+    "nominative": "Зеленогорск",
+    "genitive": "Зеленогорска",
+    "dative": "Зеленогорску",
+    "accusative": "Зеленогорск",
+    "instrumental": "Зеленогорском",
+    "prepositional": "Зеленогорске"
+  },
+  {
+    "name": "Зеленоград",
+    "slug": "zelenograd",
+    "nominative": "Зеленоград",
+    "genitive": "Зеленограда",
+    "dative": "Зеленограду",
+    "accusative": "Зеленоград",
+    "instrumental": "Зеленоградом",
+    "prepositional": "Зеленограде"
+  },
+  {
+    "name": "Зеленодольск",
+    "slug": "zelenodolsk",
+    "nominative": "Зеленодольск",
+    "genitive": "Зеленодольска",
+    "dative": "Зеленодольску",
+    "accusative": "Зеленодольск",
+    "instrumental": "Зеленодольском",
+    "prepositional": "Зеленодольске"
+  },
+  {
+    "name": "Златоуст",
+    "slug": "zlatoust",
+    "nominative": "Златоуст",
+    "genitive": "Златоуста",
+    "dative": "Златоусту",
+    "accusative": "Златоуст",
+    "instrumental": "Златоустом",
+    "prepositional": "Златоусте"
+  },
+  {
+    "name": "Иваново",
+    "slug": "ivanovo",
+    "nominative": "Иваново",
+    "genitive": "Иванова",
+    "dative": "Иванову",
+    "accusative": "Иваново",
+    "instrumental": "Ивановом",
+    "prepositional": "Иванове"
+  },
+  {
+    "name": "Ивантеевка",
+    "slug": "ivanteevka",
+    "nominative": "Ивантеевка",
+    "genitive": "Ивантеевки",
+    "dative": "Ивантеевке",
+    "accusative": "Ивантеевку",
+    "instrumental": "Ивантеевкой",
+    "prepositional": "Ивантеевке"
+  },
+  {
+    "name": "Ижевск",
+    "slug": "izhevsk",
+    "nominative": "Ижевск",
+    "genitive": "Ижевска",
+    "dative": "Ижевску",
+    "accusative": "Ижевск",
+    "instrumental": "Ижевском",
+    "prepositional": "Ижевске"
+  },
+  {
+    "name": "Избербаш",
+    "slug": "izberbash",
+    "nominative": "Избербаш",
+    "genitive": "Избербаша",
+    "dative": "Избербашу",
+    "accusative": "Избербаш",
+    "instrumental": "Избербашем",
+    "prepositional": "Избербаше"
+  },
+  {
+    "name": "Иркутск",
+    "slug": "irkutsk",
+    "nominative": "Иркутск",
+    "genitive": "Иркутска",
+    "dative": "Иркутску",
+    "accusative": "Иркутск",
+    "instrumental": "Иркутском",
+    "prepositional": "Иркутске"
+  },
+  {
+    "name": "Искитим",
+    "slug": "iskitim",
+    "nominative": "Искитим",
+    "genitive": "Искитима",
+    "dative": "Искитиму",
+    "accusative": "Искитим",
+    "instrumental": "Искитимом",
+    "prepositional": "Искитиме"
+  },
+  {
+    "name": "Истра",
+    "slug": "istra",
+    "nominative": "Истра",
+    "genitive": "Истры",
+    "dative": "Истре",
+    "accusative": "Истру",
+    "instrumental": "Истрой",
+    "prepositional": "Истре"
+  },
+  {
+    "name": "Ишим",
+    "slug": "ishim",
+    "nominative": "Ишим",
+    "genitive": "Ишима",
+    "dative": "Ишиму",
+    "accusative": "Ишим",
+    "instrumental": "Ишимом",
+    "prepositional": "Ишиме"
+  },
+  {
+    "name": "Ишимбай",
+    "slug": "ishimbaj",
+    "nominative": "Ишимбай",
+    "genitive": "Ишимбая",
+    "dative": "Ишимбаю",
+    "accusative": "Ишимбай",
+    "instrumental": "Ишимбаем",
+    "prepositional": "Ишимбае"
+  },
+  {
+    "name": "Йошкар-Ола",
+    "slug": "joshkar-ola",
+    "nominative": "Йошкар-Ола",
+    "genitive": "Йошкар-Олы",
+    "dative": "Йошкар-Оле",
+    "accusative": "Йошкар-Олу",
+    "instrumental": "Йошкар-Олой",
+    "prepositional": "Йошкар-Оле"
+  },
+  {
+    "name": "Казань",
+    "slug": "kazan",
+    "nominative": "Казань",
+    "genitive": "Казани",
+    "dative": "Казани",
+    "accusative": "Казань",
+    "instrumental": "Казанью",
+    "prepositional": "Казани"
+  },
+  {
+    "name": "Калининград",
+    "slug": "kaliningrad",
+    "nominative": "Калининград",
+    "genitive": "Калининграда",
+    "dative": "Калининграду",
+    "accusative": "Калининград",
+    "instrumental": "Калининградом",
+    "prepositional": "Калининграде"
+  },
+  {
+    "name": "Калуга",
+    "slug": "kaluga",
+    "nominative": "Калуга",
+    "genitive": "Калуги",
+    "dative": "Калуге",
+    "accusative": "Калугу",
+    "instrumental": "Калугой",
+    "prepositional": "Калуге"
+  },
+  {
+    "name": "Каменск-Уральский",
+    "slug": "kamensk-uralskij",
+    "nominative": "Каменск-Уральский",
+    "genitive": "Каменска-Уральского",
+    "dative": "Каменску-Уральскому",
+    "accusative": "Каменск-Уральский",
+    "instrumental": "Каменском-Уральским",
+    "prepositional": "Каменске-Уральском"
+  },
+  {
+    "name": "Каменск-Шахтинский",
+    "slug": "kamensk-shahtinskij",
+    "nominative": "Каменск-Шахтинский",
+    "genitive": "Каменска-Шахтинского",
+    "dative": "Каменску-Шахтинскому",
+    "accusative": "Каменск-Шахтинский",
+    "instrumental": "Каменском-Шахтинским",
+    "prepositional": "Каменске-Шахтинском"
+  },
+  {
+    "name": "Камышин",
+    "slug": "kamyshin",
+    "nominative": "Камышин",
+    "genitive": "Камышина",
+    "dative": "Камышину",
+    "accusative": "Камышин",
+    "instrumental": "Камышином",
+    "prepositional": "Камышине"
+  },
+  {
+    "name": "Канск",
+    "slug": "kansk",
+    "nominative": "Канск",
+    "genitive": "Канска",
+    "dative": "Канску",
+    "accusative": "Канск",
+    "instrumental": "Канском",
+    "prepositional": "Канске"
+  },
+  {
+    "name": "Каспийск",
+    "slug": "kaspijsk",
+    "nominative": "Каспийск",
+    "genitive": "Каспийска",
+    "dative": "Каспийску",
+    "accusative": "Каспийск",
+    "instrumental": "Каспийском",
+    "prepositional": "Каспийске"
+  },
+  {
+    "name": "Кашира",
+    "slug": "kashira",
+    "nominative": "Кашира",
+    "genitive": "Каширы",
+    "dative": "Кашире",
+    "accusative": "Каширу",
+    "instrumental": "Каширой",
+    "prepositional": "Кашире"
+  },
+  {
+    "name": "Кемерово",
+    "slug": "kemerovo",
+    "nominative": "Кемерово",
+    "genitive": "Кемерова",
+    "dative": "Кемерову",
+    "accusative": "Кемерово",
+    "instrumental": "Кемеровом",
+    "prepositional": "Кемерове"
+  },
+  {
+    "name": "Керчь",
+    "slug": "kerch",
+    "nominative": "Керчь",
+    "genitive": "Керчи",
+    "dative": "Керчи",
+    "accusative": "Керчь",
+    "instrumental": "Керчью",
+    "prepositional": "Керчи"
+  },
+  {
+    "name": "Кингисепп",
+    "slug": "kingisepp",
+    "nominative": "Кингисепп",
+    "genitive": "Кингисеппа",
+    "dative": "Кингисеппу",
+    "accusative": "Кингисепп",
+    "instrumental": "Кингисеппом",
+    "prepositional": "Кингисеппе"
+  },
+  {
+    "name": "Кинешма",
+    "slug": "kineshma",
+    "nominative": "Кинешма",
+    "genitive": "Кинешмы",
+    "dative": "Кинешме",
+    "accusative": "Кинешму",
+    "instrumental": "Кинешмой",
+    "prepositional": "Кинешме"
+  },
+  {
+    "name": "Кириши",
+    "slug": "kirishi",
+    "nominative": "Кириши",
+    "genitive": "Киришей",
+    "dative": "Киришам",
+    "accusative": "Кириши",
+    "instrumental": "Киришами",
+    "prepositional": "Киришах"
+  },
+  {
+    "name": "Киров",
+    "slug": "kirov",
+    "nominative": "Киров",
+    "genitive": "Кирова",
+    "dative": "Кирову",
+    "accusative": "Киров",
+    "instrumental": "Кировом",
+    "prepositional": "Кирове"
+  },
+  {
+    "name": "Кирово-Чепецк",
+    "slug": "kirovo-chepeczk",
+    "nominative": "Кирово-Чепецк",
+    "genitive": "Кирово-Чепецка",
+    "dative": "Кирово-Чепецку",
+    "accusative": "Кирово-Чепецк",
+    "instrumental": "Кирово-Чепецком",
+    "prepositional": "Кирово-Чепецке"
+  },
+  {
+    "name": "Киселёвск",
+    "slug": "kiselyovsk",
+    "nominative": "Киселёвск",
+    "genitive": "Киселёвска",
+    "dative": "Киселёвску",
+    "accusative": "Киселёвск",
+    "instrumental": "Киселёвском",
+    "prepositional": "Киселёвске"
+  },
+  {
+    "name": "Кисловодск",
+    "slug": "kislovodsk",
+    "nominative": "Кисловодск",
+    "genitive": "Кисловодска",
+    "dative": "Кисловодску",
+    "accusative": "Кисловодск",
+    "instrumental": "Кисловодском",
+    "prepositional": "Кисловодске"
+  },
+  {
+    "name": "Клин",
+    "slug": "klin",
+    "nominative": "Клин",
+    "genitive": "Клина",
+    "dative": "Клину",
+    "accusative": "Клин",
+    "instrumental": "Клином",
+    "prepositional": "Клину"
+  },
+  {
+    "name": "Клинцы",
+    "slug": "klinczy",
+    "nominative": "Клинцы",
+    "genitive": "Клинцов",
+    "dative": "Клинцам",
+    "accusative": "Клинцы",
+    "instrumental": "Клинцами",
+    "prepositional": "Клинцах"
+  },
+  {
+    "name": "Ковров",
+    "slug": "kovrov",
+    "nominative": "Ковров",
+    "genitive": "Коврова",
+    "dative": "Коврову",
+    "accusative": "Ковров",
+    "instrumental": "Ковровом",
+    "prepositional": "Коврове"
+  },
+  {
+    "name": "Когалым",
+    "slug": "kogalym",
+    "nominative": "Когалым",
+    "genitive": "Когалыма",
+    "dative": "Когалыму",
+    "accusative": "Когалым",
+    "instrumental": "Когалымом",
+    "prepositional": "Когалыме"
+  },
+  {
+    "name": "Коломна",
+    "slug": "kolomna",
+    "nominative": "Коломна",
+    "genitive": "Коломны",
+    "dative": "Коломне",
+    "accusative": "Коломну",
+    "instrumental": "Коломной",
+    "prepositional": "Коломне"
+  },
+  {
+    "name": "Колпино",
+    "slug": "kolpino",
+    "nominative": "Колпино",
+    "genitive": "Колпина",
+    "dative": "Колпину",
+    "accusative": "Колпино",
+    "instrumental": "Колпином",
+    "prepositional": "Колпине"
+  },
+  {
+    "name": "Комсомольск-на-Амуре",
+    "slug": "komsomolsk-na-amure",
+    "nominative": "Комсомольск-на-Амуре",
+    "genitive": "Комсомольска-на-Амуре",
+    "dative": "Комсомольску-на-Амуре",
+    "accusative": "Комсомольск-на-Амуре",
+    "instrumental": "Комсомольском-на-Амуре",
+    "prepositional": "Комсомольске-на-Амуре"
+  },
+  {
+    "name": "Копейск",
+    "slug": "kopejsk",
+    "nominative": "Копейск",
+    "genitive": "Копейска",
+    "dative": "Копейску",
+    "accusative": "Копейск",
+    "instrumental": "Копейском",
+    "prepositional": "Копейске"
+  },
+  {
+    "name": "Королёв",
+    "slug": "korolyov",
+    "nominative": "Королёв",
+    "genitive": "Королёва",
+    "dative": "Королёву",
+    "accusative": "Королёв",
+    "instrumental": "Королёвом",
+    "prepositional": "Королёве"
+  },
+  {
+    "name": "Кострома",
+    "slug": "kostroma",
+    "nominative": "Кострома",
+    "genitive": "Костромы",
+    "dative": "Костроме",
+    "accusative": "Кострому",
+    "instrumental": "Костромой",
+    "prepositional": "Костроме"
+  },
+  {
+    "name": "Котельники",
+    "slug": "kotelniki",
+    "nominative": "Котельники",
+    "genitive": "Котельников",
+    "dative": "Котельникам",
+    "accusative": "Котельники",
+    "instrumental": "Котельниками",
+    "prepositional": "Котельниках"
+  },
+  {
+    "name": "Котлас",
+    "slug": "kotlas",
+    "nominative": "Котлас",
+    "genitive": "Котласа",
+    "dative": "Котласу",
+    "accusative": "Котлас",
+    "instrumental": "Котласом",
+    "prepositional": "Котласе"
+  },
+  {
+    "name": "Краматорск",
+    "slug": "kramatorsk",
+    "nominative": "Краматорск",
+    "genitive": "Краматорска",
+    "dative": "Краматорску",
+    "accusative": "Краматорск",
+    "instrumental": "Краматорском",
+    "prepositional": "Краматорске"
+  },
+  {
+    "name": "Красноармейск",
+    "slug": "krasnoarmejsk",
+    "nominative": "Красноармейск",
+    "genitive": "Красноармейска",
+    "dative": "Красноармейску",
+    "accusative": "Красноармейск",
+    "instrumental": "Красноармейском",
+    "prepositional": "Красноармейске"
+  },
+  {
+    "name": "Красногорск",
+    "slug": "krasnogorsk",
+    "nominative": "Красногорск",
+    "genitive": "Красногорска",
+    "dative": "Красногорску",
+    "accusative": "Красногорск",
+    "instrumental": "Красногорском",
+    "prepositional": "Красногорске"
+  },
+  {
+    "name": "Краснодар",
+    "slug": "krasnodar",
+    "nominative": "Краснодар",
+    "genitive": "Краснодара",
+    "dative": "Краснодару",
+    "accusative": "Краснодар",
+    "instrumental": "Краснодаром",
+    "prepositional": "Краснодаре"
+  },
+  {
+    "name": "Краснодон",
+    "slug": "krasnodon",
+    "nominative": "Краснодон",
+    "genitive": "Краснодона",
+    "dative": "Краснодону",
+    "accusative": "Краснодон",
+    "instrumental": "Краснодоном",
+    "prepositional": "Краснодоне"
+  },
+  {
+    "name": "Краснозаводск",
+    "slug": "krasnozavodsk",
+    "nominative": "Краснозаводск",
+    "genitive": "Краснозаводска",
+    "dative": "Краснозаводску",
+    "accusative": "Краснозаводск",
+    "instrumental": "Краснозаводском",
+    "prepositional": "Краснозаводске"
+  },
+  {
+    "name": "Краснознаменск",
+    "slug": "krasnoznamensk",
+    "nominative": "Краснознаменск",
+    "genitive": "Краснознаменска",
+    "dative": "Краснознаменску",
+    "accusative": "Краснознаменск",
+    "instrumental": "Краснознаменском",
+    "prepositional": "Краснознаменске"
+  },
+  {
+    "name": "Краснокаменск",
+    "slug": "krasnokamensk",
+    "nominative": "Краснокаменск",
+    "genitive": "Краснокаменска",
+    "dative": "Краснокаменску",
+    "accusative": "Краснокаменск",
+    "instrumental": "Краснокаменском",
+    "prepositional": "Краснокаменске"
+  },
+  {
+    "name": "Краснотурьинск",
+    "slug": "krasnoturinsk",
+    "nominative": "Краснотурьинск",
+    "genitive": "Краснотурьинска",
+    "dative": "Краснотурьинску",
+    "accusative": "Краснотурьинск",
+    "instrumental": "Краснотурьинском",
+    "prepositional": "Краснотурьинске"
+  },
+  {
+    "name": "Красноярск",
+    "slug": "krasnoyarsk",
+    "nominative": "Красноярск",
+    "genitive": "Красноярска",
+    "dative": "Красноярску",
+    "accusative": "Красноярск",
+    "instrumental": "Красноярском",
+    "prepositional": "Красноярске"
+  },
+  {
+    "name": "Красный луч",
+    "slug": "krasnyj-luch",
+    "nominative": "Красный луч",
+    "genitive": "Красного луча",
+    "dative": "Красному лучу",
+    "accusative": "Красный луч",
+    "instrumental": "Красным лучом",
+    "prepositional": "Красном луче"
+  },
+  {
+    "name": "Кропоткин",
+    "slug": "kropotkin",
+    "nominative": "Кропоткин",
+    "genitive": "Кропоткина",
+    "dative": "Кропоткину",
+    "accusative": "Кропоткин",
+    "instrumental": "Кропоткиным",
+    "prepositional": "Кропоткине"
+  },
+  {
+    "name": "Крым",
+    "slug": "krym",
+    "nominative": "Крым",
+    "genitive": "Крыма",
+    "dative": "Крыму",
+    "accusative": "Крым",
+    "instrumental": "Крымом",
+    "prepositional": "Крыме"
+  },
+  {
+    "name": "Крымск",
+    "slug": "krymsk",
+    "nominative": "Крымск",
+    "genitive": "Крымска",
+    "dative": "Крымску",
+    "accusative": "Крымск",
+    "instrumental": "Крымском",
+    "prepositional": "Крымске"
+  },
+  {
+    "name": "Кстово",
+    "slug": "kstovo",
+    "nominative": "Кстово",
+    "genitive": "Кстова",
+    "dative": "Кстову",
+    "accusative": "Кстово",
+    "instrumental": "Кстовом",
+    "prepositional": "Кстове"
+  },
+  {
+    "name": "Кубинка",
+    "slug": "kubinka",
+    "nominative": "Кубинка",
+    "genitive": "Кубинки",
+    "dative": "Кубинке",
+    "accusative": "Кубинку",
+    "instrumental": "Кубинкой",
+    "prepositional": "Кубинке"
+  },
+  {
+    "name": "Кудрово",
+    "slug": "kudrovo",
+    "nominative": "Кудрово",
+    "genitive": "Кудрова",
+    "dative": "Кудрову",
+    "accusative": "Кудрово",
+    "instrumental": "Кудровом",
+    "prepositional": "Кудрове"
+  },
+  {
+    "name": "Кузнецк",
+    "slug": "kuzneczk",
+    "nominative": "Кузнецк",
+    "genitive": "Кузнецка",
+    "dative": "Кузнецку",
+    "accusative": "Кузнецк",
+    "instrumental": "Кузнецком",
+    "prepositional": "Кузнецке"
+  },
+  {
+    "name": "Кумертау",
+    "slug": "kumertau",
+    "nominative": "Кумертау",
+    "genitive": "Кумертау",
+    "dative": "Кумертау",
+    "accusative": "Кумертау",
+    "instrumental": "Кумертау",
+    "prepositional": "Кумертау"
+  },
+  {
+    "name": "Кунгур",
+    "slug": "kungur",
+    "nominative": "Кунгур",
+    "genitive": "Кунгура",
+    "dative": "Кунгуру",
+    "accusative": "Кунгур",
+    "instrumental": "Кунгуром",
+    "prepositional": "Кунгуре"
+  },
+  {
+    "name": "Курган",
+    "slug": "kurgan",
+    "nominative": "Курган",
+    "genitive": "Кургана",
+    "dative": "Кургану",
+    "accusative": "Курган",
+    "instrumental": "Курганом",
+    "prepositional": "Кургане"
+  },
+  {
+    "name": "Куровское",
+    "slug": "kurovskoe",
+    "nominative": "Куровское",
+    "genitive": "Куровского",
+    "dative": "Куровскому",
+    "accusative": "Куровское",
+    "instrumental": "Куровским",
+    "prepositional": "Куровском"
+  },
+  {
+    "name": "Курск",
+    "slug": "kursk",
+    "nominative": "Курск",
+    "genitive": "Курска",
+    "dative": "Курску",
+    "accusative": "Курск",
+    "instrumental": "Курском",
+    "prepositional": "Курске"
+  },
+  {
+    "name": "Кызыл",
+    "slug": "kyzyl",
+    "nominative": "Кызыл",
+    "genitive": "Кызыла",
+    "dative": "Кызылу",
+    "accusative": "Кызыл",
+    "instrumental": "Кызылом",
+    "prepositional": "Кызыле"
+  },
+  {
+    "name": "Лабинск",
+    "slug": "labinsk",
+    "nominative": "Лабинск",
+    "genitive": "Лабинска",
+    "dative": "Лабинску",
+    "accusative": "Лабинск",
+    "instrumental": "Лабинском",
+    "prepositional": "Лабинске"
+  },
+  {
+    "name": "Лениногорск",
+    "slug": "leninogorsk",
+    "nominative": "Лениногорск",
+    "genitive": "Лениногорска",
+    "dative": "Лениногорску",
+    "accusative": "Лениногорск",
+    "instrumental": "Лениногорском",
+    "prepositional": "Лениногорске"
+  },
+  {
+    "name": "Ленинск-Кузнецкий",
+    "slug": "leninsk-kuzneczkij",
+    "nominative": "Ленинск-Кузнецкий",
+    "genitive": "Ленинска-Кузнецкого",
+    "dative": "Ленинску-Кузнецкому",
+    "accusative": "Ленинск-Кузнецкий",
+    "instrumental": "Ленинском-Кузнецким",
+    "prepositional": "Ленинске-Кузнецком"
+  },
+  {
+    "name": "Лесосибирск",
+    "slug": "lesosibirsk",
+    "nominative": "Лесосибирск",
+    "genitive": "Лесосибирска",
+    "dative": "Лесосибирску",
+    "accusative": "Лесосибирск",
+    "instrumental": "Лесосибирском",
+    "prepositional": "Лесосибирске"
+  },
+  {
+    "name": "Ликино-Дулёво",
+    "slug": "likino-dulyovo",
+    "nominative": "Ликино-Дулёво",
+    "genitive": "Ликина-Дулёва",
+    "dative": "Ликину-Дулёву",
+    "accusative": "Ликино-Дулёво",
+    "instrumental": "Ликином-Дулёвом",
+    "prepositional": "Ликине-Дулёве"
+  },
+  {
+    "name": "Липецк",
+    "slug": "lipeczk",
+    "nominative": "Липецк",
+    "genitive": "Липецка",
+    "dative": "Липецку",
+    "accusative": "Липецк",
+    "instrumental": "Липецком",
+    "prepositional": "Липецке"
+  },
+  {
+    "name": "Лисичанск",
+    "slug": "lisichansk",
+    "nominative": "Лисичанск",
+    "genitive": "Лисичанска",
+    "dative": "Лисичанску",
+    "accusative": "Лисичанск",
+    "instrumental": "Лисичанском",
+    "prepositional": "Лисичанске"
+  },
+  {
+    "name": "Лиски",
+    "slug": "liski",
+    "nominative": "Лиски",
+    "genitive": "Лисок",
+    "dative": "Лискам",
+    "accusative": "Лиски",
+    "instrumental": "Лисками",
+    "prepositional": "Лисках"
+  },
+  {
+    "name": "Лобня",
+    "slug": "lobnya",
+    "nominative": "Лобня",
+    "genitive": "Лобни",
+    "dative": "Лобне",
+    "accusative": "Лобню",
+    "instrumental": "Лобней",
+    "prepositional": "Лобне"
+  },
+  {
+    "name": "Лосино-Петровский",
+    "slug": "losino-petrovskij",
+    "nominative": "Лосино-Петровский",
+    "genitive": "Лосино-Петровского",
+    "dative": "Лосино-Петровскому",
+    "accusative": "Лосино-Петровский",
+    "instrumental": "Лосино-Петровским",
+    "prepositional": "Лосино-Петровском"
+  },
+  {
+    "name": "Луганск",
+    "slug": "lugansk",
+    "nominative": "Луганск",
+    "genitive": "Луганска",
+    "dative": "Луганску",
+    "accusative": "Луганск",
+    "instrumental": "Луганском",
+    "prepositional": "Луганске"
+  },
+  {
+    "name": "Луховицы",
+    "slug": "luhoviczy",
+    "nominative": "Луховицы",
+    "genitive": "Луховиц",
+    "dative": "Луховицам",
+    "accusative": "Луховицы",
+    "instrumental": "Луховицами",
+    "prepositional": "Луховицах"
+  },
+  {
+    "name": "Лысьва",
+    "slug": "lysva",
+    "nominative": "Лысьва",
+    "genitive": "Лысьвы",
+    "dative": "Лысьве",
+    "accusative": "Лысьву",
+    "instrumental": "Лысьвой",
+    "prepositional": "Лысьве"
+  },
+  {
+    "name": "Лыткарино",
+    "slug": "lytkarino",
+    "nominative": "Лыткарино",
+    "genitive": "Лыткарина",
+    "dative": "Лыткарину",
+    "accusative": "Лыткарино",
+    "instrumental": "Лыткарином",
+    "prepositional": "Лыткарине"
+  },
+  {
+    "name": "Люберцы",
+    "slug": "lyuberczy",
+    "nominative": "Люберцы",
+    "genitive": "Люберец",
+    "dative": "Люберцам",
+    "accusative": "Люберцы",
+    "instrumental": "Люберцами",
+    "prepositional": "Люберцах"
+  },
+  {
+    "name": "Магадан",
+    "slug": "magadan",
+    "nominative": "Магадан",
+    "genitive": "Магадана",
+    "dative": "Магадану",
+    "accusative": "Магадан",
+    "instrumental": "Магаданом",
+    "prepositional": "Магадане"
+  },
+  {
+    "name": "Магнитогорск",
+    "slug": "magnitogorsk",
+    "nominative": "Магнитогорск",
+    "genitive": "Магнитогорска",
+    "dative": "Магнитогорску",
+    "accusative": "Магнитогорск",
+    "instrumental": "Магнитогорском",
+    "prepositional": "Магнитогорске"
+  },
+  {
+    "name": "Майкоп",
+    "slug": "majkop",
+    "nominative": "Майкоп",
+    "genitive": "Майкопа",
+    "dative": "Майкопу",
+    "accusative": "Майкоп",
+    "instrumental": "Майкопом",
+    "prepositional": "Майкопе"
+  },
+  {
+    "name": "Макеевка",
+    "slug": "makeevka",
+    "nominative": "Макеевка",
+    "genitive": "Макеевки",
+    "dative": "Макеевке",
+    "accusative": "Макеевку",
+    "instrumental": "Макеевкой",
+    "prepositional": "Макеевке"
+  },
+  {
+    "name": "Мариуполь",
+    "slug": "mariupol",
+    "nominative": "Мариуполь",
+    "genitive": "Мариуполя",
+    "dative": "Мариуполю",
+    "accusative": "Мариуполь",
+    "instrumental": "Мариуполем",
+    "prepositional": "Мариуполе"
+  },
+  {
+    "name": "Махачкала",
+    "slug": "mahachkala",
+    "nominative": "Махачкала",
+    "genitive": "Махачкалы",
+    "dative": "Махачкале",
+    "accusative": "Махачкалу",
+    "instrumental": "Махачкалой",
+    "prepositional": "Махачкале"
+  },
+  {
+    "name": "Мегион",
+    "slug": "megion",
+    "nominative": "Мегион",
+    "genitive": "Мегиона",
+    "dative": "Мегиону",
+    "accusative": "Мегион",
+    "instrumental": "Мегионом",
+    "prepositional": "Мегионе"
+  },
+  {
+    "name": "Междуреченск",
+    "slug": "mezhdurechensk",
+    "nominative": "Междуреченск",
+    "genitive": "Междуреченска",
+    "dative": "Междуреченску",
+    "accusative": "Междуреченск",
+    "instrumental": "Междуреченском",
+    "prepositional": "Междуреченске"
+  },
+  {
+    "name": "Мелеуз",
+    "slug": "meleuz",
+    "nominative": "Мелеуз",
+    "genitive": "Мелеуза",
+    "dative": "Мелеузу",
+    "accusative": "Мелеуз",
+    "instrumental": "Мелеузом",
+    "prepositional": "Мелеузе"
+  },
+  {
+    "name": "Миасс",
+    "slug": "miass",
+    "nominative": "Миасс",
+    "genitive": "Миасса",
+    "dative": "Миассу",
+    "accusative": "Миасс",
+    "instrumental": "Миассом",
+    "prepositional": "Миассе"
+  },
+  {
+    "name": "Минеральные Воды",
+    "slug": "mineralnye-vody",
+    "nominative": "Минеральные Воды",
+    "genitive": "Минеральных Вод",
+    "dative": "Минеральным Водам",
+    "accusative": "Минеральные Воды",
+    "instrumental": "Минеральными Водами",
+    "prepositional": "Минеральных Водах"
+  },
+  {
+    "name": "Минусинск",
+    "slug": "minusinsk",
+    "nominative": "Минусинск",
+    "genitive": "Минусинска",
+    "dative": "Минусинску",
+    "accusative": "Минусинск",
+    "instrumental": "Минусинском",
+    "prepositional": "Минусинске"
+  },
+  {
+    "name": "Михайловка",
+    "slug": "mihajlovka",
+    "nominative": "Михайловка",
+    "genitive": "Михайловки",
+    "dative": "Михайловке",
+    "accusative": "Михайловку",
+    "instrumental": "Михайловкой",
+    "prepositional": "Михайловке"
+  },
+  {
+    "name": "Михайловск",
+    "slug": "mihajlovsk",
+    "nominative": "Михайловск",
+    "genitive": "Михайловска",
+    "dative": "Михайловску",
+    "accusative": "Михайловск",
+    "instrumental": "Михайловском",
+    "prepositional": "Михайловске"
+  },
+  {
+    "name": "Мичуринск",
+    "slug": "michurinsk",
+    "nominative": "Мичуринск",
+    "genitive": "Мичуринска",
+    "dative": "Мичуринску",
+    "accusative": "Мичуринск",
+    "instrumental": "Мичуринском",
+    "prepositional": "Мичуринске"
+  },
+  {
+    "name": "Можайск",
+    "slug": "mozhajsk",
+    "nominative": "Можайск",
+    "genitive": "Можайска",
+    "dative": "Можайску",
+    "accusative": "Можайск",
+    "instrumental": "Можайском",
+    "prepositional": "Можайске"
+  },
+  {
+    "name": "Москва",
+    "slug": "moskva",
+    "nominative": "Москва",
+    "genitive": "Москвы",
+    "dative": "Москве",
+    "accusative": "Москву",
+    "instrumental": "Москвой",
+    "prepositional": "Москве"
+  },
+  {
+    "name": "Мурино",
+    "slug": "murino",
+    "nominative": "Мурино",
+    "genitive": "Мурина",
+    "dative": "Мурину",
+    "accusative": "Мурино",
+    "instrumental": "Мурином",
+    "prepositional": "Мурине"
+  },
+  {
+    "name": "Мурманск",
+    "slug": "murmansk",
+    "nominative": "Мурманск",
+    "genitive": "Мурманска",
+    "dative": "Мурманску",
+    "accusative": "Мурманск",
+    "instrumental": "Мурманском",
+    "prepositional": "Мурманске"
+  },
+  {
+    "name": "Муром",
+    "slug": "murom",
+    "nominative": "Муром",
+    "genitive": "Мурома",
+    "dative": "Мурому",
+    "accusative": "Муром",
+    "instrumental": "Муромом",
+    "prepositional": "Муроме"
+  },
+  {
+    "name": "Мытищи",
+    "slug": "mytishhi",
+    "nominative": "Мытищи",
+    "genitive": "Мытищ",
+    "dative": "Мытищам",
+    "accusative": "Мытищи",
+    "instrumental": "Мытищами",
+    "prepositional": "Мытищах"
+  },
+  {
+    "name": "Набережные Челны",
+    "slug": "naberezhnye-chelny",
+    "nominative": "Набережные Челны",
+    "genitive": "Набережных Челнов",
+    "dative": "Набережным Челнам",
+    "accusative": "Набережные Челны",
+    "instrumental": "Набережными Челнами",
+    "prepositional": "Набережных Челнах"
+  },
+  {
+    "name": "Назрань",
+    "slug": "nazran",
+    "nominative": "Назрань",
+    "genitive": "Назрани",
+    "dative": "Назрани",
+    "accusative": "Назрань",
+    "instrumental": "Назранью",
+    "prepositional": "Назрани"
+  },
+  {
+    "name": "Нальчик",
+    "slug": "nalchik",
+    "nominative": "Нальчик",
+    "genitive": "Нальчика",
+    "dative": "Нальчику",
+    "accusative": "Нальчик",
+    "instrumental": "Нальчиком",
+    "prepositional": "Нальчике"
+  },
+  {
+    "name": "Наро-Фоминск",
+    "slug": "naro-fominsk",
+    "nominative": "Наро-Фоминск",
+    "genitive": "Наро-Фоминска",
+    "dative": "Наро-Фоминску",
+    "accusative": "Наро-Фоминск",
+    "instrumental": "Наро-Фоминском",
+    "prepositional": "Наро-Фоминске"
+  },
+  {
+    "name": "Находка",
+    "slug": "nahodka",
+    "nominative": "Находка",
+    "genitive": "Находки",
+    "dative": "Находке",
+    "accusative": "Находку",
+    "instrumental": "Находкой",
+    "prepositional": "Находке"
+  },
+  {
+    "name": "Невинномысск",
+    "slug": "nevinnomyssk",
+    "nominative": "Невинномысск",
+    "genitive": "Невинномысска",
+    "dative": "Невинномысску",
+    "accusative": "Невинномысск",
+    "instrumental": "Невинномысском",
+    "prepositional": "Невинномысске"
+  },
+  {
+    "name": "Нерюнгри",
+    "slug": "neryungri",
+    "nominative": "Нерюнгри",
+    "genitive": "Нерюнгри",
+    "dative": "Нерюнгри",
+    "accusative": "Нерюнгри",
+    "instrumental": "Нерюнгри",
+    "prepositional": "Нерюнгри"
+  },
+  {
+    "name": "Нефтекамск",
+    "slug": "neftekamsk",
+    "nominative": "Нефтекамск",
+    "genitive": "Нефтекамска",
+    "dative": "Нефтекамску",
+    "accusative": "Нефтекамск",
+    "instrumental": "Нефтекамском",
+    "prepositional": "Нефтекамске"
+  },
+  {
+    "name": "Нефтеюганск",
+    "slug": "nefteyugansk",
+    "nominative": "Нефтеюганск",
+    "genitive": "Нефтеюганска",
+    "dative": "Нефтеюганску",
+    "accusative": "Нефтеюганск",
+    "instrumental": "Нефтеюганском",
+    "prepositional": "Нефтеюганске"
+  },
+  {
+    "name": "Нижневартовск",
+    "slug": "nizhnevartovsk",
+    "nominative": "Нижневартовск",
+    "genitive": "Нижневартовска",
+    "dative": "Нижневартовску",
+    "accusative": "Нижневартовск",
+    "instrumental": "Нижневартовском",
+    "prepositional": "Нижневартовске"
+  },
+  {
+    "name": "Нижнекамск",
+    "slug": "nizhnekamsk",
+    "nominative": "Нижнекамск",
+    "genitive": "Нижнекамска",
+    "dative": "Нижнекамску",
+    "accusative": "Нижнекамск",
+    "instrumental": "Нижнекамском",
+    "prepositional": "Нижнекамске"
+  },
+  {
+    "name": "Нижний Новгород",
+    "slug": "nizhnij-novgorod",
+    "nominative": "Нижний Новгород",
+    "genitive": "Нижнего Новгорода",
+    "dative": "Нижнему Новгороду",
+    "accusative": "Нижний Новгород",
+    "instrumental": "Нижним Новгородом",
+    "prepositional": "Нижнем Новгороде"
+  },
+  {
+    "name": "Нижний Тагил",
+    "slug": "nizhnij-tagil",
+    "nominative": "Нижний Тагил",
+    "genitive": "Нижнего Тагила",
+    "dative": "Нижнему Тагилу",
+    "accusative": "Нижний Тагил",
+    "instrumental": "Нижним Тагилом",
+    "prepositional": "Нижнем Тагиле"
+  },
+  {
+    "name": "Новгород",
+    "slug": "novgorod",
+    "nominative": "Новгород",
+    "genitive": "Новгорода",
+    "dative": "Новгороду",
+    "accusative": "Новгород",
+    "instrumental": "Новгородом",
+    "prepositional": "Новгороде"
+  },
+  {
+    "name": "Новоалтайск",
+    "slug": "novoaltajsk",
+    "nominative": "Новоалтайск",
+    "genitive": "Новоалтайска",
+    "dative": "Новоалтайску",
+    "accusative": "Новоалтайск",
+    "instrumental": "Новоалтайском",
+    "prepositional": "Новоалтайске"
+  },
+  {
+    "name": "Новокузнецк",
+    "slug": "novokuzneczk",
+    "nominative": "Новокузнецк",
+    "genitive": "Новокузнецка",
+    "dative": "Новокузнецку",
+    "accusative": "Новокузнецк",
+    "instrumental": "Новокузнецком",
+    "prepositional": "Новокузнецке"
+  },
+  {
+    "name": "Новокуйбышевск",
+    "slug": "novokujbyshevsk",
+    "nominative": "Новокуйбышевск",
+    "genitive": "Новокуйбышевска",
+    "dative": "Новокуйбышевску",
+    "accusative": "Новокуйбышевск",
+    "instrumental": "Новокуйбышевском",
+    "prepositional": "Новокуйбышевске"
+  },
+  {
+    "name": "Новомосковск",
+    "slug": "novomoskovsk",
+    "nominative": "Новомосковск",
+    "genitive": "Новомосковска",
+    "dative": "Новомосковску",
+    "accusative": "Новомосковск",
+    "instrumental": "Новомосковском",
+    "prepositional": "Новомосковске"
+  },
+  {
+    "name": "Новороссийск",
+    "slug": "novorossijsk",
+    "nominative": "Новороссийск",
+    "genitive": "Новороссийска",
+    "dative": "Новороссийску",
+    "accusative": "Новороссийск",
+    "instrumental": "Новороссийском",
+    "prepositional": "Новороссийске"
+  },
+  {
+    "name": "Новосибирск",
+    "slug": "novosibirsk",
+    "nominative": "Новосибирск",
+    "genitive": "Новосибирска",
+    "dative": "Новосибирску",
+    "accusative": "Новосибирск",
+    "instrumental": "Новосибирском",
+    "prepositional": "Новосибирске"
+  },
+  {
+    "name": "Новотроицк",
+    "slug": "novotroiczk",
+    "nominative": "Новотроицк",
+    "genitive": "Новотроицка",
+    "dative": "Новотроицку",
+    "accusative": "Новотроицк",
+    "instrumental": "Новотроицком",
+    "prepositional": "Новотроицке"
+  },
+  {
+    "name": "Новоуральск",
+    "slug": "novouralsk",
+    "nominative": "Новоуральск",
+    "genitive": "Новоуральска",
+    "dative": "Новоуральску",
+    "accusative": "Новоуральск",
+    "instrumental": "Новоуральском",
+    "prepositional": "Новоуральске"
+  },
+  {
+    "name": "Новочебоксарск",
+    "slug": "novocheboksarsk",
+    "nominative": "Новочебоксарск",
+    "genitive": "Новочебоксарска",
+    "dative": "Новочебоксарску",
+    "accusative": "Новочебоксарск",
+    "instrumental": "Новочебоксарском",
+    "prepositional": "Новочебоксарске"
+  },
+  {
+    "name": "Новочеркасск",
+    "slug": "novocherkassk",
+    "nominative": "Новочеркасск",
+    "genitive": "Новочеркасска",
+    "dative": "Новочеркасску",
+    "accusative": "Новочеркасск",
+    "instrumental": "Новочеркасском",
+    "prepositional": "Новочеркасске"
+  },
+  {
+    "name": "Новошахтинск",
+    "slug": "novoshahtinsk",
+    "nominative": "Новошахтинск",
+    "genitive": "Новошахтинска",
+    "dative": "Новошахтинску",
+    "accusative": "Новошахтинск",
+    "instrumental": "Новошахтинском",
+    "prepositional": "Новошахтинске"
+  },
+  {
+    "name": "Новый Уренгой",
+    "slug": "novyj-urengoj",
+    "nominative": "Новый Уренгой",
+    "genitive": "Нового Уренгоя",
+    "dative": "Новому Уренгою",
+    "accusative": "Новый Уренгой",
+    "instrumental": "Новым Уренгоем",
+    "prepositional": "Новом Уренгое"
+  },
+  {
+    "name": "Ногинск",
+    "slug": "noginsk",
+    "nominative": "Ногинск",
+    "genitive": "Ногинска",
+    "dative": "Ногинску",
+    "accusative": "Ногинск",
+    "instrumental": "Ногинском",
+    "prepositional": "Ногинске"
+  },
+  {
+    "name": "Норильск",
+    "slug": "norilsk",
+    "nominative": "Норильск",
+    "genitive": "Норильска",
+    "dative": "Норильску",
+    "accusative": "Норильск",
+    "instrumental": "Норильском",
+    "prepositional": "Норильске"
+  },
+  {
+    "name": "Ноябрьск",
+    "slug": "noyabrsk",
+    "nominative": "Ноябрьск",
+    "genitive": "Ноябрьска",
+    "dative": "Ноябрьску",
+    "accusative": "Ноябрьск",
+    "instrumental": "Ноябрьском",
+    "prepositional": "Ноябрьске"
+  },
+  {
+    "name": "Нягань",
+    "slug": "nyagan",
+    "nominative": "Нягань",
+    "genitive": "Нягани",
+    "dative": "Нягани",
+    "accusative": "Нягань",
+    "instrumental": "Няганью",
+    "prepositional": "Нягани"
+  },
+  {
+    "name": "Обнинск",
+    "slug": "obninsk",
+    "nominative": "Обнинск",
+    "genitive": "Обнинска",
+    "dative": "Обнинску",
+    "accusative": "Обнинск",
+    "instrumental": "Обнинском",
+    "prepositional": "Обнинске"
+  },
+  {
+    "name": "Одинцово",
+    "slug": "odinczovo",
+    "nominative": "Одинцово",
+    "genitive": "Одинцова",
+    "dative": "Одинцову",
+    "accusative": "Одинцово",
+    "instrumental": "Одинцовом",
+    "prepositional": "Одинцове"
+  },
+  {
+    "name": "Озёрск",
+    "slug": "ozyorsk",
+    "nominative": "Озёрск",
+    "genitive": "Озёрска",
+    "dative": "Озёрску",
+    "accusative": "Озёрск",
+    "instrumental": "Озёрском",
+    "prepositional": "Озёрске"
+  },
+  {
+    "name": "Озёры",
+    "slug": "ozyory",
+    "nominative": "Озёры",
+    "genitive": "Озёр",
+    "dative": "Озёрам",
+    "accusative": "Озёры",
+    "instrumental": "Озёрами",
+    "prepositional": "Озёрах"
+  },
+  {
+    "name": "Октябрьский",
+    "slug": "oktyabrskij",
+    "nominative": "Октябрьский",
+    "genitive": "Октябрьского",
+    "dative": "Октябрьскому",
+    "accusative": "Октябрьский",
+    "instrumental": "Октябрьским",
+    "prepositional": "Октябрьском"
+  },
+  {
+    "name": "Омск",
+    "slug": "omsk",
+    "nominative": "Омск",
+    "genitive": "Омска",
+    "dative": "Омску",
+    "accusative": "Омск",
+    "instrumental": "Омском",
+    "prepositional": "Омске"
+  },
+  {
+    "name": "Орёл",
+    "slug": "oryol",
+    "nominative": "Орёл",
+    "genitive": "Орла",
+    "dative": "Орлу",
+    "accusative": "Орёл",
+    "instrumental": "Орлом",
+    "prepositional": "Орле"
+  },
+  {
+    "name": "Оренбург",
+    "slug": "orenburg",
+    "nominative": "Оренбург",
+    "genitive": "Оренбурга",
+    "dative": "Оренбургу",
+    "accusative": "Оренбург",
+    "instrumental": "Оренбургом",
+    "prepositional": "Оренбурге"
+  },
+  {
+    "name": "Орехово-Зуево",
+    "slug": "orehovo-zuevo",
+    "nominative": "Орехово-Зуево",
+    "genitive": "Орехова-Зуева",
+    "dative": "Орехову-Зуеву",
+    "accusative": "Орехово-Зуево",
+    "instrumental": "Ореховом-Зуевом",
+    "prepositional": "Орехове-Зуеве"
+  },
+  {
+    "name": "Орск",
+    "slug": "orsk",
+    "nominative": "Орск",
+    "genitive": "Орска",
+    "dative": "Орску",
+    "accusative": "Орск",
+    "instrumental": "Орском",
+    "prepositional": "Орске"
+  },
+  {
+    "name": "Павлово",
+    "slug": "pavlovo",
+    "nominative": "Павлово",
+    "genitive": "Павлова",
+    "dative": "Павлову",
+    "accusative": "Павлово",
+    "instrumental": "Павловом",
+    "prepositional": "Павлове"
+  },
+  {
+    "name": "Павловский Посад",
+    "slug": "pavlovskij-posad",
+    "nominative": "Павловский Посад",
+    "genitive": "Павловского Посада",
+    "dative": "Павловскому Посаду",
+    "accusative": "Павловский Посад",
+    "instrumental": "Павловским Посадом",
+    "prepositional": "Павловском Посаде"
+  },
+  {
+    "name": "Пенза",
+    "slug": "penza",
+    "nominative": "Пенза",
+    "genitive": "Пензы",
+    "dative": "Пензе",
+    "accusative": "Пензу",
+    "instrumental": "Пензой",
+    "prepositional": "Пензе"
+  },
+  {
+    "name": "Первоуральск",
+    "slug": "pervouralsk",
+    "nominative": "Первоуральск",
+    "genitive": "Первоуральска",
+    "dative": "Первоуральску",
+    "accusative": "Первоуральск",
+    "instrumental": "Первоуральском",
+    "prepositional": "Первоуральске"
+  },
+  {
+    "name": "Пересвет",
+    "slug": "peresvet",
+    "nominative": "Пересвет",
+    "genitive": "Пересвета",
+    "dative": "Пересвету",
+    "accusative": "Пересвет",
+    "instrumental": "Пересветом",
+    "prepositional": "Пересвете"
+  },
+  {
+    "name": "Пермь",
+    "slug": "perm",
+    "nominative": "Пермь",
+    "genitive": "Перми",
+    "dative": "Перми",
+    "accusative": "Пермь",
+    "instrumental": "Пермью",
+    "prepositional": "Перми"
+  },
+  {
+    "name": "Петергоф",
+    "slug": "petergof",
+    "nominative": "Петергоф",
+    "genitive": "Петергофа",
+    "dative": "Петергофу",
+    "accusative": "Петергоф",
+    "instrumental": "Петергофом",
+    "prepositional": "Петергофе"
+  },
+  {
+    "name": "Петрозаводск",
+    "slug": "petrozavodsk",
+    "nominative": "Петрозаводск",
+    "genitive": "Петрозаводска",
+    "dative": "Петрозаводску",
+    "accusative": "Петрозаводск",
+    "instrumental": "Петрозаводском",
+    "prepositional": "Петрозаводске"
+  },
+  {
+    "name": "Петропавловск-Камчатский",
+    "slug": "petropavlovsk-kamchatskij",
+    "nominative": "Петропавловск-Камчатский",
+    "genitive": "Петропавловска-Камчатского",
+    "dative": "Петропавловску-Камчатскому",
+    "accusative": "Петропавловск-Камчатский",
+    "instrumental": "Петропавловском-Камчатским",
+    "prepositional": "Петропавловске-Камчатском"
+  },
+  {
+    "name": "Подольск",
+    "slug": "podolsk",
+    "nominative": "Подольск",
+    "genitive": "Подольска",
+    "dative": "Подольску",
+    "accusative": "Подольск",
+    "instrumental": "Подольском",
+    "prepositional": "Подольске"
+  },
+  {
+    "name": "Полевской",
+    "slug": "polevskoj",
+    "nominative": "Полевской",
+    "genitive": "Полевского",
+    "dative": "Полевскому",
+    "accusative": "Полевской",
+    "instrumental": "Полевским",
+    "prepositional": "Полевском"
+  },
+  {
+    "name": "Прокопьевск",
+    "slug": "prokopevsk",
+    "nominative": "Прокопьевск",
+    "genitive": "Прокопьевска",
+    "dative": "Прокопьевску",
+    "accusative": "Прокопьевск",
+    "instrumental": "Прокопьевском",
+    "prepositional": "Прокопьевске"
+  },
+  {
+    "name": "Протвино",
+    "slug": "protvino",
+    "nominative": "Протвино",
+    "genitive": "Протвина",
+    "dative": "Протвину",
+    "accusative": "Протвино",
+    "instrumental": "Протвином",
+    "prepositional": "Протвине"
+  },
+  {
+    "name": "Прохладный",
+    "slug": "prohladnyj",
+    "nominative": "Прохладный",
+    "genitive": "Прохладного",
+    "dative": "Прохладному",
+    "accusative": "Прохладный",
+    "instrumental": "Прохладным",
+    "prepositional": "Прохладном"
+  },
+  {
+    "name": "Псков",
+    "slug": "pskov",
+    "nominative": "Псков",
+    "genitive": "Пскова",
+    "dative": "Пскову",
+    "accusative": "Псков",
+    "instrumental": "Псковом",
+    "prepositional": "Пскове"
+  },
+  {
+    "name": "Пушкино",
+    "slug": "pushkino",
+    "nominative": "Пушкино",
+    "genitive": "Пушкина",
+    "dative": "Пушкину",
+    "accusative": "Пушкино",
+    "instrumental": "Пушкином",
+    "prepositional": "Пушкине"
+  },
+  {
+    "name": "Пущино",
+    "slug": "pushhino",
+    "nominative": "Пущино",
+    "genitive": "Пущина",
+    "dative": "Пущину",
+    "accusative": "Пущино",
+    "instrumental": "Пущином",
+    "prepositional": "Пущине"
+  },
+  {
+    "name": "Пятигорск",
+    "slug": "pyatigorsk",
+    "nominative": "Пятигорск",
+    "genitive": "Пятигорска",
+    "dative": "Пятигорску",
+    "accusative": "Пятигорск",
+    "instrumental": "Пятигорском",
+    "prepositional": "Пятигорске"
+  },
+  {
+    "name": "Раменское",
+    "slug": "ramenskoe",
+    "nominative": "Раменское",
+    "genitive": "Раменского",
+    "dative": "Раменскому",
+    "accusative": "Раменское",
+    "instrumental": "Раменским",
+    "prepositional": "Раменском"
+  },
+  {
+    "name": "Ревда",
+    "slug": "revda",
+    "nominative": "Ревда",
+    "genitive": "Ревды",
+    "dative": "Ревде",
+    "accusative": "Ревду",
+    "instrumental": "Ревдой",
+    "prepositional": "Ревде"
+  },
+  {
+    "name": "Реутов",
+    "slug": "reutov",
+    "nominative": "Реутов",
+    "genitive": "Реутова",
+    "dative": "Реутову",
+    "accusative": "Реутов",
+    "instrumental": "Реутовом",
+    "prepositional": "Реутове"
+  },
+  {
+    "name": "Ржев",
+    "slug": "rzhev",
+    "nominative": "Ржев",
+    "genitive": "Ржева",
+    "dative": "Ржеву",
+    "accusative": "Ржев",
+    "instrumental": "Ржевом",
+    "prepositional": "Ржеве"
+  },
+  {
+    "name": "Россошь",
+    "slug": "rossosh",
+    "nominative": "Россошь",
+    "genitive": "Россоши",
+    "dative": "Россоши",
+    "accusative": "Россошь",
+    "instrumental": "Россошью",
+    "prepositional": "Россоши"
+  },
+  {
+    "name": "Ростов",
+    "slug": "rostov",
+    "nominative": "Ростов",
+    "genitive": "Ростова",
+    "dative": "Ростову",
+    "accusative": "Ростов",
+    "instrumental": "Ростовом",
+    "prepositional": "Ростове"
+  },
+  {
+    "name": "Ростов-на-Дону",
+    "slug": "rostov-na-donu",
+    "nominative": "Ростов-на-Дону",
+    "genitive": "Ростова-на-Дону",
+    "dative": "Ростову-на-Дону",
+    "accusative": "Ростов-на-Дону",
+    "instrumental": "Ростовом-на-Дону",
+    "prepositional": "Ростове-на-Дону"
+  },
+  {
+    "name": "Рошаль",
+    "slug": "roshal",
+    "nominative": "Рошаль",
+    "genitive": "Рошаля",
+    "dative": "Рошалю",
+    "accusative": "Рошаль",
+    "instrumental": "Рошалем",
+    "prepositional": "Рошале"
+  },
+  {
+    "name": "Рубцовск",
+    "slug": "rubczovsk",
+    "nominative": "Рубцовск",
+    "genitive": "Рубцовска",
+    "dative": "Рубцовску",
+    "accusative": "Рубцовск",
+    "instrumental": "Рубцовском",
+    "prepositional": "Рубцовске"
+  },
+  {
+    "name": "Руза",
+    "slug": "ruza",
+    "nominative": "Руза",
+    "genitive": "Рузы",
+    "dative": "Рузе",
+    "accusative": "Рузу",
+    "instrumental": "Рузой",
+    "prepositional": "Рузе"
+  },
+  {
+    "name": "Рыбинск",
+    "slug": "rybinsk",
+    "nominative": "Рыбинск",
+    "genitive": "Рыбинска",
+    "dative": "Рыбинску",
+    "accusative": "Рыбинск",
+    "instrumental": "Рыбинском",
+    "prepositional": "Рыбинске"
+  },
+  {
+    "name": "Рязань",
+    "slug": "ryazan",
+    "nominative": "Рязань",
+    "genitive": "Рязани",
+    "dative": "Рязани",
+    "accusative": "Рязань",
+    "instrumental": "Рязанью",
+    "prepositional": "Рязани"
+  },
+  {
+    "name": "Салават",
+    "slug": "salavat",
+    "nominative": "Салават",
+    "genitive": "Салавата",
+    "dative": "Салавату",
+    "accusative": "Салават",
+    "instrumental": "Салаватом",
+    "prepositional": "Салавате"
+  },
+  {
+    "name": "Сальск",
+    "slug": "salsk",
+    "nominative": "Сальск",
+    "genitive": "Сальска",
+    "dative": "Сальску",
+    "accusative": "Сальск",
+    "instrumental": "Сальском",
+    "prepositional": "Сальске"
+  },
+  {
+    "name": "Самара",
+    "slug": "samara",
+    "nominative": "Самара",
+    "genitive": "Самары",
+    "dative": "Самаре",
+    "accusative": "Самару",
+    "instrumental": "Самарой",
+    "prepositional": "Самаре"
+  },
+  {
+    "name": "Санкт-Петербург",
+    "slug": "sankt-peterburg",
+    "nominative": "Санкт-Петербург",
+    "genitive": "Санкт-Петербурга",
+    "dative": "Санкт-Петербургу",
+    "accusative": "Санкт-Петербург",
+    "instrumental": "Санкт-Петербургом",
+    "prepositional": "Санкт-Петербурге"
+  },
+  {
+    "name": "Саранск",
+    "slug": "saransk",
+    "nominative": "Саранск",
+    "genitive": "Саранска",
+    "dative": "Саранску",
+    "accusative": "Саранск",
+    "instrumental": "Саранском",
+    "prepositional": "Саранске"
+  },
+  {
+    "name": "Сарапул",
+    "slug": "sarapul",
+    "nominative": "Сарапул",
+    "genitive": "Сарапула",
+    "dative": "Сарапулу",
+    "accusative": "Сарапул",
+    "instrumental": "Сарапулом",
+    "prepositional": "Сарапуле"
+  },
+  {
+    "name": "Саратов",
+    "slug": "saratov",
+    "nominative": "Саратов",
+    "genitive": "Саратова",
+    "dative": "Саратову",
+    "accusative": "Саратов",
+    "instrumental": "Саратовом",
+    "prepositional": "Саратове"
+  },
+  {
+    "name": "Саров",
+    "slug": "sarov",
+    "nominative": "Саров",
+    "genitive": "Сарова",
+    "dative": "Сарову",
+    "accusative": "Саров",
+    "instrumental": "Саровом",
+    "prepositional": "Сарове"
+  },
+  {
+    "name": "Свердловск",
+    "slug": "sverdlovsk",
+    "nominative": "Свердловск",
+    "genitive": "Свердловска",
+    "dative": "Свердловску",
+    "accusative": "Свердловск",
+    "instrumental": "Свердловском",
+    "prepositional": "Свердловске"
+  },
+  {
+    "name": "Севастополь",
+    "slug": "sevastopol",
+    "nominative": "Севастополь",
+    "genitive": "Севастополя",
+    "dative": "Севастополю",
+    "accusative": "Севастополь",
+    "instrumental": "Севастополем",
+    "prepositional": "Севастополе"
+  },
+  {
+    "name": "Северодвинск",
+    "slug": "severodvinsk",
+    "nominative": "Северодвинск",
+    "genitive": "Северодвинска",
+    "dative": "Северодвинску",
+    "accusative": "Северодвинск",
+    "instrumental": "Северодвинском",
+    "prepositional": "Северодвинске"
+  },
+  {
+    "name": "Северодонецк",
+    "slug": "severodoneczk",
+    "nominative": "Северодонецк",
+    "genitive": "Северодонецка",
+    "dative": "Северодонецку",
+    "accusative": "Северодонецк",
+    "instrumental": "Северодонецком",
+    "prepositional": "Северодонецке"
+  },
+  {
+    "name": "Северск",
+    "slug": "seversk",
+    "nominative": "Северск",
+    "genitive": "Северска",
+    "dative": "Северску",
+    "accusative": "Северск",
+    "instrumental": "Северском",
+    "prepositional": "Северске"
+  },
+  {
+    "name": "Сергиев Посад",
+    "slug": "sergiev-posad",
+    "nominative": "Сергиев Посад",
+    "genitive": "Сергиева Посада",
+    "dative": "Сергиеву Посаду",
+    "accusative": "Сергиев Посад",
+    "instrumental": "Сергиевым Посадом",
+    "prepositional": "Сергиевом Посаде"
+  },
+  {
+    "name": "Серов",
+    "slug": "serov",
+    "nominative": "Серов",
+    "genitive": "Серова",
+    "dative": "Серову",
+    "accusative": "Серов",
+    "instrumental": "Серовом",
+    "prepositional": "Серове"
+  },
+  {
+    "name": "Серпухов",
+    "slug": "serpuhov",
+    "nominative": "Серпухов",
+    "genitive": "Серпухова",
+    "dative": "Серпухову",
+    "accusative": "Серпухов",
+    "instrumental": "Серпуховом",
+    "prepositional": "Серпухове"
+  },
+  {
+    "name": "Сибай",
+    "slug": "sibaj",
+    "nominative": "Сибай",
+    "genitive": "Сибая",
+    "dative": "Сибаю",
+    "accusative": "Сибай",
+    "instrumental": "Сибаем",
+    "prepositional": "Сибае"
+  },
+  {
+    "name": "Симферополь",
+    "slug": "simferopol",
+    "nominative": "Симферополь",
+    "genitive": "Симферополя",
+    "dative": "Симферополю",
+    "accusative": "Симферополь",
+    "instrumental": "Симферополем",
+    "prepositional": "Симферополе"
+  },
+  {
+    "name": "Славянск",
+    "slug": "slavyansk",
+    "nominative": "Славянск",
+    "genitive": "Славянска",
+    "dative": "Славянску",
+    "accusative": "Славянск",
+    "instrumental": "Славянском",
+    "prepositional": "Славянске"
+  },
+  {
+    "name": "Славянск-на-Кубани",
+    "slug": "slavyansk-na-kubani",
+    "nominative": "Славянск-на-Кубани",
+    "genitive": "Славянска-на-Кубани",
+    "dative": "Славянску-на-Кубани",
+    "accusative": "Славянск-на-Кубани",
+    "instrumental": "Славянском-на-Кубани",
+    "prepositional": "Славянске-на-Кубани"
+  },
+  {
+    "name": "Смоленск",
+    "slug": "smolensk",
+    "nominative": "Смоленск",
+    "genitive": "Смоленска",
+    "dative": "Смоленску",
+    "accusative": "Смоленск",
+    "instrumental": "Смоленском",
+    "prepositional": "Смоленске"
+  },
+  {
+    "name": "Снежинск",
+    "slug": "snezhinsk",
+    "nominative": "Снежинск",
+    "genitive": "Снежинска",
+    "dative": "Снежинску",
+    "accusative": "Снежинск",
+    "instrumental": "Снежинском",
+    "prepositional": "Снежинске"
+  },
+  {
+    "name": "Соликамск",
+    "slug": "solikamsk",
+    "nominative": "Соликамск",
+    "genitive": "Соликамска",
+    "dative": "Соликамску",
+    "accusative": "Соликамск",
+    "instrumental": "Соликамском",
+    "prepositional": "Соликамске"
+  },
+  {
+    "name": "Солнечногорск",
+    "slug": "solnechnogorsk",
+    "nominative": "Солнечногорск",
+    "genitive": "Солнечногорска",
+    "dative": "Солнечногорску",
+    "accusative": "Солнечногорск",
+    "instrumental": "Солнечногорском",
+    "prepositional": "Солнечногорске"
+  },
+  {
+    "name": "Сосновый бор",
+    "slug": "sosnovyj-bor",
+    "nominative": "Сосновый бор",
+    "genitive": "Соснового бора",
+    "dative": "Сосновому бору",
+    "accusative": "Сосновый бор",
+    "instrumental": "Сосновым бором",
+    "prepositional": "Сосновом бору"
+  },
+  {
+    "name": "Сочи",
+    "slug": "sochi",
+    "nominative": "Сочи",
+    "genitive": "Сочи",
+    "dative": "Сочи",
+    "accusative": "Сочи",
+    "instrumental": "Сочи",
+    "prepositional": "Сочи"
+  },
+  {
+    "name": "Ставрополь",
+    "slug": "stavropol",
+    "nominative": "Ставрополь",
+    "genitive": "Ставрополя",
+    "dative": "Ставрополю",
+    "accusative": "Ставрополь",
+    "instrumental": "Ставрополем",
+    "prepositional": "Ставрополе"
+  },
+  {
+    "name": "Старая Купавна",
+    "slug": "staraya-kupavna",
+    "nominative": "Старая Купавна",
+    "genitive": "Старой Купавны",
+    "dative": "Старой Купавне",
+    "accusative": "Старую Купавну",
+    "instrumental": "Старой Купавной",
+    "prepositional": "Старой Купавне"
+  },
+  {
+    "name": "Старый Оскол",
+    "slug": "staryj-oskol",
+    "nominative": "Старый Оскол",
+    "genitive": "Старого Оскола",
+    "dative": "Старому Осколу",
+    "accusative": "Старый Оскол",
+    "instrumental": "Старым Осколом",
+    "prepositional": "Старом Осколе"
+  },
+  {
+    "name": "Стаханов",
+    "slug": "stahanov",
+    "nominative": "Стаханов",
+    "genitive": "Стаханова",
+    "dative": "Стаханову",
+    "accusative": "Стаханов",
+    "instrumental": "Стахановым",
+    "prepositional": "Стаханове"
+  },
+  {
+    "name": "Стерлитамак",
+    "slug": "sterlitamak",
+    "nominative": "Стерлитамак",
+    "genitive": "Стерлитамака",
+    "dative": "Стерлитамаку",
+    "accusative": "Стерлитамак",
+    "instrumental": "Стерлитамаком",
+    "prepositional": "Стерлитамаке"
+  },
+  {
+    "name": "Ступино",
+    "slug": "stupino",
+    "nominative": "Ступино",
+    "genitive": "Ступина",
+    "dative": "Ступину",
+    "accusative": "Ступино",
+    "instrumental": "Ступином",
+    "prepositional": "Ступине"
+  },
+  {
+    "name": "Сунжа",
+    "slug": "sunzha",
+    "nominative": "Сунжа",
+    "genitive": "Сунжи",
+    "dative": "Сунже",
+    "accusative": "Сунжу",
+    "instrumental": "Сунжей",
+    "prepositional": "Сунже"
+  },
+  {
+    "name": "Сургут",
+    "slug": "surgut",
+    "nominative": "Сургут",
+    "genitive": "Сургута",
+    "dative": "Сургуту",
+    "accusative": "Сургут",
+    "instrumental": "Сургутом",
+    "prepositional": "Сургуте"
+  },
+  {
+    "name": "Сызрань",
+    "slug": "syzran",
+    "nominative": "Сызрань",
+    "genitive": "Сызрани",
+    "dative": "Сызрани",
+    "accusative": "Сызрань",
+    "instrumental": "Сызранью",
+    "prepositional": "Сызрани"
+  },
+  {
+    "name": "Сыктывкар",
+    "slug": "syktyvkar",
+    "nominative": "Сыктывкар",
+    "genitive": "Сыктывкара",
+    "dative": "Сыктывкару",
+    "accusative": "Сыктывкар",
+    "instrumental": "Сыктывкаром",
+    "prepositional": "Сыктывкаре"
+  },
+  {
+    "name": "Таганрог",
+    "slug": "taganrog",
+    "nominative": "Таганрог",
+    "genitive": "Таганрога",
+    "dative": "Таганрогу",
+    "accusative": "Таганрог",
+    "instrumental": "Таганрогом",
+    "prepositional": "Таганроге"
+  },
+  {
+    "name": "Талдом",
+    "slug": "taldom",
+    "nominative": "Талдом",
+    "genitive": "Талдома",
+    "dative": "Талдому",
+    "accusative": "Талдом",
+    "instrumental": "Талдомом",
+    "prepositional": "Талдоме"
+  },
+  {
+    "name": "Тамбов",
+    "slug": "tambov",
+    "nominative": "Тамбов",
+    "genitive": "Тамбова",
+    "dative": "Тамбову",
+    "accusative": "Тамбов",
+    "instrumental": "Тамбовом",
+    "prepositional": "Тамбове"
+  },
+  {
+    "name": "Тверь",
+    "slug": "tver",
+    "nominative": "Тверь",
+    "genitive": "Твери",
+    "dative": "Твери",
+    "accusative": "Тверь",
+    "instrumental": "Тверью",
+    "prepositional": "Твери"
+  },
+  {
+    "name": "Тимашёвск",
+    "slug": "timashyovsk",
+    "nominative": "Тимашёвск",
+    "genitive": "Тимашёвска",
+    "dative": "Тимашёвску",
+    "accusative": "Тимашёвск",
+    "instrumental": "Тимашёвском",
+    "prepositional": "Тимашёвске"
+  },
+  {
+    "name": "Тихвин",
+    "slug": "tihvin",
+    "nominative": "Тихвин",
+    "genitive": "Тихвина",
+    "dative": "Тихвину",
+    "accusative": "Тихвин",
+    "instrumental": "Тихвином",
+    "prepositional": "Тихвине"
+  },
+  {
+    "name": "Тихорецк",
+    "slug": "tihoreczk",
+    "nominative": "Тихорецк",
+    "genitive": "Тихорецка",
+    "dative": "Тихорецку",
+    "accusative": "Тихорецк",
+    "instrumental": "Тихорецком",
+    "prepositional": "Тихорецке"
+  },
+  {
+    "name": "Тольятти",
+    "slug": "tolyatti",
+    "nominative": "Тольятти",
+    "genitive": "Тольятти",
+    "dative": "Тольятти",
+    "accusative": "Тольятти",
+    "instrumental": "Тольятти",
+    "prepositional": "Тольятти"
+  },
+  {
+    "name": "Томск",
+    "slug": "tomsk",
+    "nominative": "Томск",
+    "genitive": "Томска",
+    "dative": "Томску",
+    "accusative": "Томск",
+    "instrumental": "Томском",
+    "prepositional": "Томске"
+  },
+  {
+    "name": "Троицк",
+    "slug": "troiczk",
+    "nominative": "Троицк",
+    "genitive": "Троицка",
+    "dative": "Троицку",
+    "accusative": "Троицк",
+    "instrumental": "Троицком",
+    "prepositional": "Троицке"
+  },
+  {
+    "name": "Туапсе",
+    "slug": "tuapse",
+    "nominative": "Туапсе",
+    "genitive": "Туапсе",
+    "dative": "Туапсе",
+    "accusative": "Туапсе",
+    "instrumental": "Туапсе",
+    "prepositional": "Туапсе"
+  },
+  {
+    "name": "Туймазы",
+    "slug": "tujmazy",
+    "nominative": "Туймазы",
+    "genitive": "Туймазов",
+    "dative": "Туймазам",
+    "accusative": "Туймазы",
+    "instrumental": "Туймазами",
+    "prepositional": "Туймазах"
+  },
+  {
+    "name": "Тула",
+    "slug": "tula",
+    "nominative": "Тула",
+    "genitive": "Тулы",
+    "dative": "Туле",
+    "accusative": "Тулу",
+    "instrumental": "Тулой",
+    "prepositional": "Туле"
+  },
+  {
+    "name": "Тюмень",
+    "slug": "tyumen",
+    "nominative": "Тюмень",
+    "genitive": "Тюмени",
+    "dative": "Тюмени",
+    "accusative": "Тюмень",
+    "instrumental": "Тюменью",
+    "prepositional": "Тюмени"
+  },
+  {
+    "name": "Улан-Удэ",
+    "slug": "ulan-ude",
+    "nominative": "Улан-Удэ",
+    "genitive": "Улан-Удэ",
+    "dative": "Улан-Удэ",
+    "accusative": "Улан-Удэ",
+    "instrumental": "Улан-Удэ",
+    "prepositional": "Улан-Удэ"
+  },
+  {
+    "name": "Ульяновск",
+    "slug": "ulyanovsk",
+    "nominative": "Ульяновск",
+    "genitive": "Ульяновска",
+    "dative": "Ульяновску",
+    "accusative": "Ульяновск",
+    "instrumental": "Ульяновском",
+    "prepositional": "Ульяновске"
+  },
+  {
+    "name": "Урус-Мартан",
+    "slug": "urus-martan",
+    "nominative": "Урус-Мартан",
+    "genitive": "Урус-Мартана",
+    "dative": "Урус-Мартану",
+    "accusative": "Урус-Мартан",
+    "instrumental": "Урус-Мартаном",
+    "prepositional": "Урус-Мартане"
+  },
+  {
+    "name": "Усолье-Сибирское",
+    "slug": "usole-sibirskoe",
+    "nominative": "Усолье-Сибирское",
+    "genitive": "Усолье-Сибирского",
+    "dative": "Усолье-Сибирскому",
+    "accusative": "Усолье-Сибирское",
+    "instrumental": "Усолье-Сибирским",
+    "prepositional": "Усолье-Сибирском"
+  },
+  {
+    "name": "Уссурийск",
+    "slug": "ussurijsk",
+    "nominative": "Уссурийск",
+    "genitive": "Уссурийска",
+    "dative": "Уссурийску",
+    "accusative": "Уссурийск",
+    "instrumental": "Уссурийском",
+    "prepositional": "Уссурийске"
+  },
+  {
+    "name": "Усть-Илимск",
+    "slug": "ust-ilimsk",
+    "nominative": "Усть-Илимск",
+    "genitive": "Усть-Илимска",
+    "dative": "Усть-Илимску",
+    "accusative": "Усть-Илимск",
+    "instrumental": "Усть-Илимском",
+    "prepositional": "Усть-Илимске"
+  },
+  {
+    "name": "Уфа",
+    "slug": "ufa",
+    "nominative": "Уфа",
+    "genitive": "Уфы",
+    "dative": "Уфе",
+    "accusative": "Уфу",
+    "instrumental": "Уфой",
+    "prepositional": "Уфе"
+  },
+  {
+    "name": "Ухта",
+    "slug": "uhta",
+    "nominative": "Ухта",
+    "genitive": "Ухты",
+    "dative": "Ухте",
+    "accusative": "Ухту",
+    "instrumental": "Ухтой",
+    "prepositional": "Ухте"
+  },
+  {
+    "name": "Феодосия",
+    "slug": "feodosiya",
+    "nominative": "Феодосия",
+    "genitive": "Феодосии",
+    "dative": "Феодосии",
+    "accusative": "Феодосию",
+    "instrumental": "Феодосией",
+    "prepositional": "Феодосии"
+  },
+  {
+    "name": "Фрязино",
+    "slug": "fryazino",
+    "nominative": "Фрязино",
+    "genitive": "Фрязина",
+    "dative": "Фрязину",
+    "accusative": "Фрязино",
+    "instrumental": "Фрязином",
+    "prepositional": "Фрязине"
+  },
+  {
+    "name": "Хабаровск",
+    "slug": "habarovsk",
+    "nominative": "Хабаровск",
+    "genitive": "Хабаровска",
+    "dative": "Хабаровску",
+    "accusative": "Хабаровск",
+    "instrumental": "Хабаровском",
+    "prepositional": "Хабаровске"
+  },
+  {
+    "name": "Ханты-Мансийск",
+    "slug": "hanty-mansijsk",
+    "nominative": "Ханты-Мансийск",
+    "genitive": "Ханты-Мансийска",
+    "dative": "Ханты-Мансийску",
+    "accusative": "Ханты-Мансийск",
+    "instrumental": "Ханты-Мансийском",
+    "prepositional": "Ханты-Мансийске"
+  },
+  {
+    "name": "Хасавюрт",
+    "slug": "hasavyurt",
+    "nominative": "Хасавюрт",
+    "genitive": "Хасавюрта",
+    "dative": "Хасавюрту",
+    "accusative": "Хасавюрт",
+    "instrumental": "Хасавюртом",
+    "prepositional": "Хасавюрте"
+  },
+  {
+    "name": "Химки",
+    "slug": "himki",
+    "nominative": "Химки",
+    "genitive": "Химок",
+    "dative": "Химкам",
+    "accusative": "Химки",
+    "instrumental": "Химками",
+    "prepositional": "Химках"
+  },
+  {
+    "name": "Хотьково",
+    "slug": "hotkovo",
+    "nominative": "Хотьково",
+    "genitive": "Хотькова",
+    "dative": "Хотькову",
+    "accusative": "Хотьково",
+    "instrumental": "Хотьковом",
+    "prepositional": "Хотькове"
+  },
+  {
+    "name": "Чайковский",
+    "slug": "chajkovskij",
+    "nominative": "Чайковский",
+    "genitive": "Чайковского",
+    "dative": "Чайковскому",
+    "accusative": "Чайковский",
+    "instrumental": "Чайковским",
+    "prepositional": "Чайковском"
+  },
+  {
+    "name": "Чапаевск",
+    "slug": "chapaevsk",
+    "nominative": "Чапаевск",
+    "genitive": "Чапаевска",
+    "dative": "Чапаевску",
+    "accusative": "Чапаевск",
+    "instrumental": "Чапаевском",
+    "prepositional": "Чапаевске"
+  },
+  {
+    "name": "Чебоксары",
+    "slug": "cheboksary",
+    "nominative": "Чебоксары",
+    "genitive": "Чебоксар",
+    "dative": "Чебоксарам",
+    "accusative": "Чебоксары",
+    "instrumental": "Чебоксарами",
+    "prepositional": "Чебоксарах"
+  },
+  {
+    "name": "Челябинск",
+    "slug": "chelyabinsk",
+    "nominative": "Челябинск",
+    "genitive": "Челябинска",
+    "dative": "Челябинску",
+    "accusative": "Челябинск",
+    "instrumental": "Челябинском",
+    "prepositional": "Челябинске"
+  },
+  {
+    "name": "Черемхово",
+    "slug": "cheremhovo",
+    "nominative": "Черемхово",
+    "genitive": "Черемхова",
+    "dative": "Черемхову",
+    "accusative": "Черемхово",
+    "instrumental": "Черемховом",
+    "prepositional": "Черемхове"
+  },
+  {
+    "name": "Череповец",
+    "slug": "cherepovecz",
+    "nominative": "Череповец",
+    "genitive": "Череповца",
+    "dative": "Череповцу",
+    "accusative": "Череповец",
+    "instrumental": "Череповцом",
+    "prepositional": "Череповце"
+  },
+  {
+    "name": "Черкесск",
+    "slug": "cherkessk",
+    "nominative": "Черкесск",
+    "genitive": "Черкесска",
+    "dative": "Черкесску",
+    "accusative": "Черкесск",
+    "instrumental": "Черкесском",
+    "prepositional": "Черкесске"
+  },
+  {
+    "name": "Черноголовка",
+    "slug": "chernogolovka",
+    "nominative": "Черноголовка",
+    "genitive": "Черноголовки",
+    "dative": "Черноголовке",
+    "accusative": "Черноголовку",
+    "instrumental": "Черноголовкой",
+    "prepositional": "Черноголовке"
+  },
+  {
+    "name": "Черногорск",
+    "slug": "chernogorsk",
+    "nominative": "Черногорск",
+    "genitive": "Черногорска",
+    "dative": "Черногорску",
+    "accusative": "Черногорск",
+    "instrumental": "Черногорском",
+    "prepositional": "Черногорске"
+  },
+  {
+    "name": "Чехов",
+    "slug": "chehov",
+    "nominative": "Чехов",
+    "genitive": "Чехова",
+    "dative": "Чехову",
+    "accusative": "Чехов",
+    "instrumental": "Чеховом",
+    "prepositional": "Чехове"
+  },
+  {
+    "name": "Чистополь",
+    "slug": "chistopol",
+    "nominative": "Чистополь",
+    "genitive": "Чистополя",
+    "dative": "Чистополю",
+    "accusative": "Чистополь",
+    "instrumental": "Чистополем",
+    "prepositional": "Чистополе"
+  },
+  {
+    "name": "Чита",
+    "slug": "chita",
+    "nominative": "Чита",
+    "genitive": "Читы",
+    "dative": "Чите",
+    "accusative": "Читу",
+    "instrumental": "Читой",
+    "prepositional": "Чите"
+  },
+  {
+    "name": "Шадринск",
+    "slug": "shadrinsk",
+    "nominative": "Шадринск",
+    "genitive": "Шадринска",
+    "dative": "Шадринску",
+    "accusative": "Шадринск",
+    "instrumental": "Шадринском",
+    "prepositional": "Шадринске"
+  },
+  {
+    "name": "Шали",
+    "slug": "shali",
+    "nominative": "Шали",
+    "genitive": "Шали",
+    "dative": "Шали",
+    "accusative": "Шали",
+    "instrumental": "Шали",
+    "prepositional": "Шали"
+  },
+  {
+    "name": "Шатура",
+    "slug": "shatura",
+    "nominative": "Шатура",
+    "genitive": "Шатуры",
+    "dative": "Шатуре",
+    "accusative": "Шатуру",
+    "instrumental": "Шатурой",
+    "prepositional": "Шатуре"
+  },
+  {
+    "name": "Шахты",
+    "slug": "shahty",
+    "nominative": "Шахты",
+    "genitive": "Шахт",
+    "dative": "Шахтам",
+    "accusative": "Шахты",
+    "instrumental": "Шахтами",
+    "prepositional": "Шахтах"
+  },
+  {
+    "name": "Шуя",
+    "slug": "shuya",
+    "nominative": "Шуя",
+    "genitive": "Шуи",
+    "dative": "Шуе",
+    "accusative": "Шую",
+    "instrumental": "Шуей",
+    "prepositional": "Шуе"
+  },
+  {
+    "name": "Щёкино",
+    "slug": "shhyokino",
+    "nominative": "Щёкино",
+    "genitive": "Щёкина",
+    "dative": "Щёкину",
+    "accusative": "Щёкино",
+    "instrumental": "Щёкином",
+    "prepositional": "Щёкине"
+  },
+  {
+    "name": "Щёлково",
+    "slug": "shhyolkovo",
+    "nominative": "Щёлково",
+    "genitive": "Щёлкова",
+    "dative": "Щёлкову",
+    "accusative": "Щёлково",
+    "instrumental": "Щёлковом",
+    "prepositional": "Щёлкове"
+  },
+  {
+    "name": "Щербинка",
+    "slug": "shherbinka",
+    "nominative": "Щербинка",
+    "genitive": "Щербинки",
+    "dative": "Щербинке",
+    "accusative": "Щербинку",
+    "instrumental": "Щербинкой",
+    "prepositional": "Щербинке"
+  },
+  {
+    "name": "Электрогорск",
+    "slug": "elektrogorsk",
+    "nominative": "Электрогорск",
+    "genitive": "Электрогорска",
+    "dative": "Электрогорску",
+    "accusative": "Электрогорск",
+    "instrumental": "Электрогорском",
+    "prepositional": "Электрогорске"
+  },
+  {
+    "name": "Электросталь",
+    "slug": "elektrostal",
+    "nominative": "Электросталь",
+    "genitive": "Электростали",
+    "dative": "Электростали",
+    "accusative": "Электросталь",
+    "instrumental": "Электросталью",
+    "prepositional": "Электростали"
+  },
+  {
+    "name": "Электроугли",
+    "slug": "elektrougli",
+    "nominative": "Электроугли",
+    "genitive": "Электроуглей",
+    "dative": "Электроуглям",
+    "accusative": "Электроугли",
+    "instrumental": "Электроуглями",
+    "prepositional": "Электроуглях"
+  },
+  {
+    "name": "Элиста",
+    "slug": "elista",
+    "nominative": "Элиста",
+    "genitive": "Элисты",
+    "dative": "Элисте",
+    "accusative": "Элисту",
+    "instrumental": "Элистой",
+    "prepositional": "Элисте"
+  },
+  {
+    "name": "Энгельс",
+    "slug": "engels",
+    "nominative": "Энгельс",
+    "genitive": "Энгельса",
+    "dative": "Энгельсу",
+    "accusative": "Энгельс",
+    "instrumental": "Энгельсом",
+    "prepositional": "Энгельсе"
+  },
+  {
+    "name": "Южно-Сахалинск",
+    "slug": "yuzhno-sahalinsk",
+    "nominative": "Южно-Сахалинск",
+    "genitive": "Южно-Сахалинска",
+    "dative": "Южно-Сахалинску",
+    "accusative": "Южно-Сахалинск",
+    "instrumental": "Южно-Сахалинском",
+    "prepositional": "Южно-Сахалинске"
+  },
+  {
+    "name": "Юрга",
+    "slug": "yurga",
+    "nominative": "Юрга",
+    "genitive": "Юрги",
+    "dative": "Юрге",
+    "accusative": "Юргу",
+    "instrumental": "Юргой",
+    "prepositional": "Юрге"
+  },
+  {
+    "name": "Якутск",
+    "slug": "yakutsk",
+    "nominative": "Якутск",
+    "genitive": "Якутска",
+    "dative": "Якутску",
+    "accusative": "Якутск",
+    "instrumental": "Якутском",
+    "prepositional": "Якутске"
+  },
+  {
+    "name": "Ялта",
+    "slug": "yalta",
+    "nominative": "Ялта",
+    "genitive": "Ялты",
+    "dative": "Ялте",
+    "accusative": "Ялту",
+    "instrumental": "Ялтой",
+    "prepositional": "Ялте"
+  },
+  {
+    "name": "Ярославль",
+    "slug": "yaroslavl",
+    "nominative": "Ярославль",
+    "genitive": "Ярославля",
+    "dative": "Ярославлю",
+    "accusative": "Ярославль",
+    "instrumental": "Ярославлем",
+    "prepositional": "Ярославле"
+  },
+  {
+    "name": "Яхрома",
+    "slug": "yahroma",
+    "nominative": "Яхрома",
+    "genitive": "Яхромы",
+    "dative": "Яхроме",
+    "accusative": "Яхрому",
+    "instrumental": "Яхромой",
+    "prepositional": "Яхроме"
+  }
+]

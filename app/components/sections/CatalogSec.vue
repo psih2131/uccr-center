@@ -240,7 +240,7 @@ function formatHours(time) {
 
 const categories = computed(() =>
   (categoriesResponse.value?.data || [])
-    .filter((item) => item?.slug && item?.title)
+    .filter((item) => item?.slug && item?.title && relationCount(item.courses) > 0)
     .map((item) => ({
       id: item.slug,
       name: item.title,
